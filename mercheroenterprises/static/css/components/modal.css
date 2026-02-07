@@ -1,0 +1,254 @@
+/* Email Modal Styling (from style.css) */
+.email-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+}
+
+.email-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.email-modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f2eb 100%);
+    border: 1px solid rgba(159, 133, 56, 0.3);
+    border-radius: 15px;
+    padding: 3rem 2.5rem;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px var(--shadow-light);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.email-modal-content h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.email-modal-content p {
+    color: var(--accent-text);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.email-modal-content p strong {
+    color: var(--gold);
+    word-break: break-all;
+}
+
+.email-open-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
+}
+
+.email-open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-light);
+    background: var(--gold);
+}
+
+.or-text {
+    color: var(--accent-text);
+    font-size: 0.9rem !important;
+    margin: 1.5rem 0 !important;
+}
+
+.email-copy-btn {
+    background: rgba(159, 133, 56, 0.2);
+    color: var(--gold);
+    border: 2px solid rgba(159, 133, 56, 0.5);
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.email-copy-btn:hover {
+    background: rgba(159, 133, 56, 0.4);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.email-copy-btn.copied {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: #4caf50;
+    color: #4caf50;
+}
+
+.close-email-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    color: var(--accent-text);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-email-modal:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .email-modal-content {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+
+    .email-modal-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .email-open-btn,
+    .email-copy-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Image Modal / Overlay (from style.css) */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px var(--shadow-light);
+    animation: zoomIn 0.3s ease;
+}
+
+.image-modal .close-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 35px;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-modal .close-btn:hover {
+    transform: rotate(90deg);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(159, 133, 56, 0.8);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-arrow:hover {
+    background: var(--gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+    left: 30px;
+}
+
+.next-arrow {
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .modal-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .prev-arrow {
+        left: 15px;
+    }
+
+    .next-arrow {
+        right: 15px;
+    }
+}

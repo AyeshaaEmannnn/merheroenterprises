@@ -1,0 +1,40 @@
+/* Products Category Grid */
+.product-categories .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .product-categories .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Mobile – horizontal swipe */
+@media (max-width: 768px) {
+    .product-categories .grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 16px;
+        gap: 16px;
+        padding: 0 16px 16px;
+        scrollbar-width: none;
+    }
+
+    .product-categories .grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-categories .grid .card {
+        flex: 0 0 48%;
+        max-width: 48%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}

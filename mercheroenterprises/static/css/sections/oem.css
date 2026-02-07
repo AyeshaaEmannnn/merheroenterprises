@@ -1,0 +1,57 @@
+/* OEM Section */
+.oem-section {
+    background: linear-gradient(135deg, #f5f2eb, #e8dcc8);
+    color: var(--dark-text);
+}
+
+.oem-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.oem-text ul {
+    list-style: none;
+    text-align: left;
+}
+
+.oem-text li {
+    margin-bottom: 1rem;
+    color: var(--gold);
+}
+
+.oem-text i {
+    margin-right: 0.5rem;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+/* OEM slider tweaks */
+.oem-slider .slider-wrapper {
+    flex-wrap: nowrap;
+}
+
+.oem-slider .slide-item {
+    flex: 0 0 auto;
+    min-width: 220px;
+    animation: none;
+}
+
+.oem-slider .slide-item p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .oem-content {
+        grid-template-columns: 1fr;
+    }
+}
