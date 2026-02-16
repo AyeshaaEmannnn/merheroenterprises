@@ -35,7 +35,7 @@
 .slide-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
 }
 
@@ -56,8 +56,8 @@
     font-weight: 750;
     margin-bottom: 1.2rem;
     line-height: 1.05;
-    color: var(--light-bg);
-    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .slide-content p {
@@ -65,7 +65,8 @@
     margin-bottom: 2.5rem;
     max-width: 520px;
     line-height: 1.5;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 /* Hero CTA */
@@ -85,7 +86,8 @@
 .hero .cta-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px var(--shadow-light);
-    background: #d4a844;
+    background: rgba(159, 133, 56, 0.85);
+    color: var(--white);
 }
 
 /* Responsive */

@@ -26,7 +26,7 @@
             </div>
         </div>
         <!-- Slide 4 -->
-        <div class="slide" style="background-image: url('/static/images/2.jpeg');">
+        <div class="slide" style="background-image: url('/static/images/image.jpg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h1>Manufacturing Quality That Travels Worldwide</h1>
@@ -58,7 +58,7 @@
                     high-quality leather apparel.</p>
                 <p>We specialize in custom riding gear, jackets, pants, gloves, boots, and leather garments, delivering
                     trusted OEM manufacturing for brands worldwide.</p>
-                <a href="about.html" class="cta-button about-cta">
+                <a href="{% url 'about_introduction' %}" class="cta-button about-cta">
                     <i class="fas fa-arrow-right"></i> Discover More About Us
                 </a>
             </div>
@@ -474,6 +474,4 @@
         </button>
     </div>
 </div>
-
-
 {% endblock %}

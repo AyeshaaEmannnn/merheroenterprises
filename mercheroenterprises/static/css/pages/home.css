@@ -96,3 +96,10 @@
 .back-to-top.show {
     opacity: 1;
 }
+
+h2 {
+    text-align: center;
+    color: var(--gold);
+    font-size: 35px;
+    padding-bottom: 2px;
+}

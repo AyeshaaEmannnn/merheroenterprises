@@ -2,13 +2,26 @@
 <header class="navbar">
     <div class="container">
         <div class="logo">
-            <img src="{% static 'images/light1.png' %}" alt="Merchero Enterprises">
+            <a href="/">
+                <img src="/static/images/light1.png" alt="Merchero Enterprises Logo">
+            </a>
         </div>
-
         <nav>
             <ul class="nav-menu">
                 <button class="nav-close" type="button">&times;</button>
-                <li><a href="#about">About</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">About</a> <!-- Down arrow for dropdown -->
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'about_introduction' %}">Introduction</a></li>
+                        <li><a href="{% url 'about_our_journey' %}">Our Journey</a></li>
+                        <li><a href="{% url 'about_vision' %}">Vision & Mission</a></li>
+                        <li><a href="{% url 'about_team' %}">Our Team</a></li>
+                        <li><a href="{% url 'about_certificates' %}">Certificates</a></li>
+                        <li><a href="{% url 'about_core_values' %}">Core Values</a></li>
+                        <li><a href="{% url 'about_company_profile' %}">Company Profile</a></li>
+                    </ul>
+                </li>
                 <li><a href="#capabilities">Capabilities</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#why_choose_us">Why Choose Us</a></li>

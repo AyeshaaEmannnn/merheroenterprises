@@ -35,6 +35,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     height: 80px;
     /* increased a bit for better look */
 }
@@ -42,13 +43,21 @@
 .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .logo img {
-    height: 60px;
-    /* Logo fit */
+    max-height: 60px;
     width: auto;
+    height: auto;
     object-fit: contain;
+    display: block;
 }
 
 .nav-menu {
@@ -67,6 +76,7 @@
     transition: color 0.3s, text-shadow 0.3s;
     font-weight: 600;
     font-size: 0.9rem;
+
 }
 
 .nav-menu a:hover {
@@ -128,6 +138,8 @@
 
     .nav-menu.active {
         right: 0;
+        /* Ensure the active slide-in menu sits above the hamburger */
+        z-index: 3002;
     }
 
     .nav-menu li {
@@ -154,6 +166,8 @@
         font-size: 1.5rem;
         border-radius: 50%;
         cursor: pointer;
+        z-index: 3010;
+        pointer-events: auto;
     }
 
     .nav-close:hover {
@@ -163,5 +177,219 @@
     body.menu-open {
         overflow: hidden;
         /* background scroll band */
+    }
+}
+
+/* ────────────────────────────────────────────────
+   Modern Dropdown Menu Styling
+──────────────────────────────────────────────── */
+
+.nav-menu {
+    /* If not already present - helps with layout */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu li.dropdown {
+    position: relative;
+}
+
+/* The trigger link/button */
+.nav-menu li.dropdown>a {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.6em 1em;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+}
+
+/* Optional: arrow indicator */
+.nav-menu li.dropdown>a::after {
+    content: "▼";
+    font-size: 0.65em;
+    opacity: 0.7;
+    transition: transform 0.25s ease;
+}
+
+.nav-menu li.dropdown:hover>a::after {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* Hover/focus state for the trigger */
+.nav-menu li.dropdown:hover>a,
+.nav-menu li.dropdown>a:focus-visible {
+    background: #ffffff;
+    color: var(--gold);
+    /* or use your primary color: #0066cc, #2c7be5 etc */
+}
+
+/* ── Dropdown Menu itself ── */
+.nav-menu li.dropdown .dropdown-menu {
+    /* Reset */
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1000;
+    list-style: none;
+
+    /* Hidden by default */
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+
+    /* Styling */
+    min-width: 220px;
+    background: var(--light-bg);
+    border: 1px solid rgba(132, 144, 38, 0.2);
+    border-radius: 8px;
+    box-shadow:
+        0 6px 20px rgba(132, 144, 38, 0.15),
+        0 2px 8px rgba(132, 144, 38, 0.08);
+    overflow: hidden;
+    margin-top: 4px;
+    padding: 6px 0;
+
+    /* Smooth appearance */
+    transition:
+        opacity 0.18s ease,
+        transform 0.22s ease,
+        visibility 0.22s ease;
+}
+
+/* Show dropdown */
+.nav-menu li.dropdown:hover .dropdown-menu,
+.nav-menu li.dropdown:focus-within .dropdown-menu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
+.nav-menu .dropdown-menu li {
+    list-style: none;
+}
+
+.nav-menu .dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.nav-menu .dropdown-menu li a:hover,
+.nav-menu .dropdown-menu li a:focus {
+    background: rgba(132, 144, 38, 0.1);
+    color: var(--dark-olive);
+    outline: none;
+    border-left: 3px solid var(--gold);
+    padding-left: 15px;
+}
+
+/* Optional: active / current page style */
+.nav-menu .dropdown-menu li a.active {
+    background: rgba(159, 133, 56, 0.15);
+    font-weight: 600;
+    color: var(--gold);
+    border-left: 3px solid var(--gold);
+    padding-left: 15px;
+}
+
+/* Optional: divider between groups */
+.nav-menu .dropdown-menu li.divider {
+    height: 1px;
+    background: rgba(132, 144, 38, 0.2);
+    margin: 6px 12px;
+    list-style: none;
+}
+
+/* Right-aligned dropdown (if needed) */
+.nav-menu li.dropdown.right .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.nav-menu li.dropdown .dropdown-menu {
+    transition-delay: 0s;
+    transition: opacity 0.18s ease, transform 0.22s ease;
+}
+
+.nav-menu li.dropdown:hover .dropdown-menu {
+    transition-delay: 0.1s;
+}
+
+@media (prefers-color-scheme: dark) {
+    .nav-menu li.dropdown .dropdown-menu {
+        background: var(--light-bg);
+        border: 1px solid rgba(132, 144, 38, 0.2);
+        box-shadow: 0 10px 25px -5px rgba(132, 144, 38, 0.3);
+    }
+
+    .nav-menu .dropdown-menu li a {
+        color: var(--dark-text);
+    }
+
+    .nav-menu .dropdown-menu li a:hover {
+        background: rgba(132, 144, 38, 0.1);
+        color: var(--dark-olive);
+    }
+}
+
+/* Mobile: make dropdowns expandable inside the slide-in menu */
+@media (max-width: 768px) {
+    .nav-menu li.dropdown {
+        width: 100%;
+    }
+
+    .nav-menu li.dropdown>a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-right: 1.5rem;
+    }
+
+    .nav-menu li.dropdown>a::after {
+        content: "▸";
+        font-size: 0.9em;
+        transition: transform 0.18s ease;
+        opacity: 0.9;
+    }
+
+    .nav-menu li.dropdown.open>a::after {
+        transform: rotate(90deg);
+    }
+
+    .nav-menu li.dropdown .dropdown-menu {
+        position: static;
+        left: auto;
+        top: auto;
+        box-shadow: none;
+        margin: 0;
+        padding: 0 0 0 0.5rem;
+        display: none;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        background: transparent;
+    }
+
+    .nav-menu li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .nav-menu li.dropdown .dropdown-menu li a {
+        padding-left: 1.2rem;
+        white-space: normal;
     }
 }
