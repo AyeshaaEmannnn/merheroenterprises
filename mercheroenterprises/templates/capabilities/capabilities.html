@@ -68,10 +68,10 @@
                 <div class="block-text">
                     <h2 class="section-title">Quality Assurance</h2>
                     <p>Quality is monitored throughout cutting, stitching, finishing, and final inspection stages. Every product is reviewed before packing to ensure export-level consistency.</p>
-                    <a href="quality_assurance.html" class="small-link">View Quality Process &rarr;</a>
+                    <a href="{% url 'quality_assurance' %}" class="small-link">View Quality Process &rarr;</a>
                 </div>
                 <div class="block-image">
-                    <img src="{% url 'quality_assurance' %}" alt="Quality Inspection Close-up">
+                    <img src="/static/images/qualityassurance.jpg" alt="Quality Inspection Close-up">
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                 <span class="step">Delivery</span>
             </div>
 
-            <a href="#" class="workflow-link">View Detailed Workflow</a>
+            <a href="{% url 'work_process' %}" class="workflow-link">View Detailed Workflow</a>
         </div>
     </section>
 
@@ -129,8 +129,8 @@
             <h2>Collaborate With Us</h2>
             <p>We welcome wholesale, brand, and OEM manufacturing partnerships.</p>
             <div>
-                <a href="#" class="btn btn-cta">Request Production Quote</a>
-                <a href="#" class="btn btn-outline" style="border-color: #fff; color: #fff;">Contact Our Team</a>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-cta">Request Production Quote</a>
+                <a href="{% url 'team_director_and_managment_team' %}" class="btn btn-outline" style="border-color: #fff; color: #fff;">Contact Our Team</a>
             </div>
         </div>
     </section>

@@ -35,7 +35,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     height: 80px;
     /* increased a bit for better look */
 }
@@ -66,7 +65,7 @@
 }
 
 .nav-menu li {
-    margin-left: 2rem;
+    margin-left: 0rem;
 
 }
 
@@ -391,5 +390,19 @@
     .nav-menu li.dropdown .dropdown-menu li a {
         padding-left: 1.2rem;
         white-space: normal;
+    }
+    .nav-menu {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5rem;     /* ya 80px — neeche space */
+    }
+
+    /* Optional: scrollbar styling */
+    .nav-menu::-webkit-scrollbar {
+        width: 5px;
+    }
+    .nav-menu::-webkit-scrollbar-thumb {
+        background: rgba(100,100,100,0.3);
+        border-radius: 10px;
     }
 }
