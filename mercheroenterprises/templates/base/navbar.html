@@ -22,13 +22,42 @@
                         <li><a href="{% url 'about_company_profile' %}">Company Profile</a></li>
                     </ul>
                 </li>
-                <li><a href="#capabilities">Capabilities</a></li>
+                <li class="dropdown">
+                    <a href="#">Capabilities</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'capabilities' %}">Capabilities</a></li>
+                        <li><a href="{% url 'capabilities_manufacturing_facility' %}">Manufacturing Facilities</a></li>
+                        <li><a href="{% url 'research_and_development' %}"> Research & Development (R&D)</a></li>
+                        <li><a href="{% url 'quality_assurance' %}">Quality Assurance</a></li>
+                        <li><a href="{% url 'oem_and_customization' %}">OEM & Customization</a></li>
+                        <li><a href="{% url 'work_process' %}">Work Process</a></li>
+                        <li><a href="{% url 'sustainability' %}">Sustainability</a></li>
+                        <li><a href="{% url 'collaborate_with_us' %}">Collaborate With Us</a></li>
+                    </ul>
+
+                </li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#why_choose_us">Why Choose Us</a></li>
                 <li><a href="#blog">Blogs</a></li>
                 <li><a href="#client">Clients & Partners</a></li>
-                <li><a href="#team">Team & Leadership</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Team & Leadership</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Introduction</a></li>
+                        <li><a href="">Leadership</a></li>
+                        <li><a href=""> Managment & Commercial Structure</a></li>  
+                        <li><a href="">Production & Desgin</a></li>  
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                    </ul>
+                </li>
                 <li><a href="#careers">Careers & Community</a></li>
 
             </ul>

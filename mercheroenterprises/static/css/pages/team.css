@@ -81,7 +81,7 @@ body {
 }
 
 /* Hero Section */
-.hero {
+.hero-team-section {
     position: relative;
     min-height: 55vh;
     display: flex;

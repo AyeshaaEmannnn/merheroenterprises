@@ -1,6 +1,7 @@
 /* Contact / Addresses Section */
 .contact-section {
     background: linear-gradient(135deg, #f5f2eb 0%, #ffffff 100%);
+    padding: inherit;
 }
 
 .section-subtitle {

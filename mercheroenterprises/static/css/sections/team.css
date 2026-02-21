@@ -1,7 +1,7 @@
 /* Team Section */
-.team-section {
-    padding: 60px 0;
+.team-section-home {
     background-color: #F5F2EB;
+    padding: 20px ;
 }
 
 .team-layout {
@@ -31,7 +31,7 @@
 .team-photos {
     flex: 1;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
 }
 
@@ -52,6 +52,7 @@
 .team-member img {
     max-width: 180px;
     border-radius: 5%;
+    object-fit: cover;
 }
 
 .member-name {

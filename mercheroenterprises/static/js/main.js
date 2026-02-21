@@ -5,7 +5,6 @@ import "./home/04-slider.js";
 import "./home/05-modals.js";
 import "./home/06-touch-sliders.js";
 import "./home/07-timeline.js";
-import "./home/08-departments-slider.js";
 
 import "./about/introduction.js";
 import "./about/company_profile.js";

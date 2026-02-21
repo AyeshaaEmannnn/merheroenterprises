@@ -1,6 +1,7 @@
 /* Community Initiatives Section */
 .community-section {
     background: var(--light-bg);
+    padding: inherit;
 }
 
 .community-content {

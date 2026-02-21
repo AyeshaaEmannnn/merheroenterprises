@@ -22,7 +22,7 @@
            transition-delay: 0.3s;
        }
 
-       .hero {
+       .hero-certificate-section {
            position: relative;
            min-height: 50vh;
            display: flex;

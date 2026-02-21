@@ -18,7 +18,6 @@
 @import "sections/certificates.css";
 @import "sections/contact.css";
 @import "sections/community.css";
-@import "sections/department.css";
 @import "sections/manufacturing.css";
 @import "sections/special.css";
 
@@ -30,3 +29,16 @@
 @import "pages/core_values.css";
 @import "pages/certificates.css";
 @import "pages/team.css";
+
+@import "pages/capabilities.css";
+@import "pages/manufacturing_facility.css";
+@import "pages/qualityassurance.css";
+@import "pages/researchanddevelopment.css";
+@import "pages/oem&customization.css";
+@import "pages/workprocess.css";
+@import "pages/sustainability.css";
+@import "pages/collaboratewithus.css";
+
+@import "pages/inquiry.css";
+@import "pages/map.css";
+@import "pages/contactdeails.css";
