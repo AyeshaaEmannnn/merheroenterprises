@@ -14,4 +14,5 @@ urlpatterns = [
     path("inquiry-form/", inquiry_view, name="contact_inquiry_form"),
     path('details/', contact_contact_details, name='contact_contact_details'),
     path('map/', contact_google_map, name='contact_google_map'),
+    path('faqs/', contact_faqs, name='contact_faqs'),
 ]

@@ -9,13 +9,13 @@
 <!-- Hero Section -->
 <section id="hero" class="hero-certificate-section">
     <div class="hero-pattern"></div>
-    <div class="hero-content reveal">
+    <div class="hero-content-certificate reveal">
         <div class="hero-badge">
             <span class="hero-badge-dot"></span>
             Verified Business
         </div>
-        <h1 class="hero-title font-display">Legal Registration & Certifications</h1>
-        <p class="hero-subtitle">Merchero Enterprises operates as an internationally focused leather manufacturing
+        <h1 class="hero-title-certificate font-display">Legal Registration & Certifications</h1>
+        <p class="hero-subtitle-certificate">Merchero Enterprises operates as an internationally focused leather manufacturing
             and OEM partner, with verified registrations for transparent and reliable business operations.</p>
     </div>
 </section>
@@ -62,7 +62,15 @@
                 </div>
                 <div class="reg-item">
                     <span class="reg-label">UTR (Tax Reference)</span>
-                    <span class="reg-value" style="color: var(--accent);">[ UK UTR NUMBER HERE ]</span>
+                    <span class="reg-value" style="color: var(--gold);">3462125498</span>
+                </div>
+                <div class="reg-item">
+                    <span class="reg-label">UK Company Number</span>
+                    <span class="reg-value" style="color: var(--gold);">15816145</span>
+                </div>
+                <div class="reg-item">
+                    <span class="reg-label">TAX Office Number(UK)</span>
+                    <span class="reg-value" style="color: var(--gold);">623</span>
                 </div>
             </div>
 
@@ -98,11 +106,11 @@
                 </div>
                 <div class="reg-item">
                     <span class="reg-label">NTN Number</span>
-                    <span class="reg-value" style="color: var(--accent);">[ NTN NUMBER HERE ]</span>
+                    <span class="reg-value" style="color: var(--gold);">G870058-1</span>
                 </div>
                 <div class="reg-item">
                     <span class="reg-label">Chamber of Commerce</span>
-                    <span class="reg-value" style="color: var(--accent);">[ Chamber Registration NUMBER ]</span>
+                    <span class="reg-value" style="color: var(--gold);">A-91140</span>
                 </div>
                 <div class="reg-item">
                     <span class="reg-label">Export Capability</span>
@@ -179,35 +187,44 @@
         </div>
 
         <div class="documents-grid">
-            <!-- Document 1 -->
+            
+            <!-- Document 1: Image Certificate -->
             <div class="doc-card reveal reveal-delay-1">
-                <img src="https://images.unsplash.com/photo-1568702846914-96b305d2uj21?w=600&q=80" alt="Certificate"
-                    class="doc-image">
-                <div class="doc-content">
-                    <h3 class="doc-title">UK Business Registration</h3>
-                    <p class="doc-meta">Companies House UK</p>
-                </div>
+                <img src="/static/images/certificate-1.jpeg" alt="Registration Certificate" class="doc-image">
             </div>
 
-            <!-- Document 2 -->
+            <!-- Document 2: Image Certificate -->
             <div class="doc-card reveal reveal-delay-2">
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Certificate"
-                    class="doc-image">
-                <div class="doc-content">
-                    <h3 class="doc-title">NTN Certificate</h3>
-                    <p class="doc-meta">Federal Board of Revenue Pakistan</p>
-                </div>
+                <img src="/static/images/certificate-2.jpeg" alt="Award Certificate" class="doc-image">
             </div>
 
-            <!-- Document 3 -->
+            <!-- Document 3: Image Certificate -->
             <div class="doc-card reveal reveal-delay-3">
-                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Certificate"
-                    class="doc-image">
-                <div class="doc-content">
-                    <h3 class="doc-title">Chamber of Commerce</h3>
-                    <p class="doc-meta">Membership Certificate</p>
-                </div>
+                <img src="/static/images/certificate-3.jpeg" alt="License Certificate" class="doc-image">
             </div>
+
+            <!-- Document 4: PDF File -->
+            <!-- PDF ko clickable banane k liye anchor tag use ho ga -->
+            <div class="doc-card reveal reveal-delay-4">
+                <a href="/static/pdfs/certificate.pdf" target="_blank" class="doc-link">
+                    <!-- PDF ka thumbnail ya icon yahan dikhayy -->
+                    <img src="/static/images/thumbnail-1.png" alt="Tax Certificate PDF" class="doc-image">
+                    <div class="doc-overlay">
+                        <span>View PDF</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Document 5: PDF File -->
+            <div class="doc-card reveal reveal-delay-5">
+                <a href="/static/pdfs/audit-report.pdf" target="_blank" class="doc-link">
+                    <img src="/static/images/pdf-thumbnail-icon.png" alt="Audit Report PDF" class="doc-image">
+                    <div class="doc-overlay">
+                        <span>View PDF</span>
+                    </div>
+                </a>
+            </div>
+
         </div>
     </div>
 </section>
@@ -239,7 +256,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section">
+<section class="cta-section-certificates">
     <div class="cta-inner reveal">
         <h2 class="cta-title font-display">Need Verification Documents?</h2>
         <p class="cta-text">We provide official documentation for business verification upon request. Contact us to

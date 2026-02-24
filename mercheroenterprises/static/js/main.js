@@ -13,3 +13,5 @@ import "./about/vision.js";
 import "./about/core_values.js";
 import "./about/certificates.js";
 import "./about/team.js";
+
+import "./contact/faq.js";

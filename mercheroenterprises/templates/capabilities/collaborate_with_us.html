@@ -7,8 +7,8 @@
 
     <!-- 1️⃣ HERO SECTION -->
     <header id="hero" class="hero-collab">
-        <div class="container">
-            <div class="hero-content">
+        <div class="container-collab">
+            <div class="hero-content-collab">
                 <h1>Let’s Build the Next Product Together</h1>
                 <p>Connect directly with our manufacturing, development, and international coordination teams to start a structured business partnership.</p>
                 <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Start Your Inquiry</a>
@@ -166,33 +166,50 @@
             </div>
         </div>
     </section>
-
-    <!-- 7️⃣ CONTACT CHANNELS -->
-    <section class="section-contact">
-        <div class="container">
-            <h2 style="color: var(--white);">Contact Channels</h2>
+<!-- 7️⃣ CONTACT CHANNELS -->
+<section class="section-contact">
+    <div class="container">
+        
+        <!-- SPLIT CONTAINER: Left Image, Right Content -->
+        <div class="contact-split-container">
             
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h4>General Inquiries</h4>
-                    <a href="mailto:info@mercheroenterprises.com">info@mercheroenterprises.com</a>
+            <!-- LEFT SIDE: RF IMAGE -->
+            <div class="contact-image-side">
+                 <h2>Contact Channels</h2>
+                
+                <!-- TF TEXT: Intro Text -->
+                <p class="contact-intro-text">
+                    Connect with our specialized teams for manufacturing, distribution, and general inquiries. We are committed to providing premium support across all regions.
+                </p>
+            </div>
+
+            <!-- RIGHT SIDE: TF TEXT & CONTACT INFO -->
+            <div class="contact-content-side">
+               
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>General Inquiries</h4>
+                        <a href="mailto:info@mercheroenterprises.com">info@mercheroenterprises.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>OEM Development</h4>
+                        <a href="mailto:oem@mercheroenterprises.com">oem@mercheroenterprises.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Bulk Orders & Distribution</h4>
+                        <a href="mailto:sales@mercheroenterprises.com">sales@mercheroenterprises.com</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h4>OEM Development</h4>
-                    <a href="mailto:oem@mercheroenterprises.com">oem@mercheroenterprises.com</a>
-                </div>
-                <div class="contact-item">
-                    <h4>Bulk Orders & Distribution</h4>
-                    <a href="mailto:sales@mercheroenterprises.com">sales@mercheroenterprises.com</a>
+
+                <div class="operating-regions">
+                    <strong>Operating Regions:</strong> UK | Pakistan | Europe
                 </div>
             </div>
 
-            <div class="operating-regions">
-                <strong>Operating Regions:</strong> UK | Pakistan | Europe
-            </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- 8️⃣ FINAL CLOSING -->
     <section class="section-final">
         <div class="container">
@@ -202,4 +219,19 @@
             <a href="#" class="btn" style="background: transparent; border: 1px solid var(--bg-dark); color: var(--bg-dark);">Book a Meeting</a>
         </div>
     </section>
+
+    <div id="emailModal" class="email-modal">
+    <div class="email-modal-content">
+        <span class="close-email-modal">&times;</span>
+        <h3>Send Email</h3>
+        <p>Email: <strong id="modalEmailAddress"></strong></p>
+        <a id="openEmailClient" href="#" class="email-open-btn">
+            <i class="fas fa-paper-plane"></i> Open Email Client
+        </a>
+        <p class="or-text">OR</p>
+        <button id="copyEmailBtn" class="email-copy-btn">
+            <i class="fas fa-copy"></i> Copy Email Address
+        </button>
+    </div>
+</div>
 {% endblock %}

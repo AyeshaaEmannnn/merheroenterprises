@@ -47,3 +47,6 @@ def contact_contact_details(request):
 
 def contact_google_map(request):
     return render(request, 'contact/map.html')
+
+def contact_faqs(request):
+    return render(request, 'contact/faq.html')

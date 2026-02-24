@@ -134,7 +134,7 @@
     .map-wrapper {
         display: flex;
         flex-direction: column-reverse; /* Card neeche, map upar (ya br_br reverse karein) */
-        height: auto;
+        height: 100%;
     }
     
     /* Mobile par card pehle aur map neeche */

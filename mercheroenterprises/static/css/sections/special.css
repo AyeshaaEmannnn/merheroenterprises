@@ -1,15 +1,13 @@
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .feature-card {
-  background: linear-gradient(145deg, #849026, #585d2e);
+  background: linear-gradient(145deg, #fff, var(--gold));
   border: 1px solid transparent;
   border-radius: 24px;
-  padding: 3rem 2rem;
+  padding: 0.5rem;
   position: relative;
   overflow: hidden;
   transition: all 0.5s;
@@ -19,7 +17,7 @@
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(45deg, var(--neon-red), var(--neon-cyan), transparent);
+  background: linear-gradient(45deg, var(--gold), #fff, transparent);
   border-radius: 24px;
   opacity: 0.4;
   z-index: -1;
@@ -39,7 +37,7 @@
 .icon {
   font-size: 4rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, var(--neon-red), var(--neon-cyan));
+  background: linear-gradient(90deg, var(--gold), #fff);
   -webkit-background-clip: text;
   color: transparent;
 }

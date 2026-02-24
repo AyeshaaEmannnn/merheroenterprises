@@ -20,6 +20,7 @@
 @import "sections/community.css";
 @import "sections/manufacturing.css";
 @import "sections/special.css";
+@import "sections/leathercollection.css";
 
 @import "pages/home.css";
 @import "pages/introduction.css";
@@ -42,6 +43,7 @@
 @import "pages/inquiry.css";
 @import "pages/map.css";
 @import "pages/contactdeails.css";
+@import "pages/faq.css";
 
 @import "pages/leader_ceo_message.css";
 @import "pages/director_and_managment_team.css";

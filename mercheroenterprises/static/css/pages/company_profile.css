@@ -1,3 +1,28 @@
+/* =========================================
+   CSS VARIABLES (ROOT)
+   ========================================= */
+:root {
+    /* HTML ke liye Variables */
+    --bg: #f4f4f0;         /* Light Industrial Background */
+    --bg-alt: #ffffff;     /* White Background */
+    --bg-elevated: #ebebeb; /* Slightly darker for sections */
+    
+    --fg: #1a1a1a;         /* Main Text Color (Black/Dark Grey) */
+    --fg-muted: #666666;   /* Secondary Text Color (Grey) */
+    --accent: #9f8538;     /* Gold Color for highlights */
+    --border: #d1d5db;     /* Light Border Color */
+    
+    --black: #000000;      /* Pure Black */
+
+    /* Aapke Original Variables */
+    --light-bg: #f4f4f0;
+    --dark-text: #1a1a1a;
+    --gold: #9f8538;
+    --white: #ffffff;
+    --shadow-light: #d1d5db;
+    --olive-green: #556b2f; 
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,7 +39,7 @@ body {
     font-family: 'Instrument Serif', serif;
 }
 
-/* Industrial Background */
+/* FIX: Industrial Background Z-Index changed to -1 so it stays BEHIND text */
 .bg-industrial {
     position: fixed;
     inset: 0;
@@ -23,114 +48,51 @@ body {
         radial-gradient(ellipse 80% 60% at 100% 100%, rgba(159, 133, 56, 0.05) 0%, transparent 40%),
         linear-gradient(180deg, var(--light-bg) 0%, var(--light-bg) 100%);
     pointer-events: none;
-    z-index: 0;
+    z-index: -1; /* Changed from 0 to -1 */
 }
 
+/* FIX: Grain Background Z-Index changed to -1 */
 .bg-grain {
     position: fixed;
     inset: 0;
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     pointer-events: none;
-    z-index: 1;
+    z-index: -1; /* Changed from 1 to -1 so it doesn't cover text */
 }
 
-.bg-lines {
-    position: fixed;
-    inset: 0;
-    background-image: repeating-linear-gradient(90deg,
-            transparent,
-            transparent 100px,
-            rgba(132, 144, 38, 0.15) 100px,
-            rgba(132, 144, 38, 0.15) 101px);
-    pointer-events: none;
-    z-index: 1;
-}
 
 /* Animations */
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(60px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeScale {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes countUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes lineExpand {
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
+/* FIX: Reveal class - Changed opacity from 0 to 1 so text is visible even without JS */
 .reveal {
-    opacity: 0;
-    transform: translateY(50px);
+    opacity: 1; /* Was 0 */
+    transform: translateY(0); /* Removed translateY to prevent jumping */
     transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Kept visible class for compatibility if JS is added later */
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 .reveal-left {
-    transform: translateX(-50px);
+    transform: translateX(0);
 }
 
 .reveal-left.visible {
@@ -138,44 +100,21 @@ body {
 }
 
 .reveal-scale {
-    transform: scale(0.95);
+    transform: scale(1);
 }
 
 .reveal-scale.visible {
     transform: scale(1);
 }
 
-.delay-1 {
-    transition-delay: 0.1s;
-}
-
-.delay-2 {
-    transition-delay: 0.2s;
-}
-
-.delay-3 {
-    transition-delay: 0.3s;
-}
-
-.delay-4 {
-    transition-delay: 0.4s;
-}
-
-.delay-5 {
-    transition-delay: 0.5s;
-}
-
-.delay-6 {
-    transition-delay: 0.6s;
-}
-
-.delay-7 {
-    transition-delay: 0.7s;
-}
-
-.delay-8 {
-    transition-delay: 0.8s;
-}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+.delay-8 { transition-delay: 0.8s; }
 
 /* Hero */
 .hero-title {
@@ -291,12 +230,12 @@ body {
 }
 
 /* Timeline */
-.timeline-item {
+.timeline-item-cp {
     position: relative;
     padding-left: 2rem;
 }
 
-.timeline-item::before {
+.timeline-item-cp::before {
     content: '';
     position: absolute;
     left: 0;
@@ -307,7 +246,7 @@ body {
     border-radius: 50%;
 }
 
-.timeline-item::after {
+.timeline-item-cp::after {
     content: '';
     position: absolute;
     left: 3px;
@@ -317,7 +256,7 @@ body {
     background: var(--shadow-light);
 }
 
-.timeline-item:last-child::after {
+.timeline-item-cp:last-child::after {
     display: none;
 }
 
@@ -449,38 +388,54 @@ body {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
-    }
-
-    .capability-fill {
-        transform: scaleX(1);
-    }
+    .reveal { opacity: 1; transform: none; }
+    .capability-fill { transform: scaleX(1); }
 }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--light-bg); }
+::-webkit-scrollbar-thumb { background: var(--shadow-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* Extra Utility Classes for Catalog */
+.product-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--light-bg);
+.product-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    pointer-events: none;
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--shadow-light);
-    border-radius: 3px;
+.btn-editorial {
+    background-color: var(--dark-text);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
+.btn-editorial:hover { background-color: var(--gold); }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--gold);
+.btn-outline {
+    border: 1px solid var(--dark-text);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
 }

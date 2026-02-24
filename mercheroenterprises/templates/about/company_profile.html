@@ -6,15 +6,14 @@
 {% block content %}
 <div class="bg-industrial"></div>
 <div class="bg-grain"></div>
-<div class="bg-lines"></div>
 <div class="scroll-indicator" id="scrollIndicator"></div>
 
-<main class="relative z-10">
+<main >
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-end pb-20 pt-32 lg:pt-40">
+    <section id="hero" class="min-h-screen  pb-10 pt-2 lg:pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 ">
 
                 <div class="lg:col-span-7">
                     <div class="reveal delay-1">
@@ -71,7 +70,7 @@
     </section>
 
     <!-- Company Overview -->
-    <section id="overview" class="py-20 lg:py-32">
+    <section id="overview" class="py-10 lg:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="section-marker reveal">
@@ -138,7 +137,7 @@
     </section>
 
     <!-- Core Specialization -->
-    <section id="products" class="py-20 lg:py-32" style="background: var(--bg-elevated);">
+    <section id="products" class="py-10 lg:py-22" style="background: var(--bg-elevated);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="section-marker reveal">
@@ -227,7 +226,7 @@
     </section>
 
     <!-- Manufacturing Capabilities -->
-    <section id="capabilities" class="py-20 lg:py-32">
+    <section id="capabilities" class="py-10 lg:py-22">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
@@ -323,7 +322,7 @@
     </section>
 
     <!-- OEM Partnership -->
-    <section class="py-20 lg:py-32" style="background: var(--bg-elevated);">
+    <section class="py-10 lg:py-22" style="background: var(--bg-elevated);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="section-marker reveal">
@@ -343,27 +342,27 @@
                 </div>
 
                 <div class="space-y-4 reveal delay-2">
-                    <div class="timeline-item pb-6">
+                    <div class="timeline-item-cp pb-6">
                         <h4 class="font-medium">Custom Design Execution</h4>
                         <p class="text-sm mt-1" style="color: var(--fg-muted);">Transform your designs into
                             production-ready products</p>
                     </div>
-                    <div class="timeline-item pb-6">
+                    <div class="timeline-item-cp pb-6">
                         <h4 class="font-medium">Branding & Labeling</h4>
                         <p class="text-sm mt-1" style="color: var(--fg-muted);">Complete brand integration with
                             custom labels and tags</p>
                     </div>
-                    <div class="timeline-item pb-6">
+                    <div class="timeline-item-cp pb-6">
                         <h4 class="font-medium">Size and Fit Adjustments</h4>
                         <p class="text-sm mt-1" style="color: var(--fg-muted);">Precise sizing for your target
                             market</p>
                     </div>
-                    <div class="timeline-item pb-6">
+                    <div class="timeline-item-cp pb-6">
                         <h4 class="font-medium">Packaging & Export Documentation</h4>
                         <p class="text-sm mt-1" style="color: var(--fg-muted);">Full export support and compliance
                         </p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item-cp pb-6">
                         <h4 class="font-medium">Long-Term Supply Cooperation</h4>
                         <p class="text-sm mt-1" style="color: var(--fg-muted);">Sustained partnership for continuous
                             growth</p>
@@ -374,7 +373,7 @@
     </section>
 
     <!-- Quality & Compliance -->
-    <section class="py-20 lg:py-32">
+    <section class="py-10 lg:py-22">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="section-marker reveal">
@@ -430,7 +429,7 @@
     </section>
 
     <!-- Commitment -->
-    <section class="py-20 lg:py-32" style="background: linear-gradient(180deg, var(--bg-elevated), var(--bg));">
+    <section class="py-10 lg:py-22" style="background: linear-gradient(180deg, var(--bg-elevated), var(--bg));">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="reveal">
                 <span class="section-number">06</span>
@@ -452,8 +451,128 @@
         </div>
     </section>
 
+<!-- CORRECTED CATALOG SECTION STARTS HERE -->
+<!-- I removed the duplicate "Black on Black" section that was hiding everything -->
+<!-- CORRECTED CATALOG SECTION STARTS HERE -->
+<!-- CORRECTED CATALOG SECTION STARTS HERE -->
+<!-- CORRECTED CATALOG SECTION STARTS HERE -->
+<!-- CORRECTED CATALOG SECTION STARTS HERE -->
+<section id="catalog" class="py-12 lg:py-22" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);">
+  <div class="max-w-7xl mx-auto px-4 lg:px-12">
+    
+    <div class="text-center mb-10 lg:mb-16">
+      <!-- FIX: Forced Gold Color with !important -->
+      <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-xs tracking-wider" 
+            style="border: 1px solid #9f8538 !important; color: #9f8538 !important; background-color: rgba(159, 133, 56, 0.05) !important;">
+        Product Catalog
+      </span>
+      
+      <!-- FIX: Forced Gold Color with !important -->
+      <h2 class="font-display text-3xl lg:text-6xl mt-4 lg:mt-6" 
+          style="color: #9f8538 !important;">
+        Explore Our Products
+      </h2>
+      
+      <!-- FIX: Forced Black Color with !important -->
+      <p class="mt-2 lg:mt-4 text-base lg:text-lg max-w-2xl mx-auto px-2" 
+         style="color: #000000 !important;">
+        View our complete range of performance leather products and apparel
+      </p>
+    </div>
+    
+    <!-- Catalog Categories -->
+    <!-- Mobile: 2 Columns, Desktop: 5 Columns -->
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-6">
+      
+      <div class="product-tile aspect-[3/4] reveal delay-1">
+        <img 
+          src="/static/images/racing-suit.jpeg" 
+          alt="Racing Suits"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        >
+        <div class="product-label">
+          <!-- Responsive Text Size -->
+          <div class="font-display text-sm lg:text-xl">Motorbike Racing Gear</div>
+          <div class="text-xs lg:text-sm opacity-80 mt-1">Performance Series</div>
+        </div>
+      </div>
+      
+      <div class="product-tile aspect-[3/4] reveal delay-2">
+        <img 
+          src="/static/images/garments-final.jpeg" 
+          alt="Leather Jackets"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        >
+        <div class="product-label">
+          <div class="font-display text-sm lg:text-xl">Garments</div>
+          <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Casual</div>
+        </div>
+      </div>
+      
+      <div class="product-tile aspect-[3/4] reveal delay-3">
+        <img 
+          src="/static/images/gloves.jpeg" 
+          alt="Gloves & Accessories"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        >
+        <div class="product-label">
+          <div class="font-display text-sm lg:text-xl">Gloves</div>
+          <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Street</div>
+        </div>
+      </div>
+      
+      <div class="product-tile aspect-[3/4] reveal delay-4">
+        <img 
+          src="/static/images/image.jpg" 
+          alt="Bags & Gear"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        >
+        <div class="product-label">
+          <div class="font-display text-sm lg:text-xl">OEM Custom Project</div>
+          <div class="text-xs lg:text-sm opacity-80 mt-1">Utility</div>
+        </div>
+      </div>
+
+      <!-- Last item spans full width on mobile for better layout -->
+      <div class="product-tile aspect-[3/4] reveal delay-4  ">
+        <img 
+          src="/static/images/bags.jpeg" 
+          alt="Bags & Gear"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        >
+        <div class="product-label">
+          <div class="font-display text-sm lg:text-xl">Bags & Gear</div>
+          <div class="text-xs lg:text-sm opacity-80 mt-1">Utility & Style</div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- CTA Buttons -->
+    <!-- Stack vertically on mobile -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 lg:gap-4 mt-10 lg:mt-12 reveal delay-5">
+      <a href="#" class="btn-editorial px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider inline-flex items-center justify-center gap-3">
+        <span>Download Full Catalog</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+      </a>
+      <a href="{% url 'contact_inquiry_form' %}" class="btn-outline px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider text-center">
+        Request Custom Catalog
+      </a>
+    </div>
+    
+  </div>
+</section>
+<!-- END OF CORRECTED CATALOG SECTION -->
+
     <!-- Contact Section -->
-    <section id="contact" class="py-20 lg:py-32">
+    <section id="contact" class="py-10 lg:py-22">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="section-marker reveal">
@@ -523,6 +642,9 @@
                 </div>
             </div>
         </div>
+        
+<!-- Add this before the Contact Section in Company Profile -->
+
     </section>
     <!-- Email Modal -->
     <div id="emailModal" class="email-modal">

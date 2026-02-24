@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const heroSection = document.querySelector('#hero');
 
+    // Hamburger Menu Toggle (Mobile)
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -20,37 +21,52 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Close menu when clicking outside
         document.addEventListener('click', (event) => {
+            // Agar click menu ya hamburger ke bahar hai
             if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
                 navMenu.classList.remove('active');
                 body.classList.remove('menu-open');
+                
+                // Desktop par bhi dropdowns band karein bahar click karne par
+                document.querySelectorAll('li.dropdown.open').forEach(dd => dd.classList.remove('open'));
             }
         });
 
-        // Close the mobile menu when clicking regular links, but keep
-        // dropdown triggers expandable on mobile.
+        // Regular Links (jo dropdown nahi hain) - click par menu band karein
         navMenu.querySelectorAll('a').forEach(link => {
-            const isDropdownTrigger = link.parentElement.classList.contains('dropdown') && link.nextElementSibling && link.nextElementSibling.classList.contains('dropdown-menu');
-            if (isDropdownTrigger) return;
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                body.classList.remove('menu-open');
-            });
+            const parentLi = link.parentElement;
+            const isDropdownTrigger = parentLi.classList.contains('dropdown');
+            
+            if (!isDropdownTrigger) {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            }
         });
 
-        // Make dropdowns expandable on touch / mobile
+        // ==================================================
+        // DROPDOWN LOGIC (Laptop & Mobile Dono ke liye)
+        // ==================================================
         navMenu.querySelectorAll('li.dropdown > a').forEach(trigger => {
             trigger.addEventListener('click', (e) => {
-                // Only toggle on small screens (when navMenu is the mobile drawer)
-                if (window.matchMedia('(max-width: 768px)').matches) {
-                    e.preventDefault();
-                    const li = trigger.parentElement;
-                    li.classList.toggle('open');
-                }
+                e.preventDefault(); // Link ka default kaam roko
+                
+                const li = trigger.parentElement;
+
+                // Agar koi aur dropdown open hai to use band karo (Optional, agar multi-open chahiye to ye hata do)
+                // navMenu.querySelectorAll('li.dropdown.open').forEach(openLi => {
+                //     if (openLi !== li) openLi.classList.remove('open');
+                // });
+
+                // Toggle current dropdown
+                li.classList.toggle('open');
             });
         });
     }
 
+    // Navbar Scroll Effect
     if (navbar && heroSection) {
         const heroHeight = heroSection.offsetHeight;
         window.addEventListener('scroll', () => {

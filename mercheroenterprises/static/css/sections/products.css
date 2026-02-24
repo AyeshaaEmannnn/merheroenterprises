@@ -64,7 +64,7 @@
 @media (max-width: 768px) {
     .product-categories .grid {
         gap: 16px;
-        padding: 0 16px 16px;
+        padding: 0;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         /* Mobile par scrollbar hide karni hai native look ke liye */

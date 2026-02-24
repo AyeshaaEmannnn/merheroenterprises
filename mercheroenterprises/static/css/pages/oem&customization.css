@@ -19,13 +19,9 @@
             line-height: 1.7;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            line-height: 1.2;
-        }
 
-        .container {
+
+        .container-oem {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
@@ -80,34 +76,34 @@
         /* --- SECTION 1: HERO --- */
         .hero-oem {
             position: relative;
-            height: 80vh;
             min-height: 600px;
             background: url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            color: var(--white);
         }
 
-        .hero-overlay {
+        .hero-overlay-oem {
             position: absolute;
             inset: 0;
             background: linear-gradient(45deg, rgba(0,0,0,0.85), rgba(0,0,0,0.5));
         }
 
-        .hero-content {
+        .hero-content-oem {
             position: relative;
             z-index: 2;
             max-width: 900px;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
+        .hero-content-oem h1 {
+            font-size: 2.5rem;
             color: var(--white);
             margin-bottom: 20px;
         }
 
-        .hero-content p {
+        .hero-content-oem p {
             font-size: 1.2rem;
             color: rgba(255,255,255,0.9);
             max-width: 700px;

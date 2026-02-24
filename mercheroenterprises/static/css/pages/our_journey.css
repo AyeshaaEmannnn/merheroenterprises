@@ -230,7 +230,7 @@ body {
     font-size: clamp(5rem, 15vw, 14rem);
     font-weight: 400;
     line-height: 0.8;
-    color: rgba(132, 144, 38, 0.3);
+    color: var(--black);
     position: absolute;
     top: -0.15em;
     left: -0.03em;

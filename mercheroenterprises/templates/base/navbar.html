@@ -11,7 +11,7 @@
                 <button class="nav-close" type="button">&times;</button>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="dropdown">
-                    <a href="#">About</a> <!-- Down arrow for dropdown -->
+                    <a href="#">About us</a> <!-- Down arrow for dropdown -->
                     <ul class="dropdown-menu">
                         <li><a href="{% url 'about_introduction' %}">Introduction</a></li>
                         <li><a href="{% url 'about_our_journey' %}">Our Journey</a></li>
@@ -36,10 +36,41 @@
                     </ul>
 
                 </li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#why_choose_us">Why Choose Us</a></li>
-                <li><a href="#blog">Blogs</a></li>
-                <li><a href="#client">Clients & Partners</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products</a>
+                 <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                    </ul></li>
+                <li class="dropdown">
+                    <a href="#why_choose_us">Why Choose Us</a>
+                     <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#blog">Blogs</a>
+                     <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#client">Clients & Partners</a>
+                     <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#">Team & Leadership</a>
                     <ul class="dropdown-menu">
@@ -54,10 +85,18 @@
                         <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
                         <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
                         <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
-                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
                     </ul>
                 </li>
-                <li><a href="#careers">Careers & Community</a></li>
+                <li class="dropdown">
+                    <a href="#careers">Careers & Community</a>
+                     <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                    </ul>
+                </li>
 
             </ul>
 
