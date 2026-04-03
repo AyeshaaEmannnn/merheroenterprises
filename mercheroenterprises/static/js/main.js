@@ -15,3 +15,7 @@ import "./about/certificates.js";
 import "./about/team.js";
 
 import "./contact/faq.js";
+
+import "./why_choose_us/commitmenttoquality.js";
+import "./why_choose_us/oemexpertise.js";
+import "./why_choose_us/skilledworkforce.js";

@@ -278,7 +278,6 @@
 
     .info-item {
         flex-direction: row;        /* icon left – text right (horizontal stack better feel deta) */
-        justify-content: center;
         text-align: left;
         gap: 18px;
     }

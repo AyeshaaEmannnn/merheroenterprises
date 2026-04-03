@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Capabilities</a>
+                    <a href="{% url 'capabilities' %}">Capabilities</a>
                     <ul class="dropdown-menu">
                         <li><a href="{% url 'capabilities' %}">Capabilities</a></li>
                         <li><a href="{% url 'capabilities_manufacturing_facility' %}">Manufacturing Facilities</a></li>
@@ -47,30 +47,35 @@
                 <li class="dropdown">
                     <a href="#why_choose_us">Why Choose Us</a>
                      <ul class="dropdown-menu">
-                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
-                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
-                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
-                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                        <li><a href="{% url 'why_choose_us' %}">Overview</a></li>
+                        <li><a href="{% url 'why_choose_us_commitment_to_quality' %}">Commitment to Quality</a></li>
+                        <li><a href="{% url 'why_choose_us_advanced_technology' %}">Advanced Technology</a></li>
+                        <li><a href="{% url 'why_choose_us_oem_expertise' %}">OEM Expertise</a></li>  
+                        <li><a href="{% url 'why_choose_us_skilled_workforce' %}">Skilled Workforce</a></li>  
+                        <li><a href="{% url 'why_choose_us_global_deleivery_network' %}">Globl Delivery Network</a></li>  
+                        <li><a href="{% url 'why_choose_us_fast_communication_and_support' %}">Fast Communication and support</a></li>  
+                        <li><a href="{% url 'why_choose_us_sustainable_production' %}">Sustainable Production</a></li>  
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#blog">Blogs</a>
                      <ul class="dropdown-menu">
-                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
-                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
-                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
-                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                        <li><a href="{% url 'contact_inquiry_form' %}">Industry News</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">OEM Vs ODM</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Leather & Textile Guides</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">Motorbike Suit Innovations</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">Brand Success Stories</a></li>  
+                        <li><a href="{% url 'contact_faqs' %}">Merchero Updates</a></li>  
                     </ul>
                 </li>
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="#client">Clients & Partners</a>
                      <ul class="dropdown-menu">
-                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
-                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
-                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
-                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                        <li><a href="{% url 'contact_inquiry_form' %}">Global Clients</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Testimonials</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Collaboration Inquiry Form</a></li>   
                     </ul>
-                </li>
+                </li> -->
                 <li class="dropdown">
                     <a href="#">Team & Leadership</a>
                     <ul class="dropdown-menu">
@@ -91,10 +96,9 @@
                 <li class="dropdown">
                     <a href="#careers">Careers & Community</a>
                      <ul class="dropdown-menu">
-                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
-                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
-                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>  
-                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>  
+                        <li><a href="{% url 'contact_inquiry_form' %}">Job Opportunities</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Internship Programs</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">CSR & Community Projects</a></li>  
                     </ul>
                 </li>
 

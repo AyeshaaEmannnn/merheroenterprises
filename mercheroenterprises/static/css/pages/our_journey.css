@@ -448,14 +448,14 @@ body {
     z-index: 1;
 }
 
-.btn-outline {
+.btn-outline-journey {
     background: transparent;
     border: 2px solid var(--dark-text);
     color: var(--dark-text);
     transition: all 0.3s ease;
 }
 
-.btn-outline:hover {
+.btn-outline-journey:hover {
     background: var(--dark-text);
     color: var(--light-bg);
 }

@@ -79,31 +79,31 @@ body {
 }
 
 /* FIX: Reveal class - Changed opacity from 0 to 1 so text is visible even without JS */
-.reveal {
+.reveal-company {
     opacity: 1; /* Was 0 */
     transform: translateY(0); /* Removed translateY to prevent jumping */
     transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Kept visible class for compatibility if JS is added later */
-.reveal.visible {
+.reveal-company.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.reveal-left {
+.reveal-company-left {
     transform: translateX(0);
 }
 
-.reveal-left.visible {
+.reveal-company-left.visible {
     transform: translateX(0);
 }
 
-.reveal-scale {
+.reveal-company-scale {
     transform: scale(1);
 }
 
-.reveal-scale.visible {
+.reveal-company-scale.visible {
     transform: scale(1);
 }
 
@@ -130,14 +130,14 @@ body {
 }
 
 /* Cards */
-.profile-card {
+.profile-card-company {
     background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
     border: 1px solid var(--shadow-light);
     position: relative;
     overflow: hidden;
 }
 
-.profile-card::before {
+.profile-card-company::before {
     content: '';
     position: absolute;
     top: 0;
@@ -150,7 +150,7 @@ body {
     transition: transform 0.6s ease;
 }
 
-.profile-card:hover::before {
+.profile-card-company:hover::before {
     transform: scaleX(1);
 }
 
@@ -429,13 +429,14 @@ body {
 }
 .btn-editorial:hover { background-color: var(--gold); }
 
-.btn-outline {
+.btn-outline-companyprofile {
     border: 1px solid var(--dark-text);
+    background-color: var(--dark-text);
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
 }
-.btn-outline:hover {
+.btn-outline-companyprofile:hover {
     border-color: var(--gold);
     color: var(--gold);
 }
