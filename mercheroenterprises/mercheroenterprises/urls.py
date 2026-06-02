@@ -25,4 +25,7 @@ urlpatterns = [
     path('',include('apps.contact.urls')),
     path('',include('apps.team.urls')),
     path('',include('apps.why_choose_us.urls')),
+    path('',include('apps.leathercollection.urls')),
+    path('',include('apps.products.urls')),
+    path('',include('apps.cataloge.urls')),
 ]

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
                 navMenu.classList.remove('active');
                 body.classList.remove('menu-open');
-                
+
                 // Desktop par bhi dropdowns band karein bahar click karne par
                 document.querySelectorAll('li.dropdown.open').forEach(dd => dd.classList.remove('open'));
             }
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.querySelectorAll('a').forEach(link => {
             const parentLi = link.parentElement;
             const isDropdownTrigger = parentLi.classList.contains('dropdown');
-            
+
             if (!isDropdownTrigger) {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.querySelectorAll('li.dropdown > a').forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 e.preventDefault(); // Link ka default kaam roko
-                
+
                 const li = trigger.parentElement;
 
-                // Agar koi aur dropdown open hai to use band karo (Optional, agar multi-open chahiye to ye hata do)
-                // navMenu.querySelectorAll('li.dropdown.open').forEach(openLi => {
-                //     if (openLi !== li) openLi.classList.remove('open');
-                // });
+                // Agar koi aur dropdown open hai to use band karo
+                navMenu.querySelectorAll('li.dropdown.open').forEach(openLi => {
+                    if (openLi !== li) openLi.classList.remove('open');
+                });
 
                 // Toggle current dropdown
                 li.classList.toggle('open');

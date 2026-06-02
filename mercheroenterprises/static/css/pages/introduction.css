@@ -12,9 +12,13 @@
         }
 
         /* Hero Section Spacing */
-        #hero {
-            margin-top: var(--navbar-height);
-            padding-top: 2rem;
+        .hero {
+            margin-top: var(--navbar-height) !important;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            height: auto !important;
+            min-height: auto !important;
+            overflow: visible !important;
         }
 
         /* Background texture */

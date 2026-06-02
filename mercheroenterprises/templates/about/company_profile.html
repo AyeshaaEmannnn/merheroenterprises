@@ -8,10 +8,10 @@
 <div class="bg-grain"></div>
 <div class="scroll-indicator" id="scrollIndicator"></div>
 
-<main >
+<main>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen  pb-10 pt-2 lg:pt-20">
+    <section id="hero" class="hero min-h-screen pb-16 pt-24 lg:pt-32 lg:pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 ">
 
@@ -36,6 +36,14 @@
                             style="border-color: var(--border);">
                             Start Partnership
                         </a>
+                        <button type="button" onclick="window.print()"
+                            class="btn-download-pdf px-8 py-3 font-medium tracking-wide inline-flex items-center gap-2 cursor-pointer">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Download PDF
+                        </button>
                     </div>
                 </div>
 
@@ -47,25 +55,6 @@
                 </div>
             </div>
 
-            <!-- Quick Stats -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-8" style="border-top: 1px solid var(--border);">
-                <div class="reveal delay-2">
-                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">15+</div>
-                    <div class="text-sm mt-1" style="color: var(--fg-muted);">Years Experience</div>
-                </div>
-                <div class="reveal delay-3">
-                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">UK</div>
-                    <div class="text-sm mt-1" style="color: var(--fg-muted);">Registered Office</div>
-                </div>
-                <div class="reveal delay-4">
-                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">PK</div>
-                    <div class="text-sm mt-1" style="color: var(--fg-muted);">Manufacturing Base</div>
-                </div>
-                <div class="reveal delay-5">
-                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">B2B</div>
-                    <div class="text-sm mt-1" style="color: var(--fg-muted);">Global Markets</div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -73,7 +62,27 @@
     <section id="overview" class="py-10 lg:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="section-marker reveal">
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-4 gap-6 mb-20 lg:mb-32">
+                <div class="reveal delay-1">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">15+</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Years Experience</div>
+                </div>
+                <div class="reveal delay-2">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">UK</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Registered Office</div>
+                </div>
+                <div class="reveal delay-3">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">PK</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Manufacturing Base</div>
+                </div>
+                <div class="reveal delay-4">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">B2B</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Global Markets</div>
+                </div>
+            </div>
+
+            <div class="section-marker reveal mb-12">
                 <span class="section-number">01</span>
                 <span class="text-sm font-medium tracking-wider">COMPANY OVERVIEW</span>
                 <div class="section-line"></div>
@@ -451,125 +460,107 @@
         </div>
     </section>
 
-<!-- CORRECTED CATALOG SECTION STARTS HERE -->
-<!-- I removed the duplicate "Black on Black" section that was hiding everything -->
-<!-- CORRECTED CATALOG SECTION STARTS HERE -->
-<!-- CORRECTED CATALOG SECTION STARTS HERE -->
-<!-- CORRECTED CATALOG SECTION STARTS HERE -->
-<!-- CORRECTED CATALOG SECTION STARTS HERE -->
-<section id="catalog" class="py-12 lg:py-22" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);">
-  <div class="max-w-7xl mx-auto px-4 lg:px-12">
-    
-    <div class="text-center mb-10 lg:mb-16">
-      <!-- FIX: Forced Gold Color with !important -->
-      <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-xs tracking-wider" 
-            style="border: 1px solid #9f8538 !important; color: #9f8538 !important; background-color: rgba(159, 133, 56, 0.05) !important;">
-        Product Catalog
-      </span>
-      
-      <!-- FIX: Forced Gold Color with !important -->
-      <h2 class="font-display text-3xl lg:text-6xl mt-4 lg:mt-6" 
-          style="color: #9f8538 !important;">
-        Explore Our Products
-      </h2>
-      
-      <!-- FIX: Forced Black Color with !important -->
-      <p class="mt-2 lg:mt-4 text-base lg:text-lg max-w-2xl mx-auto px-2" 
-         style="color: #000000 !important;">
-        View our complete range of performance leather products and apparel
-      </p>
-    </div>
-    
-    <!-- Catalog Categories -->
-    <!-- Mobile: 2 Columns, Desktop: 5 Columns -->
-    <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-6">
-      
-      <div class="product-tile aspect-[3/4] reveal delay-1">
-        <img 
-          src="/static/images/racing-suit.jpeg" 
-          alt="Racing Suits"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        >
-        <div class="product-label">
-          <!-- Responsive Text Size -->
-          <div class="font-display text-sm lg:text-xl">Motorbike Racing Gear</div>
-          <div class="text-xs lg:text-sm opacity-80 mt-1">Performance Series</div>
-        </div>
-      </div>
-      
-      <div class="product-tile aspect-[3/4] reveal delay-2">
-        <img 
-          src="/static/images/garments-final.jpeg" 
-          alt="Leather Jackets"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        >
-        <div class="product-label">
-          <div class="font-display text-sm lg:text-xl">Garments</div>
-          <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Casual</div>
-        </div>
-      </div>
-      
-      <div class="product-tile aspect-[3/4] reveal delay-3">
-        <img 
-          src="/static/images/gloves.jpeg" 
-          alt="Gloves & Accessories"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        >
-        <div class="product-label">
-          <div class="font-display text-sm lg:text-xl">Gloves</div>
-          <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Street</div>
-        </div>
-      </div>
-      
-      <div class="product-tile aspect-[3/4] reveal delay-4">
-        <img 
-          src="/static/images/image.jpg" 
-          alt="Bags & Gear"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        >
-        <div class="product-label">
-          <div class="font-display text-sm lg:text-xl">OEM Custom Project</div>
-          <div class="text-xs lg:text-sm opacity-80 mt-1">Utility</div>
-        </div>
-      </div>
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- I removed the duplicate "Black on Black" section that was hiding everything -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <section id="catalog" class="py-12 lg:py-22"
+        style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);">
+        <div class="max-w-7xl mx-auto px-4 lg:px-12">
 
-      <!-- Last item spans full width on mobile for better layout -->
-      <div class="product-tile aspect-[3/4] reveal delay-4  ">
-        <img 
-          src="/static/images/bags.jpeg" 
-          alt="Bags & Gear"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        >
-        <div class="product-label">
-          <div class="font-display text-sm lg:text-xl">Bags & Gear</div>
-          <div class="text-xs lg:text-sm opacity-80 mt-1">Utility & Style</div>
+            <div class="text-center mb-10 lg:mb-16">
+                <!-- FIX: Forced Gold Color with !important -->
+                <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-xs tracking-wider"
+                    style="border: 1px solid #9f8538 !important; color: #9f8538 !important; background-color: rgba(159, 133, 56, 0.05) !important;">
+                    Product Catalog
+                </span>
+
+                <!-- FIX: Forced Gold Color with !important -->
+                <h2 class="font-display text-3xl lg:text-6xl mt-4 lg:mt-6" style="color: #9f8538 !important;">
+                    Explore Our Products
+                </h2>
+
+                <!-- FIX: Forced Black Color with !important -->
+                <p class="mt-2 lg:mt-4 text-base lg:text-lg max-w-2xl mx-auto px-2" style="color: #000000 !important;">
+                    View our complete range of performance leather products and apparel
+                </p>
+            </div>
+
+            <!-- Catalog Categories -->
+            <!-- Mobile: 2 Columns, Desktop: 5 Columns -->
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-6">
+
+                <div class="product-tile aspect-[3/4] reveal delay-1">
+                    <img src="/static/images/racing-suit.jpeg" alt="Racing Suits" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <!-- Responsive Text Size -->
+                        <div class="font-display text-sm lg:text-xl">Motorbike Racing Gear</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Performance Series</div>
+                    </div>
+                </div>
+
+                <div class="product-tile aspect-[3/4] reveal delay-2">
+                    <img src="/static/images/garments-final.jpeg" alt="Leather Jackets"
+                        class="w-full h-full object-cover" loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">Garments</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Casual</div>
+                    </div>
+                </div>
+
+                <div class="product-tile aspect-[3/4] reveal delay-3">
+                    <img src="/static/images/gloves.jpeg" alt="Gloves & Accessories" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">Gloves</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Street</div>
+                    </div>
+                </div>
+
+                <div class="product-tile aspect-[3/4] reveal delay-4">
+                    <img src="/static/images/image.jpg" alt="Bags & Gear" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">OEM Custom Project</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Utility</div>
+                    </div>
+                </div>
+
+                <!-- Last item spans full width on mobile for better layout -->
+                <div class="product-tile aspect-[3/4] reveal delay-4  ">
+                    <img src="/static/images/bags.jpeg" alt="Bags & Gear" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">Bags & Gear</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Utility & Style</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Buttons -->
+            <!-- Stack vertically on mobile -->
+            <div class="flex flex-col sm:flex-row justify-center gap-3 lg:gap-4 mt-10 lg:mt-12 reveal delay-5">
+                <a href="#"
+                    class="btn-editorial px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider inline-flex items-center justify-center gap-3">
+                    <span>Download Full Catalog</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                </a>
+                <a href="{% url 'contact_inquiry_form' %}"
+                    class="btn-outline-companyprofile px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider text-center">
+                    Request Custom Catalog
+                </a>
+            </div>
+
         </div>
-      </div>
-      
-    </div>
-    
-    <!-- CTA Buttons -->
-    <!-- Stack vertically on mobile -->
-    <div class="flex flex-col sm:flex-row justify-center gap-3 lg:gap-4 mt-10 lg:mt-12 reveal delay-5">
-      <a href="#" class="btn-editorial px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider inline-flex items-center justify-center gap-3">
-        <span>Download Full Catalog</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-        </svg>
-      </a>
-      <a href="{% url 'contact_inquiry_form' %}" class="btn-outline-companyprofile px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider text-center">
-        Request Custom Catalog
-      </a>
-    </div>
-    
-  </div>
-</section>
-<!-- END OF CORRECTED CATALOG SECTION -->
+    </section>
+    <!-- END OF CORRECTED CATALOG SECTION -->
 
     <!-- Contact Section -->
     <section id="contact" class="py-10 lg:py-22">
@@ -642,8 +633,8 @@
                 </div>
             </div>
         </div>
-        
-<!-- Add this before the Contact Section in Company Profile -->
+
+        <!-- Add this before the Contact Section in Company Profile -->
 
     </section>
     <!-- Email Modal -->

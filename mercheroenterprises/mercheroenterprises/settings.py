@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'apps.team',
     'apps.contact',
     'apps.career',
-    
+    'apps.leathercollection',
+    'apps.cataloge',
 ]
 
 MIDDLEWARE = [

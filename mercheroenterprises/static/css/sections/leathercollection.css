@@ -1,6 +1,6 @@
     .leather-collection-section {
         position: relative;
-        height: 70vh; /* Section ki height */
+        height: 100vh; /* Section ki height */
         background-image: url('/static/images/leaher-collection.jpeg'); /* Yahan apni image ka path lagayen */
         background-size: cover;
         background-position: center;
@@ -65,5 +65,5 @@
     /* Mobile adjustments */
     @media (max-width: 768px) {
         .leather-content h2 { font-size: 2rem; }
-        .leather-collection-section { height: 50vh; }
+        .leather-collection-section { height: 100vh; }
     }
