@@ -1,0 +1,82 @@
+/* About / Who We Are Section */
+.about-section {
+    background: var(--light-bg);
+    border-bottom: 1px solid rgba(132, 144, 38, 0.15);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text h2 {
+    color: var(--gold);
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-text h3 {
+    color: var(--dark-text);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--dark-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(132, 144, 38, 0.05);
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.highlight-item i {
+    font-size: 1.4rem;
+    color: var(--olive-green);
+}
+
+.about-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--olive-green);
+    color: var(--white);
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.35s ease;
+    margin-top: 1.5rem;
+}
+
+.about-cta:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}

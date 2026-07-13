@@ -1,0 +1,237 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+
+    <!-- 1️⃣ HERO SECTION -->
+    <header id="hero" class="hero-collab">
+        <div class="container-collab">
+            <div class="hero-content-collab">
+                <h1>Let’s Build the Next Product Together</h1>
+                <p>Connect directly with our manufacturing, development, and international coordination teams to start a structured business partnership.</p>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Start Your Inquiry</a>
+                <a href="#" class="btn btn-ghost">Schedule a Consultation Call</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2️⃣ WHY COLLABORATE WITH US -->
+    <section class="section-intro">
+        <div class="container">
+            <p class="intro-text">
+                At Merchero Enterprises, collaboration means more than placing an order — it’s about building a structured, reliable, and scalable international partnership.
+            </p>
+
+            <div class="strengths-grid">
+                <div class="strength-box">
+                    <h4>Direct Manufacturer (Pakistan Facility)</h4>
+                </div>
+                <div class="strength-box">
+                    <h4>UK Registered Company</h4>
+                </div>
+                <div class="strength-box">
+                    <h4>European Market Partner</h4>
+                </div>
+                <div class="strength-box">
+                    <h4>Organized Departmental Structure</h4>
+                </div>
+                <div class="strength-box">
+                    <h4>Export-Focused Operations</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ OUR INTERNATIONAL STRUCTURE -->
+    <section class="section-structure">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our International Structure</h2>
+            </div>
+
+            <div class="structure-grid">
+                <!-- UK -->
+                <div class="country-card">
+                    <span class="country-flag">🇬🇧</span>
+                    <h3>United Kingdom</h3>
+                    <span class="role">Registered Company & Business Office</span>
+                    <p>Registered entity handling international legal compliance, documentation, and client correspondence.</p>
+                </div>
+                <!-- Pakistan -->
+                <div class="country-card">
+                    <span class="country-flag">🇵🇰</span>
+                    <h3>Pakistan</h3>
+                    <span class="role">Manufacturing & Operations</span>
+                    <p>Primary production facility managing product development, quality control, and global export operations.</p>
+                </div>
+                <!-- Europe -->
+                <div class="country-card">
+                    <span class="country-flag">🇪🇺</span>
+                    <h3>Europe</h3>
+                    <span class="role">Business Development & Coordination</span>
+                    <p>Owner-led partner office managing European client meetings, trade visits, and market expansion support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ OUR DEPARTMENTS -->
+    <section class="section-departments">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Departments</h2>
+            </div>
+
+            <div class="dept-grid">
+                <div class="dept-item">
+                    <h3>Production</h3>
+                    <p>Planning, manufacturing, and operational execution.</p>
+                </div>
+                <div class="dept-item">
+                    <h3>Quality Control</h3>
+                    <p>Inspection and compliance before shipment.</p>
+                </div>
+                <div class="dept-item">
+                    <h3>OEM & Development</h3>
+                    <p>Custom sampling, private label production, and technical adjustments.</p>
+                </div>
+                <div class="dept-item">
+                    <h3>International Sales</h3>
+                    <p>Quotations, order processing, buyer communication, and shipment coordination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ WHO WE WORK WITH -->
+    <section class="section-clients">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Who We Work With</h2>
+            <p style="color: var(--text-muted);">We actively collaborate with:</p>
+            
+            <div class="client-list">
+                <span class="client-pill">Private Label Brands</span>
+                <span class="client-pill">Fashion & Leather Retailers</span>
+                <span class="client-pill">E-Commerce Businesses</span>
+                <span class="client-pill">Corporate Buyers</span>
+                <span class="client-pill">International Distributors</span>
+            </div>
+
+            <p class="closing-line">Whether you are launching a new line or scaling production, our structure supports sustainable growth.</p>
+        </div>
+    </section>
+
+    <!-- 6️⃣ BUSINESS INQUIRY PROCESS -->
+    <section class="section-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Business Inquiry Process</h2>
+            </div>
+
+            <div class="process-row">
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-circle">01</div>
+                    <div>
+                        <h4>Initial Inquiry</h4>
+                        <p>Share product details, quantity, and specifications.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-circle">02</div>
+                    <div>
+                        <h4>Evaluation & Quotation</h4>
+                        <p>Technical feasibility review and pricing proposal.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-circle">03</div>
+                    <div>
+                        <h4>Sampling & Approval</h4>
+                        <p>Prototype development if required.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="step-circle">04</div>
+                    <div>
+                        <h4>Production & Dispatch</h4>
+                        <p>Order confirmation, production scheduling, and shipment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- 7️⃣ CONTACT CHANNELS -->
+<section class="section-contact">
+    <div class="container">
+        
+        <!-- SPLIT CONTAINER: Left Image, Right Content -->
+        <div class="contact-split-container">
+            
+            <!-- LEFT SIDE: RF IMAGE -->
+            <div class="contact-image-side">
+                 <h2>Contact Channels</h2>
+                
+                <!-- TF TEXT: Intro Text -->
+                <p class="contact-intro-text">
+                    Connect with our specialized teams for manufacturing, distribution, and general inquiries. We are committed to providing premium support across all regions.
+                </p>
+            </div>
+
+            <!-- RIGHT SIDE: TF TEXT & CONTACT INFO -->
+            <div class="contact-content-side">
+               
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>General Inquiries</h4>
+                        <a href="mailto:info@mercheroenterprises.com">info@mercheroenterprises.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>OEM Development</h4>
+                        <a href="mailto:oem@mercheroenterprises.com">oem@mercheroenterprises.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Bulk Orders & Distribution</h4>
+                        <a href="mailto:sales@mercheroenterprises.com">sales@mercheroenterprises.com</a>
+                    </div>
+                </div>
+
+                <div class="operating-regions">
+                    <strong>Operating Regions:</strong> UK | Pakistan | Europe
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- 8️⃣ FINAL CLOSING -->
+    <section class="section-final">
+        <div class="container">
+            <h2>A Structured Manufacturing Partner for Long-Term Growth</h2>
+            <p>At Merchero Enterprises, collaboration means shared growth, transparent operations, and globally aligned production systems.</p>
+            <a href="{% url 'contact_inquiry_form' %}" class="btn btn-dark">Send Business Inquiry</a>
+            <a href="#" class="btn" style="background: transparent; border: 1px solid var(--bg-dark); color: var(--bg-dark);">Book a Meeting</a>
+        </div>
+    </section>
+
+    <div id="emailModal" class="email-modal">
+    <div class="email-modal-content">
+        <span class="close-email-modal">&times;</span>
+        <h3>Send Email</h3>
+        <p>Email: <strong id="modalEmailAddress"></strong></p>
+        <a id="openEmailClient" href="#" class="email-open-btn">
+            <i class="fas fa-paper-plane"></i> Open Email Client
+        </a>
+        <p class="or-text">OR</p>
+        <button id="copyEmailBtn" class="email-copy-btn">
+            <i class="fas fa-copy"></i> Copy Email Address
+        </button>
+    </div>
+</div>
+{% endblock %}

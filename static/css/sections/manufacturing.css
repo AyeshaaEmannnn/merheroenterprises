@@ -1,0 +1,101 @@
+.manufacturing-section {
+    position: relative;
+    padding: 60px 0;
+    background-color: #f5f2eb;
+    /* fallback */
+    overflow: hidden;
+}
+
+/* Background image (blurred) */
+.manufacturing-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/static/images/exce.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: blur(2px);
+    transform: scale(1.1);
+    /* blur edges fix */
+    z-index: 0;
+}
+
+/* Color overlay */
+.manufacturing-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #f5f2eb;
+    opacity: 0.65;
+    /* overlay strength */
+    z-index: 1;
+}
+
+/* Section content ko upar lao */
+.manufacturing-section>* {
+    position: relative;
+    z-index: 2;
+}
+
+.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    /* Vertically center if heights differ */
+}
+
+.left-column {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.1rem
+}
+
+.right-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.left-column h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+    /* Dark green to match your theme */
+}
+
+.right-column h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.capabilities-list {
+    list-style: none;
+    padding: 0;
+}
+
+.capabilities-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+.capabilities-list i {
+    font-size: 1rem;
+    margin-right: 15px;
+    color: var(--gold);
+    /* Green icons to match theme */
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .two-columns {
+        flex-direction: column;
+    }
+}

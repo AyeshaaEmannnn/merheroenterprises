@@ -1,0 +1,122 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}All Products | Merchero Enterprises{% endblock %}
+
+{% block content %}
+<style>
+  :root{
+    --ink:#2a2019;
+    --surface:#fbf7f0;
+    --surface-2:#f3ecdf;
+    --stitch:#d8c9ab;
+    --brass:#9c6b23;
+    --brass-bright:#b8863b;
+    --racing-red:#8a2323;
+    --parchment:#2a2019;
+    --muted:#8a7c68;
+    --radius:2px;
+  }
+
+  .products-archive{ padding: 2rem 0 4rem; background: linear-gradient(180deg, #f8f1e4 0%, #f3ebdc 100%); }
+  .products-archive .page-header{ padding: 2rem 1rem 1rem; text-align: center; }
+  .products-archive .eyebrow{ font-size: 0.74rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--brass-bright); display: block; margin-bottom: 0.6rem; }
+  .products-archive .page-header h1{ font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 0.8rem; color: var(--parchment); }
+  .products-archive .page-header p{ max-width: 700px; margin: 0 auto; color: var(--muted); line-height: 1.7; }
+  .products-archive .filter-bar{ display: flex; gap: 0.7rem; flex-wrap: wrap; justify-content: center; padding: 1.25rem 1rem 0.25rem; }
+  .products-archive .filter-pill{ padding: 0.55rem 0.95rem; border: 1px solid var(--stitch); border-radius: 999px; background: #fffdf8; color: var(--muted); cursor: pointer; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; }
+  .products-archive .filter-pill.active, .products-archive .filter-pill:hover{ background: var(--brass-bright); color: #fff; border-color: var(--brass-bright); }
+  .products-archive .product-grid{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding: 1.25rem 1rem 0; max-width: 1180px; margin: 0 auto; }
+  .products-archive .card{ background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%); border: 1px solid var(--stitch); border-radius: var(--radius); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .products-archive .card:hover{ transform: translateY(-4px); box-shadow: 0 12px 28px rgba(42,32,25,0.12); }
+  .products-archive .card-img{ aspect-ratio: 3/4; overflow: hidden; position: relative; background: #efe6d4; }
+  .products-archive .card-img img{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .products-archive .card:hover .card-img img{ transform: scale(1.05); }
+  .products-archive .card-body{ padding: 1.25rem; background: #fbf7f0; border-top: 2px dashed #d8c9ab; }
+  .products-archive .card-body .category-tag{ font-size: 0.75rem; color: var(--brass-bright); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; display: block; font-weight: 600; }
+  .products-archive .card-body h3{ font-size: 1.15rem; color: var(--parchment); margin: 0 0 0.8rem 0; font-weight: 700; line-height: 1.3; display: block; }
+  .products-archive .card-body .spec-line{ color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; line-height: 1.6; }
+  .products-archive .card-cta{ display: block; text-decoration: none; border: 1px solid var(--brass); color: var(--brass); padding: 0.7rem 0.9rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; text-align: center; font-weight: 600; transition: all 0.25s ease; }
+  .products-archive .card-cta:hover{ background: var(--brass); color: #fff; border-color: var(--brass); }
+  .products-archive .empty-state{ grid-column: 1 / -1; text-align: center; padding: 2rem 1rem; color: var(--muted); }
+  .products-archive .grid-footer{ text-align: center; padding: 1.5rem 1rem 0; color: var(--muted); }
+  .products-archive .grid-footer a{ color: var(--brass); text-decoration: none; }
+  @media (min-width: 768px){ .products-archive .product-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1024px){ .products-archive .product-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+</style>
+
+<section class="products-archive">
+  <header class="page-header">
+    <span class="eyebrow">Merchero Enterprises</span>
+    <h1>All Products</h1>
+    <p>Premium leather motorbike gear, custom OEM manufacturing, and signature rider essentials — all in one curated catalog.</p>
+  </header>
+
+  <nav class="filter-bar" id="filterBar">
+    <button class="filter-pill active" type="button" data-filter="all">All</button>
+    <button class="filter-pill" type="button" data-filter="racing-suits">Racing Suits</button>
+    <button class="filter-pill" type="button" data-filter="racing-gloves">Racing Gloves</button>
+    <button class="filter-pill" type="button" data-filter="garments">Garments</button>
+    <button class="filter-pill" type="button" data-filter="bags">Bags</button>
+    <button class="filter-pill" type="button" data-filter="oem-custom">OEM Custom</button>
+  </nav>
+
+  <section class="product-grid" id="productGrid">
+    {% for product in products %}
+    <article class="card" data-category="{{ product.category|slugify }}">
+      <a href="{% url 'product_detail' product.slug %}" style="text-decoration:none; color:inherit; display:block;">
+        <div class="card-img">
+          <img src="{{ product.image }}" alt="{{ product.name }}">
+        </div>
+        <div class="card-body">
+          <span class="category-tag">{{ product.category }}</span>
+          <h3>{{ product.name }}</h3>
+          <div class="spec-line">{{ product.short_desc }}</div>
+          <span class="card-cta">View Details</span>
+        </div>
+      </a>
+    </article>
+    {% empty %}
+    <div class="empty-state">No products are available right now. Please check back soon.</div>
+    {% endfor %}
+  </section>
+
+  <p class="grid-footer">Need bulk pricing or a custom build? <a href="{% url 'contact_inquiry_form' %}">Submit an inquiry →</a></p>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.card');
+  const grid = document.getElementById('productGrid');
+
+  pills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      pills.forEach((item) => item.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filter = pill.dataset.filter;
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount += 1;
+      });
+
+      let empty = document.querySelector('.empty-state');
+      if (visibleCount === 0) {
+        if (!empty) {
+          empty = document.createElement('div');
+          empty.className = 'empty-state';
+          empty.textContent = 'No products in this category yet — check back soon.';
+          grid.appendChild(empty);
+        }
+      } else if (empty) {
+        empty.remove();
+      }
+    });
+  });
+</script>
+{% endblock %}

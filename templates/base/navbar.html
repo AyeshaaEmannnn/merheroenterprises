@@ -1,0 +1,100 @@
+{% load static %}
+<header class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img src="/static/images/light1.png" alt="Merchero Enterprises Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <button class="nav-close" type="button">&times;</button>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'about_introduction' %}">Introduction</a></li>
+                        <li><a href="{% url 'about_our_journey' %}">Our Journey</a></li>
+                        <li><a href="{% url 'about_vision' %}">Vision & Mission</a></li>
+                        <li><a href="{% url 'about_team' %}">Our Team</a></li>
+                        <li><a href="{% url 'about_certificates' %}">Certificates</a></li>
+                        <li><a href="{% url 'about_core_values' %}">Core Values</a></li>
+                        <li><a href="{% url 'about_company_profile' %}">Company Profile</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'leathercollection' %}">Leather Collection</a></li>
+                <li class="dropdown">
+                    <a href="{% url 'capabilities' %}">Capabilities</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'capabilities' %}">Capabilities</a></li>
+                        <li><a href="{% url 'capabilities_manufacturing_facility' %}">Manufacturing Facilities</a></li>
+                        <li><a href="{% url 'research_and_development' %}">Research & Development (R&D)</a></li>
+                        <li><a href="{% url 'quality_assurance' %}">Quality Assurance</a></li>
+                        <li><a href="{% url 'oem_and_customization' %}">OEM & Customization</a></li>
+                        <li><a href="{% url 'work_process' %}">Work Process</a></li>
+                        <li><a href="{% url 'sustainability' %}">Sustainability</a></li>
+                        <li><a href="{% url 'collaborate_with_us' %}">Collaborate With Us</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'products_list' %}">Products</a>
+                </li>
+                <li><a href="{% url 'cataloge' %}">Catalouge</a></li>
+                <li class="dropdown">
+                    <a href="#why_choose_us">Why Us?</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'why_choose_us' %}">Overview</a></li>
+                        <li><a href="{% url 'why_choose_us_commitment_to_quality' %}">Commitment to Quality</a></li>
+                        <li><a href="{% url 'why_choose_us_advanced_technology' %}">Advanced Technology</a></li>
+                        <li><a href="{% url 'why_choose_us_oem_expertise' %}">OEM Expertise</a></li>
+                        <li><a href="{% url 'why_choose_us_skilled_workforce' %}">Skilled Workforce</a></li>
+                        <li><a href="{% url 'why_choose_us_global_deleivery_network' %}">Global Delivery Network</a>
+                        </li>
+                        <li><a href="{% url 'why_choose_us_fast_communication_and_support' %}">Fast Communication and
+                                Support</a></li>
+                        <li><a href="{% url 'why_choose_us_sustainable_production' %}">Sustainable Production</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#blog">Blogs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Industry News</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">OEM Vs ODM</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Leather & Textile Guides</a></li>
+                        <li><a href="{% url 'contact_faqs' %}">Motorbike Suit Innovations</a></li>
+                        <li><a href="{% url 'contact_faqs' %}">Brand Success Stories</a></li>
+                        <li><a href="{% url 'contact_faqs' %}">Merchero Updates</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'team_leader_ceo_message' %}">Founder / CEO Message</a></li>
+                        <li><a href="{% url 'team_director_and_managment_team' %}">Director & Management Team</a></li>
+                        <li><a href="{% url 'team_production_and_design_team' %}">Production & Design Team</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Inquiry Form</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Contact Details</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">Map</a></li>
+                        <li><a href="{% url 'contact_faqs' %}">FAQs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#careers">Careers & Community</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_inquiry_form' %}">Job Opportunities</a></li>
+                        <li><a href="{% url 'contact_contact_details' %}">Internship Programs</a></li>
+                        <li><a href="{% url 'contact_google_map' %}">CSR & Community Projects</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>

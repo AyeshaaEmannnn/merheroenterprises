@@ -1,0 +1,18 @@
+   /* Specific styles for this page */
+        .tech-card {
+            transition: all 0.4s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.25);
+        }
+        .image-overlay {
+            position: relative;
+        }
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }

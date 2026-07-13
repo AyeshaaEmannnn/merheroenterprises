@@ -1,0 +1,274 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+
+   
+    <!-- Hero Section -->
+    <section id="hero" class="pt-10 min-h-[80vh] flex items-center">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                
+                <!-- Content -->
+                <div>
+                    <!-- Heading -->
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.15] mb-6 animate-fade-up animate-delay-2">
+                        Delivering <span class="text-gold-500">Excellence</span><br>
+                        in Every <span class="italic">Stitch</span> and Panel.
+                    </h1>
+                    
+                    <!-- Paragraph -->
+                    <p class="text-lg text-dark-muted leading-relaxed mb-8 animate-fade-up animate-delay-3">
+                        At Merchero Enterprises, quality is the foundation of everything we produce. From motorbike racing suits to winter jackets, leather accessories, and cowboy apparel, every product is designed, crafted, and inspected to meet the highest performance and durability standards.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <span class="text-sm font-medium">High-Grade Materials</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <span class="text-sm font-medium">Precision Patterns</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <span class="text-sm font-medium">Strict Inspection</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <span class="text-sm font-medium">Global Standards</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Decorative Side -->
+                <div class="relative hidden lg:flex items-center justify-center">
+                    <!-- Large decorative circle -->
+                    <div class="w-80 h-80 border-2 border-gold-200 rounded-full flex items-center justify-center">
+                        <div class="w-60 h-60 border border-gold-300 rounded-full flex items-center justify-center">
+                            <div class="w-40 h-40 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="award" class="w-16 h-16 text-gold-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating badges -->
+                    <div class="absolute top-8 right-8 bg-white shadow-lg px-4 py-2 rounded-sm border border-gold-100">
+                        <span class="text-xs font-medium text-dark-muted">Inspection Rate</span>
+                        <span class="block font-serif text-xl text-gold-600">100%</span>
+                    </div>
+                    <div class="absolute bottom-8 left-8 bg-white shadow-lg px-4 py-2 rounded-sm border border-gold-100">
+                        <span class="text-xs font-medium text-dark-muted">Quality Stages</span>
+                        <span class="block font-serif text-xl text-gold-600">5-Step</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quality Promise Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="max-w-2xl mb-16">
+                <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Our Process</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-4">Our Quality Promise</h2>
+                <p class="text-dark-muted leading-relaxed">We focus on precision, consistency, and reliability across all stages of manufacturing.</p>
+            </div>
+            
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="step-card bg-light-bg p-8 rounded-sm border border-gold-100 hover:border-gold-300 transition-colors group" data-step="01">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-gold-500 rounded-sm flex items-center justify-center mb-6 group-hover:bg-dark-text transition-colors">
+                            <i data-lucide="box" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3">Material Selection</h3>
+                        <p class="text-dark-muted text-sm leading-relaxed">Only high-grade finished leathers and protective textiles are chosen for durability, flexibility, and performance.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card bg-light-bg p-8 rounded-sm border border-gold-100 hover:border-gold-300 transition-colors group" data-step="02">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-gold-500 rounded-sm flex items-center justify-center mb-6 group-hover:bg-dark-text transition-colors">
+                            <i data-lucide="pencil-ruler" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3">Pattern & Design Accuracy</h3>
+                        <p class="text-dark-muted text-sm leading-relaxed">CAD-based digital patterns and structured grading ensure exact fit and uniformity across all sizes.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-card bg-light-bg p-8 rounded-sm border border-gold-100 hover:border-gold-300 transition-colors group" data-step="03">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-gold-500 rounded-sm flex items-center justify-center mb-6 group-hover:bg-dark-text transition-colors">
+                            <i data-lucide="settings" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3">Production Standards</h3>
+                        <p class="text-dark-muted text-sm leading-relaxed">Skilled craftsmen maintain strict control during stitching, panel assembly, and finishing.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-card bg-light-bg p-8 rounded-sm border border-gold-100 hover:border-gold-300 transition-colors group" data-step="04">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-gold-500 rounded-sm flex items-center justify-center mb-6 group-hover:bg-dark-text transition-colors">
+                            <i data-lucide="shield" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3">Protection & Reinforcement</h3>
+                        <p class="text-dark-muted text-sm leading-relaxed">For racing gear, reinforcements and armor integration are systematically checked for safety.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="step-card bg-light-bg p-8 rounded-sm border border-gold-100 hover:border-gold-300 transition-colors group" data-step="05">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-gold-500 rounded-sm flex items-center justify-center mb-6 group-hover:bg-dark-text transition-colors">
+                            <i data-lucide="check-circle" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-medium mb-3">Final Inspection</h3>
+                        <p class="text-dark-muted text-sm leading-relaxed">Multi-stage inspection before shipping, guaranteeing consistent quality for all orders.</p>
+                    </div>
+                </div>
+                
+                <!-- Summary Card -->
+                <div class="bg-dark-text p-8 rounded-sm flex flex-col justify-center">
+                    <div class="text-center">
+                        <span class="font-serif text-5xl text-gold-400 block mb-2">100%</span>
+                        <span class="text-white/80 text-sm uppercase tracking-widest">Quality Assured</span>
+                        <div class="w-12 h-px bg-gold-500 mx-auto mt-6"></div>
+                        <p class="text-neutral-400 text-sm mt-6">Every product meets our rigorous standards before delivery.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Brands Trust Us -->
+<section class="py-24 bg-light-bg">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Trusted Partner</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight text-dark-text">Why Brands Trust Us</h2>
+        </div>
+        
+        <!-- Trust Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Card 1 -->
+            <div class="bg-white border border-gold-100 p-10 rounded-sm hover:shadow-lg hover:border-gold-300 transition-all group">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center group-hover:bg-gold-500 transition-colors">
+                            <i data-lucide="layers" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Consistency Across Categories</h3>
+                        <p class="text-dark-muted leading-relaxed text-sm">Whether racing suits, winter wear, leather bags, or cowboy gear — same high standards across all lines.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-white border border-gold-100 p-10 rounded-sm hover:shadow-lg hover:border-gold-300 transition-all group">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center group-hover:bg-gold-500 transition-colors">
+                            <i data-lucide="git-branch" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Structured Workflow</h3>
+                        <p class="text-dark-muted leading-relaxed text-sm">From tech pack to delivery, every stage is monitored and documented for complete transparency.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-white border border-gold-100 p-10 rounded-sm hover:shadow-lg hover:border-gold-300 transition-all group">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center group-hover:bg-gold-500 transition-colors">
+                            <i data-lucide="users" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Customer-Centric Approach</h3>
+                        <p class="text-dark-muted leading-relaxed text-sm">Feedback loops and transparent communication ensure brand requirements are fully met.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="bg-white border border-gold-100 p-10 rounded-sm hover:shadow-lg hover:border-gold-300 transition-all group">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center group-hover:bg-gold-500 transition-colors">
+                            <i data-lucide="globe" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Global Standards</h3>
+                        <p class="text-dark-muted leading-relaxed text-sm">Products comply with international expectations for fit, finish, and performance.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+    <!-- Quote Section -->
+    <section class="py-20 bg-gold-50 border-y border-gold-200">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+            <i data-lucide="quote" class="w-10 h-10 text-gold-400 mx-auto mb-6"></i>
+            <blockquote class="font-serif text-2xl md:text-3xl text-dark-text leading-snug mb-6 italic">
+                "Quality isn't just a promise — it's a measurable standard built into every stage of production."
+            </blockquote>
+            <p class="text-dark-muted">— Merchero Enterprises</p>
+        </div>
+    </section>
+    
+    <!-- Closing CTA -->
+    <section class="py-24 bg-light-bg">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+            
+            <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Start Today</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">
+                Elevate Your Brand with <span class="text-gold-500">Precision</span> & <span class="text-gold-500">Reliability</span>
+            </h2>
+            <p class="text-dark-muted leading-relaxed mb-10 max-w-2xl mx-auto">
+                Partner with us and experience craftsmanship that elevates your brand. From custom designs to bulk production, we deliver excellence in every piece.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="{% url 'contact_inquiry_form' %}" class="bg-dark-text text-white px-8 py-4 text-sm font-medium uppercase tracking-widest hover:bg-gold-600 transition-colors inline-flex items-center gap-3">
+                    <span>Contact Us for Custom Projects</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#" class="border border-dark-text text-dark-text px-8 py-4 text-sm font-medium uppercase tracking-widest hover:bg-dark-text hover:text-white transition-colors">
+                    View All Products
+                </a>
+            </div>
+            
+        </div>
+    </section>
+{% endblock %}

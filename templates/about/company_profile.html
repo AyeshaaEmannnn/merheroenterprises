@@ -1,0 +1,658 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+<div class="bg-industrial"></div>
+<div class="bg-grain"></div>
+<div class="scroll-indicator" id="scrollIndicator"></div>
+
+<main>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero min-h-screen pb-16 pt-24 lg:pt-32 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 ">
+
+                <div class="lg:col-span-7">
+                    <div class="reveal delay-1">
+                        <span class="badge-accent">COMPANY PROFILE 2025</span>
+                    </div>
+                    <h1 class="hero-title mt-6 reveal delay-2">
+                        <span class="block">Merchero</span>
+                        <span class="block hero-accent font-serif">Enterprises</span>
+                    </h1>
+                    <p class="mt-6 text-xl lg:text-2xl font-light reveal delay-3"
+                        style="color: var(--fg-muted); max-width: 600px;">
+                        Global Manufacturing Partner in Performance Leather & Apparel
+                    </p>
+                    <div class="mt-10 flex flex-wrap gap-4 reveal delay-4">
+                        <a href="#overview" class="btn-industrial px-8 py-3 font-medium tracking-wide">
+                            Explore Profile
+                        </a>
+                        <a href="{% url 'contact_inquiry_form' %}"
+                            class="px-8 py-3 font-medium tracking-wide border transition-all hover:border-[var(--accent)]"
+                            style="border-color: var(--border);">
+                            Start Partnership
+                        </a>
+                        <a href="/static/pdfs/company_profile.pdf" download="company_profile.pdf"
+                            class="btn-download-pdf px-8 py-3 font-medium tracking-wide inline-flex items-center gap-2 cursor-pointer">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 reveal delay-5">
+                    <div class="frame-industrial p-2">
+                        <img src="/static/images/company.jpg" alt="Premium leather racing suit craftsmanship"
+                            class="w-full aspect-[3/4] object-cover" loading="eager">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section id="overview" class="py-10 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-4 gap-6 mb-20 lg:mb-32">
+                <div class="reveal delay-1">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">15+</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Years Experience</div>
+                </div>
+                <div class="reveal delay-2">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">UK</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Registered Office</div>
+                </div>
+                <div class="reveal delay-3">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">PK</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Manufacturing Base</div>
+                </div>
+                <div class="reveal delay-4">
+                    <div class="text-4xl lg:text-5xl font-light" style="color: var(--accent);">B2B</div>
+                    <div class="text-sm mt-2" style="color: var(--fg-muted);">Global Markets</div>
+                </div>
+            </div>
+
+            <div class="section-marker reveal mb-12">
+                <span class="section-number">01</span>
+                <span class="text-sm font-medium tracking-wider">COMPANY OVERVIEW</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <div>
+                    <h2 class="text-3xl lg:text-5xl font-light leading-tight reveal delay-1">
+                        Founded in <span style="color: var(--accent);">2010</span>, Merchero Enterprises is a
+                        performance-driven leather and apparel manufacturing company serving international B2B
+                        markets.
+                    </h2>
+                </div>
+                <div class="space-y-6 reveal delay-2">
+                    <p class="text-lg" style="color: var(--fg-muted);">
+                        With a registered business presence in the United Kingdom and manufacturing operations in
+                        Pakistan, we operate with a global business mindset supported by skilled production
+                        expertise.
+                    </p>
+                    <p class="text-lg" style="color: var(--fg-muted);">
+                        We specialize in manufacturing motorbike racing suits and premium leather garments, offering
+                        OEM and private label solutions for brands worldwide.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Business Identity Cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
+                <div class="data-card p-6 reveal delay-1">
+                    <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">Business Type
+                    </div>
+                    <div class="font-medium text-lg">Manufacturer & OEM Partner</div>
+                </div>
+                <div class="data-card p-6 reveal delay-2">
+                    <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">Established
+                    </div>
+                    <div class="font-medium text-lg">2010</div>
+                </div>
+                <div class="data-card p-6 reveal delay-3">
+                    <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">Registered
+                        Office</div>
+                    <div class="font-medium text-lg">United Kingdom</div>
+                </div>
+                <div class="data-card p-6 reveal delay-4">
+                    <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">Manufacturing
+                        Base</div>
+                    <div class="font-medium text-lg">Pakistan</div>
+                </div>
+                <div class="data-card p-6 reveal delay-5">
+                    <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">Markets
+                        Served</div>
+                    <div class="font-medium text-lg">UK, Europe & Global</div>
+                </div>
+                <div class="data-card p-6 reveal delay-6">
+                    <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">Core Focus
+                    </div>
+                    <div class="font-medium text-lg">Performance Leather & Apparel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Specialization -->
+    <section id="products" class="py-10 lg:py-22" style="background: var(--bg-elevated);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="section-marker reveal">
+                <span class="section-number">02</span>
+                <span class="text-sm font-medium tracking-wider">CORE SPECIALIZATION</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 mt-12">
+
+                <!-- Performance Products -->
+                <div class="profile-card p-8 rounded-lg reveal delay-1">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 flex items-center justify-center rounded"
+                            style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                            <svg class="w-6 h-6" style="color: var(--accent);" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-medium">Performance Products</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Motorbike Racing Suits</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Racing Gloves</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Racing Boots</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6" style="border-top: 1px solid var(--border);">
+                        <img src="/static/images/boots,loves.jpg" alt="Performance racing products"
+                            class="w-full h-48 object-cover rounded" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Leather Apparel -->
+                <div class="profile-card p-8 rounded-lg reveal delay-2">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 flex items-center justify-center rounded"
+                            style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                            <svg class="w-6 h-6" style="color: var(--accent);" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-medium">Leather Apparel & Accessories</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Leather Jackets (Racing & Casual)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Leather Gloves</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Leather Bags</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Leather Pants, Shirts & Waistcoats</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--accent);"></span>
+                            <span>Custom Leather Accessories</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6" style="border-top: 1px solid var(--border);">
+                        <img src="/static/images/company-2.jpg" alt="Leather apparel and accessories"
+                            class="w-full h-48 object-cover rounded" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Capabilities -->
+    <section id="capabilities" class="py-10 lg:py-22">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-5">
+                    <div class="section-marker reveal">
+                        <span class="section-number">03</span>
+                        <span class="text-sm font-medium tracking-wider">MANUFACTURING</span>
+                        <div class="section-line"></div>
+                    </div>
+
+                    <h2 class="text-3xl lg:text-5xl font-light leading-tight mt-6 reveal delay-1">
+                        Capabilities
+                    </h2>
+
+                    <p class="mt-6 text-lg reveal delay-2" style="color: var(--fg-muted);">
+                        Merchero Enterprises operates with structured production systems focused on precision,
+                        durability, and export consistency.
+                    </p>
+
+                    <div class="mt-8 frame-industrial p-2 reveal delay-3">
+                        <img src="/static/images/manufacturing2.jpg" alt="Leather manufacturing facility"
+                            class="w-full aspect-square object-cover" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="space-y-6">
+
+                        <div class="profile-card p-6 rounded-lg reveal delay-1">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-medium">Custom Pattern Development</span>
+                                <span class="text-sm" style="color: var(--accent);">100%</span>
+                            </div>
+                            <div class="capability-bar">
+                                <div class="capability-fill" style="--width: 100%;" data-width="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card p-6 rounded-lg reveal delay-2">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-medium">OEM & Private Label Production</span>
+                                <span class="text-sm" style="color: var(--accent);">100%</span>
+                            </div>
+                            <div class="capability-bar">
+                                <div class="capability-fill" style="--width: 100%;" data-width="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card p-6 rounded-lg reveal delay-3">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-medium">Material Sourcing & Leather Selection</span>
+                                <span class="text-sm" style="color: var(--accent);">95%</span>
+                            </div>
+                            <div class="capability-bar">
+                                <div class="capability-fill" style="--width: 95%;" data-width="95"></div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card p-6 rounded-lg reveal delay-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-medium">Controlled Stitching & Finishing</span>
+                                <span class="text-sm" style="color: var(--accent);">100%</span>
+                            </div>
+                            <div class="capability-bar">
+                                <div class="capability-fill" style="--width: 100%;" data-width="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card p-6 rounded-lg reveal delay-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-medium">Multi-Stage Quality Inspection</span>
+                                <span class="text-sm" style="color: var(--accent);">100%</span>
+                            </div>
+                            <div class="capability-bar">
+                                <div class="capability-fill" style="--width: 100%;" data-width="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card p-6 rounded-lg reveal delay-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-medium">Small to Bulk Production Flexibility</span>
+                                <span class="text-sm" style="color: var(--accent);">90%</span>
+                            </div>
+                            <div class="capability-bar">
+                                <div class="capability-fill" style="--width: 90%;" data-width="90"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OEM Partnership -->
+    <section class="py-10 lg:py-22" style="background: var(--bg-elevated);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="section-marker reveal">
+                <span class="section-number">04</span>
+                <span class="text-sm font-medium tracking-wider">OEM PARTNERSHIP</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-12">
+                <div class="reveal delay-1">
+                    <h2 class="text-3xl lg:text-5xl font-light leading-tight">
+                        Your Silent Manufacturing Partner
+                    </h2>
+                    <p class="mt-6 text-lg" style="color: var(--fg-muted);">
+                        We work as a silent manufacturing partner for brands seeking reliable production support.
+                    </p>
+                </div>
+
+                <div class="space-y-4 reveal delay-2">
+                    <div class="timeline-item-cp pb-6">
+                        <h4 class="font-medium">Custom Design Execution</h4>
+                        <p class="text-sm mt-1" style="color: var(--fg-muted);">Transform your designs into
+                            production-ready products</p>
+                    </div>
+                    <div class="timeline-item-cp pb-6">
+                        <h4 class="font-medium">Branding & Labeling</h4>
+                        <p class="text-sm mt-1" style="color: var(--fg-muted);">Complete brand integration with
+                            custom labels and tags</p>
+                    </div>
+                    <div class="timeline-item-cp pb-6">
+                        <h4 class="font-medium">Size and Fit Adjustments</h4>
+                        <p class="text-sm mt-1" style="color: var(--fg-muted);">Precise sizing for your target
+                            market</p>
+                    </div>
+                    <div class="timeline-item-cp pb-6">
+                        <h4 class="font-medium">Packaging & Export Documentation</h4>
+                        <p class="text-sm mt-1" style="color: var(--fg-muted);">Full export support and compliance
+                        </p>
+                    </div>
+                    <div class="timeline-item-cp pb-6">
+                        <h4 class="font-medium">Long-Term Supply Cooperation</h4>
+                        <p class="text-sm mt-1" style="color: var(--fg-muted);">Sustained partnership for continuous
+                            growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Compliance -->
+    <section class="py-10 lg:py-22">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="section-marker reveal">
+                <span class="section-number">05</span>
+                <span class="text-sm font-medium tracking-wider">QUALITY APPROACH</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mt-12">
+                <div class="profile-card p-8 rounded-lg text-center reveal delay-1">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full mb-6"
+                        style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                        <svg class="w-7 h-7" style="color: var(--accent);" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Consistent Standards</h3>
+                    <p class="text-sm" style="color: var(--fg-muted);">Uniform material quality across all
+                        production batches</p>
+                </div>
+
+                <div class="profile-card p-8 rounded-lg text-center reveal delay-2">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full mb-6"
+                        style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                        <svg class="w-7 h-7" style="color: var(--accent);" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Performance Focus</h3>
+                    <p class="text-sm" style="color: var(--fg-muted);">Construction methods optimized for durability
+                        and function</p>
+                </div>
+
+                <div class="profile-card p-8 rounded-lg text-center reveal delay-3">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full mb-6"
+                        style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                        <svg class="w-7 h-7" style="color: var(--accent);" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Export Ready</h3>
+                    <p class="text-sm" style="color: var(--fg-muted);">Products prepared for international shipping
+                        standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment -->
+    <section class="py-10 lg:py-22" style="background: linear-gradient(180deg, var(--bg-elevated), var(--bg));">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <span class="section-number">06</span>
+            </div>
+            <h2 class="text-3xl lg:text-5xl font-light leading-tight mt-8 reveal delay-1">
+                Our Commitment
+            </h2>
+            <p class="mt-8 text-xl lg:text-2xl font-light reveal delay-2"
+                style="color: var(--fg-muted); max-width: 700px; margin-left: auto; margin-right: auto;">
+                We believe in long-term business partnerships built on transparency, reliability, and continuous
+                improvement.
+            </p>
+            <div class="mt-8 reveal delay-3">
+                <p class="text-lg" style="color: var(--accent);">
+                    Merchero Enterprises is committed to helping brands scale confidently in competitive
+                    international markets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- I removed the duplicate "Black on Black" section that was hiding everything -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <!-- CORRECTED CATALOG SECTION STARTS HERE -->
+    <section id="catalog" class="py-12 lg:py-22"
+        style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);">
+        <div class="max-w-7xl mx-auto px-4 lg:px-12">
+
+            <div class="text-center mb-10 lg:mb-16">
+                <!-- FIX: Forced Gold Color with !important -->
+                <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-xs tracking-wider"
+                    style="border: 1px solid #9f8538 !important; color: #9f8538 !important; background-color: rgba(159, 133, 56, 0.05) !important;">
+                    Product Catalog
+                </span>
+
+                <!-- FIX: Forced Gold Color with !important -->
+                <h2 class="font-display text-3xl lg:text-6xl mt-4 lg:mt-6" style="color: #9f8538 !important;">
+                    Explore Our Products
+                </h2>
+
+                <!-- FIX: Forced Black Color with !important -->
+                <p class="mt-2 lg:mt-4 text-base lg:text-lg max-w-2xl mx-auto px-2" style="color: #000000 !important;">
+                    View our complete range of performance leather products and apparel
+                </p>
+            </div>
+
+            <!-- Catalog Categories -->
+            <!-- Mobile: 2 Columns, Desktop: 5 Columns -->
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-6">
+
+                <div class="product-tile aspect-[3/4] reveal delay-1">
+                    <img src="/static/images/racing-suit.jpeg" alt="Racing Suits" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <!-- Responsive Text Size -->
+                        <div class="font-display text-sm lg:text-xl">Motorbike Racing Gear</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Performance Series</div>
+                    </div>
+                </div>
+
+                <div class="product-tile aspect-[3/4] reveal delay-2">
+                    <img src="/static/images/garments-final.jpeg" alt="Leather Jackets"
+                        class="w-full h-full object-cover" loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">Garments</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Casual</div>
+                    </div>
+                </div>
+
+                <div class="product-tile aspect-[3/4] reveal delay-3">
+                    <img src="/static/images/gloves.jpeg" alt="Gloves & Accessories" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">Gloves</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Racing & Street</div>
+                    </div>
+                </div>
+
+                <div class="product-tile aspect-[3/4] reveal delay-4">
+                    <img src="/static/images/image.jpg" alt="Bags & Gear" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">OEM Custom Project</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Utility</div>
+                    </div>
+                </div>
+
+                <!-- Last item spans full width on mobile for better layout -->
+                <div class="product-tile aspect-[3/4] reveal delay-4  ">
+                    <img src="/static/images/bags.jpeg" alt="Bags & Gear" class="w-full h-full object-cover"
+                        loading="lazy">
+                    <div class="product-label">
+                        <div class="font-display text-sm lg:text-xl">Bags & Gear</div>
+                        <div class="text-xs lg:text-sm opacity-80 mt-1">Utility & Style</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Buttons -->
+            <!-- Stack vertically on mobile -->
+            <div class="flex flex-col sm:flex-row justify-center gap-3 lg:gap-4 mt-10 lg:mt-12 reveal delay-5">
+                <a href="{% url 'products_list' %}"
+                    class="btn-editorial px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider inline-flex items-center justify-center gap-3">
+                    <span>Explore All Products</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="{% url 'contact_inquiry_form' %}"
+                    class="btn-outline-companyprofile px-8 py-3 lg:px-10 lg:py-4 text-sm font-semibold tracking-wider text-center">
+                    Request Custom Catalog
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- END OF CORRECTED CATALOG SECTION -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 lg:py-22">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="section-marker reveal">
+                <span class="section-number">07</span>
+                <span class="text-sm font-medium tracking-wider">CONTACT</span>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mt-12">
+
+                <div class="contact-card p-8 lg:p-12 rounded-lg reveal delay-1">
+                    <h3 class="text-2xl lg:text-3xl font-light mb-8">Business Inquiries</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">
+                                General Inquiries</div>
+                            <a href="mailto:info@mercheroenterprises.com"
+                                class="text-lg hover:text-[var(--accent)] transition-colors">
+                                info@mercheroenterprises.com
+                            </a>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider mb-2" style="color: var(--fg-muted);">OEM &
+                                Manufacturing</div>
+                            <a href="mailto:oem@mercheroenterprises.com"
+                                class="text-lg hover:text-[var(--accent)] transition-colors">
+                                oem@mercheroenterprises.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="profile-card-company p-8 rounded-lg reveal-company delay-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex items-center justify-center rounded flex-shrink-0"
+                                style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                                <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium mb-1">Registered Office</div>
+                                <div style="color: var(--fg-muted);">United Kingdom</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card-company p-8 rounded-lg reveal-company delay-3">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex items-center justify-center rounded flex-shrink-0"
+                                style="background: rgba(184, 134, 11, 0.1); border: 1px solid var(--border);">
+                                <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium mb-1">Manufacturing Operations</div>
+                                <div style="color: var(--fg-muted);">Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add this before the Contact Section in Company Profile -->
+
+    </section>
+    <!-- Email Modal -->
+    <div id="emailModal" class="email-modal">
+        <div class="email-modal-content">
+            <span class="close-email-modal">&times;</span>
+            <h3>Send Email</h3>
+            <p>Email: <strong id="modalEmailAddress"></strong></p>
+            <a id="openEmailClient" href="#" class="email-open-btn">
+                <i class="fas fa-paper-plane"></i> Open Email Client
+            </a>
+            <p class="or-text">OR</p>
+            <button id="copyEmailBtn" class="email-copy-btn">
+                <i class="fas fa-copy"></i> Copy Email Address
+            </button>
+        </div>
+    </div>
+
+
+</main>
+{% endblock %}

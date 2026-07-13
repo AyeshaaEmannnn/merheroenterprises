@@ -1,0 +1,146 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+  <!-- NEW HERO SECTION -->
+    <section id="hero" class="hero-section-team">
+        <div class="team-hero-bg"></div>
+        <div class="team-hero-content">
+            <h1>Our Visionary <span>Leadership</span></h1>
+            <p>Driving global excellence from Pakistan to the world through integrity, innovation, and craftsmanship.</p>
+            <a href="#leadership" class="hero-btn">Meet The Team</a>
+        </div>
+    </section>
+
+    <!-- Section 1: Introduction -->
+    <section class="intro-section" id="leadership">
+        <div class="container">
+            <h2>Dual-Leadership Model</h2>
+            <p class="intro-text">
+                Merchero Enterprises is driven by a dual-leadership model combining strategic expansion with disciplined operational execution. Our Founder and CEO provide global direction while maintaining operational excellence across Pakistan and international markets.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2 & 3: Leadership Profiles -->
+    <section class="container leadership-grid">
+        
+        <!-- Founder Card -->
+        <article class="profile-card">
+            <div class="card-header">
+                <div class="profile-img-container">
+                    <img src="/static/images/WhatsApp Image 2026-01-24 at 11.31.15 AM (1).jpeg" alt="Muhammad Saad Madni" class="profile-img">
+                </div>
+                <h2>Muhammad Saad Madni</h2>
+                <div class="role">Founder & Director</div>
+                <div class="location"><i class="fas fa-map-marker-alt"></i> Based in Antwerp</div>
+            </div>
+            <div class="card-body">
+                <p class="bio-text">
+                    Muhammad Saad Madni founded Merchero Enterprises with the goal of creating a globally respected leather manufacturing company rooted in Pakistan’s craftsmanship and industrial expertise.
+                </p>
+                
+                <div class="responsibilities">
+                    <h4>Key Responsibilities</h4>
+                    <ul>
+                        <li>International business engagement</li>
+                        <li>Strategic partnerships and market expansion</li>
+                        <li>Representation in UK & Europe</li>
+                        <li>Long-term growth and planning</li>
+                    </ul>
+                </div>
+
+                <div class="message-box">
+                    “Our vision is to combine Pakistani craftsmanship with global standards, creating a trusted brand built on integrity, structured operations, and sustainable growth.”
+                </div>
+
+                <a href="mailto:founder@mercheroenterprises.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> founder@mercheroenterprises.com
+                </a>
+            </div>
+        </article>
+
+        <!-- CEO Card -->
+        <article class="profile-card">
+            <div class="card-header">
+                <div class="profile-img-container">
+                    <img src="/static/images/WhatsApp Image 2026-01-24 at 11.31.15 AM.jpeg" alt="Muhammad Ahtisham Baho" class="profile-img">
+                </div>
+                <h2>Muhammad Ahtisham Baho</h2>
+                <div class="role">Chief Executive Officer & Director</div>
+                <div class="location"><i class="fas fa-map-marker-alt"></i> Based in Sialkot</div>
+            </div>
+            <div class="card-body">
+                <p class="bio-text">
+                    Muhammad Ahtisham Baho ensures that every operational and production process maintains quality, efficiency, and alignment with international client expectations.
+                </p>
+                
+                <div class="responsibilities">
+                    <h4>Key Responsibilities</h4>
+                    <ul>
+                        <li>Production supervision</li>
+                        <li>Workflow and operational management</li>
+                        <li>Quality control systems</li>
+                        <li>Team coordination and export compliance</li>
+                    </ul>
+                </div>
+
+                <div class="message-box">
+                    “At Merchero Enterprises, disciplined execution, consistent quality, and operational clarity define our approach to every product and process.”
+                </div>
+
+                <a href="mailto:ceo@mercheroenterprises.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> ceo@mercheroenterprises.com
+                </a>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- Section 4: Leadership Philosophy -->
+    <section class="philosophy-section">
+        <div class="container">
+            <h2>Leadership Philosophy</h2>
+            <div class="philosophy-grid">
+                <div class="phil-item">
+                    <div class="phil-icon"><i class="fas fa-globe-asia"></i></div>
+                    <h4>Global & Local Balance</h4>
+                    <p>Balance international engagement and local operations to bridge markets effectively.</p>
+                </div>
+                <div class="phil-item">
+                    <div class="phil-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h4>Accountability</h4>
+                    <p>Ensure accountability and clear responsibilities across all organizational levels.</p>
+                </div>
+                <div class="phil-item">
+                    <div class="phil-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Sustainable Growth</h4>
+                    <p>Maintain sustainable long-term growth through strategic decision-making.</p>
+                </div>
+                <div class="phil-item">
+                    <div class="phil-icon"><i class="fas fa-comments"></i></div>
+                    <h4>Transparency</h4>
+                    <p>Promote transparent communication across teams and stakeholders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Modal -->
+<div id="emailModal" class="email-modal">
+    <div class="email-modal-content">
+        <span class="close-email-modal">&times;</span>
+        <h3>Send Email</h3>
+        <p>Email: <strong id="modalEmailAddress"></strong></p>
+        <a id="openEmailClient" href="#" class="email-open-btn">
+            <i class="fas fa-paper-plane"></i> Open Email Client
+        </a>
+        <p class="or-text">OR</p>
+        <button id="copyEmailBtn" class="email-copy-btn">
+            <i class="fas fa-copy"></i> Copy Email Address
+        </button>
+    </div>
+</div>
+{% endblock %}

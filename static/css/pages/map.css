@@ -1,0 +1,152 @@
+/* --- 1. Small Hero Section --- */
+.hero-section-sm {
+    position: relative;
+    height: 40vh; /* Chota hero */
+    min-height: 300px;
+    background-image: url('/static/images/map-bg.jpg'); /* Koi b city ya factory ki image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7); /* Dark overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- 2. Map Section Styling --- */
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Map ki height */
+    min-height: 500px;
+    background: #eee;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(20%); /* Map ko thora professional/grayscale karna */
+}
+
+/* Floating Info Card (Glassmorphism Effect) */
+.location-info-card {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9); /* Transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    z-index: 10;
+    max-width: 320px;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.location-info-card h3 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.info-line i {
+    color: var(--gold);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.btn-directions {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    padding: 12px;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-directions:hover {
+    background: var(--gold);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .location-info-card {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 20px;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .map-wrapper {
+        display: flex;
+        flex-direction: column-reverse; /* Card neeche, map upar (ya br_br reverse karein) */
+        height: 100%;
+    }
+    
+    /* Mobile par card pehle aur map neeche */
+    .map-wrapper {
+        flex-direction: column;
+    }
+    
+    .map-container {
+        height: 400px; /* Fixed height for mobile map */
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}

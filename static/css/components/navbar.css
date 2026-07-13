@@ -1,0 +1,321 @@
+.navbar {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a {
+    color: #000;
+}
+
+.navbar a:hover {
+    color: #e3c13a;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    max-width: 1400px;
+    padding: 0 0.75rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.nav-menu li {
+    margin-left: 0rem;
+}
+
+.nav-menu a {
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 0.6em 0.6em;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(159, 133, 56, 0.3);
+}
+
+.nav-close {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-text);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* ========== DROPDOWN STYLING (Updated) ========== */
+
+.nav-menu li.dropdown {
+    position: relative;
+}
+
+.nav-menu li.dropdown>a {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.6em 0.6em;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+    cursor: pointer;
+    /* Cursor indicate kare ke click kar sakte hain */
+}
+
+/* Arrow indicator */
+.nav-menu li.dropdown>a::after {
+    content: "▼";
+    font-size: 0.65em;
+    opacity: 0.7;
+    transition: transform 0.25s ease;
+}
+
+/* Arrow rotation sirf tab jab dropdown OPEN ho (click ke baad) */
+.nav-menu li.dropdown.open>a::after {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* Hover effect sirf LINK ka, dropdown menu nahi khulega */
+.nav-menu li.dropdown:hover>a,
+.nav-menu li.dropdown>a:focus-visible {
+    background: #ffffff;
+    color: var(--gold);
+}
+
+/* ── Dropdown Menu itself ── */
+.nav-menu li.dropdown .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1000;
+    list-style: none;
+
+    /* Hidden by default (Removed hover display:block) */
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+
+    min-width: 220px;
+    background: var(--light-bg);
+    border: 1px solid rgba(132, 144, 38, 0.2);
+    border-radius: 8px;
+    box-shadow:
+        0 6px 20px rgba(132, 144, 38, 0.15),
+        0 2px 8px rgba(132, 144, 38, 0.08);
+    overflow: hidden;
+    margin-top: 4px;
+    padding: 6px 0;
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.22s ease,
+        visibility 0.22s ease;
+}
+
+/* YEH LINE HATADI GAYI HAI JO HOVER PAR KHOLTI THI:
+.nav-menu li.dropdown:hover .dropdown-menu { display: block; ... } 
+*/
+
+/* Show dropdown sirf .open class ke saath (JS control karega) */
+.nav-menu li.dropdown.open .dropdown-menu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
+.nav-menu .dropdown-menu li {
+    list-style: none;
+}
+
+.nav-menu .dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.nav-menu .dropdown-menu li a:hover,
+.nav-menu .dropdown-menu li a:focus {
+    background: rgba(132, 144, 38, 0.1);
+    color: var(--dark-olive);
+    outline: none;
+    border-left: 3px solid var(--gold);
+    padding-left: 15px;
+}
+
+/* Right-aligned dropdown */
+.nav-menu li.dropdown.right .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* ========== RIGHT SIDE SLIDE MOBILE NAVBAR ========== */
+@media (max-width: 768px) {
+
+    .hero,
+    .slider,
+    .carousel,
+    .swiper,
+    .hero-section {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+
+    .hamburger {
+        display: flex;
+        z-index: 3001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding-top: 100px;
+        transition: right 0.4s ease-in-out;
+        z-index: 3000;
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        right: 0;
+        z-index: 3002;
+    }
+
+    .nav-menu li {
+        margin: 0.9rem 0;
+        padding-left: 1.5rem;
+        width: 100%;
+    }
+
+    .nav-menu a {
+        font-size: 0.95rem;
+    }
+
+    .nav-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: rgba(0, 0, 0, 0.08);
+        color: var(--dark-text);
+        font-size: 1.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 3010;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* Mobile Dropdown Styling */
+    .nav-menu li.dropdown>a {
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 1.5rem;
+    }
+
+    .nav-menu li.dropdown>a::after {
+        content: "▸";
+        /* Mobile ke liye arrow */
+        font-size: 0.9em;
+        opacity: 0.9;
+    }
+
+    /* Mobile mein bhi sirf .open class se khulega */
+    .nav-menu li.dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        margin: 0;
+        padding: 0 0 0 0.5rem;
+        background: transparent;
+        border: none;
+    }
+
+    .nav-menu li.dropdown.open .dropdown-menu {
+        display: block;
+        /* Mobile mein bhi click se khulega */
+    }
+
+    .nav-menu li.dropdown.open>a::after {
+        transform: rotate(90deg);
+        /* Mobile arrow rotation */
+    }
+}

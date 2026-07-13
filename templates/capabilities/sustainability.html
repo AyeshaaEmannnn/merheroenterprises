@@ -1,0 +1,147 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+
+    <!-- 1️⃣ HERO SECTION -->
+    <header id="hero" class="hero-sustain">
+        <div class="hero-overlay"></div>
+        <div class="container-sustain">
+            <div class="hero-content-sustain">
+                <h1>Responsible Manufacturing for a Sustainable Future</h1>
+                <p>We believe quality craftsmanship must go hand in hand with environmental and social responsibility.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2️⃣ OUR SUSTAINABILITY COMMITMENT -->
+    <section class="section-commitment">
+        <div class="container">
+            <p class="commitment-intro">
+                At Merchero Enterprises, sustainability is integrated into our sourcing, production, and operational practices. We strive to minimize environmental impact while maintaining global manufacturing standards.
+            </p>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌱</div>
+                    <h3>Ethical Material Sourcing</h3>
+                    <p>Verified origins and responsible supply chains.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">♻️</div>
+                    <h3>Waste Reduction</h3>
+                    <p>Optimized processes to minimize off-cuts.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🏭</div>
+                    <h3>Responsible Production</h3>
+                    <p>Cleaner methods for better output.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌍</div>
+                    <h3>Long-Term Environmental Care</h3>
+                    <p>Commitment to future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ RESPONSIBLE LEATHER SOURCING -->
+    <section class="section-detail bg-light">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-text">
+                    <h2>Ethically Sourced Raw Materials</h2>
+                    <p>We work with verified suppliers to ensure responsible sourcing of leather and raw materials. This is critical for maintaining trust with our B2B partners.</p>
+                    <ul class="eco-list">
+                        <li>Leather sourced from regulated tanneries</li>
+                        <li>Compliance with environmental processing standards</li>
+                        <li>Controlled chemical treatment processes</li>
+                        <li>Traceable material supply chain</li>
+                    </ul>
+                </div>
+                <div class="detail-visual img-sourcing"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ WASTE MANAGEMENT -->
+    <section class="section-detail bg-white">
+        <div class="container">
+            <div class="detail-grid reverse">
+                <div class="detail-text">
+                    <h2>Minimizing Production Waste</h2>
+                    <p>Our production system is designed to reduce material waste and improve resource efficiency, ensuring we get the most out of every hide.</p>
+                    <ul class="eco-list">
+                        <li>Pattern optimization to reduce off-cuts</li>
+                        <li>Reuse of usable leather scraps</li>
+                        <li>Controlled material inventory management</li>
+                        <li>Energy-conscious machine operation</li>
+                    </ul>
+                </div>
+                <div class="detail-visual img-waste"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ CHEMICAL & ENVIRONMENTAL CONTROL -->
+    <section class="section-detail bg-light">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-text">
+                    <h2>Safer Processing Standards</h2>
+                    <p>We maintain strict controls over chemical usage to protect both our workforce and the environment.</p>
+                    <ul class="eco-list">
+                        <li>Limited chemical exposure during finishing</li>
+                        <li>Safe adhesive handling practices</li>
+                        <li>Controlled dye usage</li>
+                        <li>Ventilation and workplace air quality measures</li>
+                    </ul>
+                </div>
+                <div class="detail-visual img-chemical"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ ETHICAL WORKPLACE PRACTICES -->
+    <section class="section-detail bg-white">
+        <div class="container">
+            <div class="detail-grid reverse">
+                <div class="detail-text">
+                    <h2>People Are Part of Sustainability</h2>
+                    <p>Sustainable manufacturing is not only about environment — it is about responsible workforce management and fair practices.</p>
+                    <ul class="eco-list">
+                        <li>Fair working conditions</li>
+                        <li>Safe production environment</li>
+                        <li>Skilled workforce training</li>
+                        <li>Compliance with labor standards</li>
+                    </ul>
+                </div>
+                <div class="detail-visual img-people"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7️⃣ LONG-TERM VISION -->
+    <section class="section-vision">
+        <div class="container">
+            <div class="vision-content">
+                <h2>Building a Responsible Manufacturing Future</h2>
+                <p>We continuously evaluate and improve our practices to align with evolving global sustainability expectations. Our goal is to grow responsibly while supporting our partners’ ethical sourcing commitments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8️⃣ CLOSING CTA -->
+    <section class="section-cta-sustain">
+        <div class="container">
+            <div class="cta-content-sustain">
+                <h2>Partner With a Responsible Manufacturer</h2>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Discuss Sustainable Production</a>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-ghost-sustain">Request Compliance Information</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

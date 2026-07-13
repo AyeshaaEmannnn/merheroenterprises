@@ -1,0 +1,290 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}   
+    <!-- Hero Section with Image 1 -->
+    <section id="hero" class="pt-20 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Content -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6 animate-fade-up animate-delay-1">
+                        
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.15] mb-6 animate-fade-up animate-delay-2">
+                        Precision Meets <span class="text-gold-500">Innovation</span> in Every Product.
+                    </h1>
+                    
+                    <p class="text-lg text-dark-muted leading-relaxed mb-8 animate-fade-up animate-delay-3">
+                        At Merchero Enterprises, we combine traditional craftsmanship with cutting-edge technology to manufacture high-performance leather and textile products.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center gap-2 bg-gold-50 px-4 py-2 rounded-full border border-gold-200">
+                            <i data-lucide="cpu" class="w-4 h-4 text-gold-600"></i>
+                            <span class="text-sm font-medium">CAD Precision</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gold-50 px-4 py-2 rounded-full border border-gold-200">
+                            <i data-lucide="activity" class="w-4 h-4 text-gold-600"></i>
+                            <span class="text-sm font-medium">ERP Tracking</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gold-50 px-4 py-2 rounded-full border border-gold-200">
+                            <i data-lucide="scan" class="w-4 h-4 text-gold-600"></i>
+                            <span class="text-sm font-medium">Digital Sampling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image 1 (Hero) -->
+                <div class="relative animate-fade-up animate-delay-4">
+                    <div class="image-overlay rounded-sm overflow-hidden shadow-2xl">
+                        <img src="/static/images/manufacturing-bg.jpg" alt="Advanced Machinery" class="w-full h-[500px] lg:h-[600px] object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <!-- Floating Stats Box -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl rounded-sm border border-gold-100 max-w-xs">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-gold-500 rounded-full flex items-center justify-center">
+                                <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <span class="font-serif text-3xl text-dark-text block">99.9%</span>
+                                <span class="text-xs text-dark-muted uppercase tracking-widest">Accuracy Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Technology Advantages -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Core Systems</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-4">Core Technology Advantages</h2>
+                <p class="text-dark-muted max-w-2xl mx-auto">We leverage modern tools to deliver excellence across all categories.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="tech-card bg-light-bg p-8 rounded-sm border border-gold-100 group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="pencil-ruler" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">CAD & Digital Pattern Making</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Accurate sizing, panel alignment, and design replication across all product lines.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="tech-card bg-light-bg p-8 rounded-sm border border-gold-100 group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="monitor" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">ERP Production Monitoring</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Real-time tracking of production stages, ensuring timely updates and proactive problem-solving.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="tech-card bg-light-bg p-8 rounded-sm border border-gold-100 group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="scissors" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Advanced Stitching Machines</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Handles complex designs, reinforced panels, and intricate finishing with precision.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="tech-card bg-light-bg p-8 rounded-sm border border-gold-100 group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="scan" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Digitized Sampling</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Rapid prototyping with minimal errors, faster approvals, and reduced production delays.</p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="tech-card bg-light-bg p-8 rounded-sm border border-gold-100 group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="flask-conical" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Material Testing</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Technical leathers and protective fabrics tested for strength, flexibility, and performance.</p>
+                </div>
+                
+                <!-- Summary Card -->
+                <div class="bg-gradient-to-br from-gold-500 to-gold-600 p-8 rounded-sm flex flex-col justify-center text-white">
+                    <i data-lucide="sparkles" class="w-12 h-12 mb-4 opacity-80"></i>
+                    <h3 class="font-serif text-2xl font-medium mb-2">Future-Ready</h3>
+                    <p class="text-white/80 text-sm">Continuous innovation for competitive global manufacturing.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Multi-Category Manufacturing -->
+    <section class="py-20 bg-gold-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-4">Multi-Category Manufacturing</h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-3 bg-white border border-gold-200 rounded-full text-sm font-medium text-dark-text hover:bg-gold-500 hover:text-white hover:border-gold-500 transition-colors cursor-pointer">
+                    <i data-lucide="shield" class="w-4 h-4 inline mr-2"></i>Racing Gear
+                </span>
+                <span class="px-6 py-3 bg-white border border-gold-200 rounded-full text-sm font-medium text-dark-text hover:bg-gold-500 hover:text-white hover:border-gold-500 transition-colors cursor-pointer">
+                    <i data-lucide="cloud-snow" class="w-4 h-4 inline mr-2"></i>Winter Wear
+                </span>
+                <span class="px-6 py-3 bg-white border border-gold-200 rounded-full text-sm font-medium text-dark-text hover:bg-gold-500 hover:text-white hover:border-gold-500 transition-colors cursor-pointer">
+                    <i data-lucide="briefcase" class="w-4 h-4 inline mr-2"></i>Leather Accessories
+                </span>
+                <span class="px-6 py-3 bg-white border border-gold-200 rounded-full text-sm font-medium text-dark-text hover:bg-gold-500 hover:text-white hover:border-gold-500 transition-colors cursor-pointer">
+                    <i data-lucide="horse" class="w-4 h-4 inline mr-2"></i>Cowboy Apparel
+                </span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Supporting Technology with Image 2 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Image 2 -->
+                <div class="relative order-2 lg:order-1">
+                    <div class="image-overlay rounded-sm overflow-hidden shadow-xl">
+                        <img src="https://picsum.photos/seed/factory-interior/800/600.jpg" alt="Factory Interior" class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <!-- Decorative Box -->
+                    <div class="absolute -z-10 -bottom-4 -right-4 w-full h-full border-2 border-gold-200 rounded-sm"></div>
+                </div>
+                
+                <!-- Content -->
+                <div class="order-1 lg:order-2">
+                    <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Integration</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">Technology in Action</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="layout-dashboard" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Real-time Dashboards</h4>
+                                <p class="text-dark-muted text-sm">Production dashboards for clients to track progress transparently.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="archive" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Digital Pattern Archives</h4>
+                                <p class="text-dark-muted text-sm">Easy access for repeat orders and consistency assurance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Automated Quality Checkpoints</h4>
+                                <p class="text-dark-muted text-sm">Quality checkpoints for critical components integration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="plug" class="w-5 h-5 text-gold-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">CE-Certified Gear Integration</h4>
+                                <p class="text-dark-muted text-sm">Compatibility with protective inserts and certified gear.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Brands Trust Us (Light Background Section) -->
+    <section class="py-24 bg-light-bg">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Reliability</span>
+                <!-- Changed text color to dark for light bg -->
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight text-dark-text">Why Brands Trust Our Technology</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Added bg-white, changed border and text colors -->
+                <div class="bg-white border border-gold-200 p-8 rounded-sm hover:shadow-lg hover:border-gold-400 transition-all group">
+                    <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Consistency Across Products</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Every item maintains structural integrity, fit, and finish.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white border border-gold-200 p-8 rounded-sm hover:shadow-lg hover:border-gold-400 transition-all group">
+                    <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="zap" class="w-6 h-6 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Speed & Accuracy</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Digital systems reduce errors and improve production timelines.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white border border-gold-200 p-8 rounded-sm hover:shadow-lg hover:border-gold-400 transition-all group">
+                    <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="rocket" class="w-6 h-6 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Future-Ready Manufacturing</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Continuous adoption of innovative systems keeps products competitive.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white border border-gold-200 p-8 rounded-sm hover:shadow-lg hover:border-gold-400 transition-all group">
+                    <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="award" class="w-6 h-6 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Compliance & Standards</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">International-quality benchmarks met for global markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Closing CTA -->
+    <section class="py-24 bg-light-bg">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+            <i data-lucide="cpu" class="w-12 h-12 text-gold-400 mx-auto mb-6"></i>
+            <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">
+                Experience the Power of <span class="text-gold-500">Technology</span>
+            </h2>
+            <p class="text-dark-muted leading-relaxed mb-10 max-w-2xl mx-auto">
+                From concept to final delivery, our systems ensure precision, performance, and reliability.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="bg-dark-text text-white px-8 py-4 text-sm font-medium uppercase tracking-widest hover:bg-gold-600 transition-colors inline-flex items-center gap-3">
+                    <span>Contact Us Today</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

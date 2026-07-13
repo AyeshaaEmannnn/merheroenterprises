@@ -1,0 +1,347 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+
+
+  <!-- Hero Section -->
+  <section id="hero" style="position: relative; min-height: 100vh; padding-top: 6rem; display: flex; align-items: center;">
+    <!-- Background Decor -->
+    <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(to left, #FEFDF8, transparent); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: 0; left: -5rem; width: 30rem; height: 30rem; background: #F9F1D8; border-radius: 50%; filter: blur(100px); opacity: 0.4;"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+      <!-- Left Content -->
+      <div class="reveal">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <span style="width: 2rem; height: 1px; background: #C5A059; display: inline-block;"></span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #A07C38; text-transform: uppercase; font-weight: 500;">OEM Solutions</span>
+        </div>
+        
+        <h1 class="serif" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; line-height: 1.1; color: #1C1C1C; margin-bottom: 1.5rem;">
+          OEM Expertise —<br>
+          <span style="color: #C5A059; font-style: italic;">Your Brand, Our Responsibility</span>
+        </h1>
+        
+        <p style="font-size: 1.125rem; color: #5C5C5C; line-height: 1.7; margin-bottom: 2.5rem; max-width: 540px;">
+          At Merchero Enterprises, we don't just produce leather products — we take full ownership of the OEM process, ensuring your designs, quality standards, and brand identity are faithfully translated into high-performance, market-ready products.
+        </p>
+        
+        <!-- USP Pills -->
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #F9F1D8; display: flex; align-items: center; justify-content: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <span style="font-size: 0.875rem; color: #1C1C1C; font-weight: 500;">Quality Assured</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #F9F1D8; display: flex; align-items: center; justify-content: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span style="font-size: 0.875rem; color: #1C1C1C; font-weight: 500;">Timely Delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="reveal" style="transition-delay: 0.2s; position: relative;">
+        <div style="position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Designer reviewing specs" style="width: 100%; height: auto; display: block; aspect-ratio: 4/5; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,28,28,0.3), transparent);"></div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div style="position: absolute; bottom: -1.5rem; left: -1.5rem; width: 8rem; height: 10rem; border-radius: 4px; overflow: hidden; border: 4px solid #FFFFFF; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+          <img src="https://images.unsplash.com/photo-1617409594552-a18c3a125f5d?w=300&q=80" alt="Prototype" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <div style="position: absolute; top: 1.5rem; right: -1rem; background: #FFFFFF; padding: 0.75rem 1.25rem; border-radius: 4px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="width: 0.5rem; height: 0.5rem; background: #C5A059; border-radius: 50%; display: inline-block;"></span>
+          <span style="font-size: 0.75rem; font-weight: 500; color: #1C1C1C;">End-to-End OEM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Our OEM Role (Timeline) -->
+  <section style="position: relative; padding: 6rem 0; background: #FFFFFF;">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal text-center" style="margin-bottom: 4rem;">
+        <span style="display: block; font-size: 0.75rem; letter-spacing: 0.2em; color: #A07C38; text-transform: uppercase; margin-bottom: 0.75rem;">The Process</span>
+        <h2 class="serif" style="font-size: 2.75rem; color: #1C1C1C; font-weight: 400;">Our OEM Role</h2>
+        <p style="color: #5C5C5C; margin-top: 0.75rem;">What we do for you — from concept to delivery</p>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div style="position: relative;">
+        <!-- The line -->
+        <div style="position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #F3E4B5, #C5A059, #F3E4B5);"></div>
+        
+        <!-- Items -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          
+          <!-- Item 1 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Design Feasibility Analysis</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Review your concept, tech pack, and specifications to ensure manufacturability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative; transition-delay: 0.1s;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="m21 16-4-4-4 4"/><path d="M17 20V4"/><path d="m3 8 4 4 4-4"/><path d="M7 4v16"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Material Sourcing</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Select high-quality finished leather and fabrics suitable for your product category.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative; transition-delay: 0.15s;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Prototype & Sample Development</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Produce exact replicas of your designs for approval before mass production.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative; transition-delay: 0.2s;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Custom Branding & Finishing</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Apply logos, embroidery, trims, packaging, and labels per your brand standards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative; transition-delay: 0.25s;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Full Production Management</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Oversee stitching, paneling, finishing, reinforcement — maintaining consistency.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative; transition-delay: 0.3s;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Quality Assurance</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Multi-stage inspection ensures products meet performance and durability standards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="reveal" style="display: flex; gap: 1.5rem; position: relative; transition-delay: 0.35s;">
+            <div style="width: 16px; height: 16px; background: #C5A059; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #F9F1D8; z-index: 1; flex-shrink: 0; margin-top: 0.5rem;"></div>
+            <div class="hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 1.5rem; border-radius: 4px; width: 100%;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="background: #F9F1D8; padding: 0.75rem; border-radius: 50%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div>
+                  <h3 class="serif" style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1C1C1C;">Delivery & Support</h3>
+                  <p style="font-size: 0.9rem; color: #5C5C5C; line-height: 1.6;">Products shipped on time; continuous communication ensures client satisfaction.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Multi-Category OEM Coverage -->
+  <section style="padding: 6rem 0; background: linear-gradient(180deg, #F9F8F6 0%, #FFFFFF 100%);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="reveal text-center" style="margin-bottom: 3rem;">
+        <span style="display: block; font-size: 0.75rem; letter-spacing: 0.2em; color: #A07C38; text-transform: uppercase; margin-bottom: 0.75rem;">Categories</span>
+        <h2 class="serif" style="font-size: 2.75rem; color: #1C1C1C; font-weight: 400;">Multi-Category Coverage</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="reveal group" style="position: relative; border-radius: 4px; overflow: hidden; cursor: pointer; height: 400px;">
+          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Racing Gear" class="img-zoom" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,28,28,0.9) 0%, rgba(28,28,28,0.4) 40%, transparent 100%); transition: background 0.3s;"></div>
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; color: #FFFFFF;">
+            <span style="font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">Performance</span>
+            <h3 class="serif" style="font-size: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.25rem;">Motorbike Racing Gear</h3>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.4;">Suits, gloves, boots — engineered for protection.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reveal group" style="position: relative; border-radius: 4px; overflow: hidden; cursor: pointer; height: 400px; transition-delay: 0.1s;">
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80" alt="Winter Apparel" class="img-zoom" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,28,28,0.9) 0%, rgba(28,28,28,0.4) 40%, transparent 100%);"></div>
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; color: #FFFFFF;">
+            <span style="font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">Lifestyle</span>
+            <h3 class="serif" style="font-size: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.25rem;">Winter Leather Apparel</h3>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.4;">Jackets, coats, vests — warmth meets style.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reveal group" style="position: relative; border-radius: 4px; overflow: hidden; cursor: pointer; height: 400px; transition-delay: 0.2s;">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="Accessories" class="img-zoom" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,28,28,0.9) 0%, rgba(28,28,28,0.4) 40%, transparent 100%);"></div>
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; color: #FFFFFF;">
+            <span style="font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">Premium</span>
+            <h3 class="serif" style="font-size: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.25rem;">Accessories</h3>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.4;">Bags, belts, hats — functional elegance.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="reveal group" style="position: relative; border-radius: 4px; overflow: hidden; cursor: pointer; height: 400px; transition-delay: 0.3s;">
+          <img src="https://images.unsplash.com/photo-1505751904534-4468817e28a5?w=600&q=80" alt="Cowboy" class="img-zoom" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,28,28,0.9) 0%, rgba(28,28,28,0.4) 40%, transparent 100%);"></div>
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; color: #FFFFFF;">
+            <span style="font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.8; text-transform: uppercase;">Durability</span>
+            <h3 class="serif" style="font-size: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.25rem;">Cowboy / Horse Apparel</h3>
+            <p style="font-size: 0.875rem; opacity: 0.8; line-height: 1.4;">Vests, pants, gloves — built to last.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Why Choose Us -->
+  <section style="padding: 6rem 0; background: #FFFFFF;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center" style="margin-bottom: 3rem;">
+        <span style="display: block; font-size: 0.75rem; letter-spacing: 0.2em; color: #A07C38; text-transform: uppercase; margin-bottom: 0.75rem;">The Advantage</span>
+        <h2 class="serif" style="font-size: 2.75rem; color: #1C1C1C; font-weight: 400;">Why Brands Choose Us</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Feature 1 -->
+        <div class="reveal hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 2rem; border-radius: 4px;">
+          <div style="display: flex; gap: 1.25rem;">
+            <div style="background: #F9F1D8; width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div>
+              <h3 class="serif" style="font-size: 1.5rem; color: #1C1C1C; margin-bottom: 0.5rem;">End-to-End Support</h3>
+              <p style="color: #5C5C5C; line-height: 1.6;">From design review to final shipment, we manage the process so you can focus on building your brand.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="reveal hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 2rem; border-radius: 4px; transition-delay: 0.1s;">
+          <div style="display: flex; gap: 1.25rem;">
+            <div style="background: #F9F1D8; width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h3 class="serif" style="font-size: 1.5rem; color: #1C1C1C; margin-bottom: 0.5rem;">Quality & Consistency</h3>
+              <p style="color: #5C5C5C; line-height: 1.6;">Multi-stage checks and expert craftsmanship ensure uniformity across all production batches.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="reveal hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 2rem; border-radius: 4px; transition-delay: 0.2s;">
+          <div style="display: flex; gap: 1.25rem;">
+            <div style="background: #F9F1D8; width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3 class="serif" style="font-size: 1.5rem; color: #1C1C1C; margin-bottom: 0.5rem;">Global Readiness</h3>
+              <p style="color: #5C5C5C; line-height: 1.6;">Production aligned with international standards, ready for export and global retail markets.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="reveal hover-lift" style="background: #F9F8F6; border: 1px solid #EEDC9A; padding: 2rem; border-radius: 4px; transition-delay: 0.3s;">
+          <div style="display: flex; gap: 1.25rem;">
+            <div style="background: #F9F1D8; width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A07C38" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <div>
+              <h3 class="serif" style="font-size: 1.5rem; color: #1C1C1C; margin-bottom: 0.5rem;">Flexibility & Customization</h3>
+              <p style="color: #5C5C5C; line-height: 1.6;">Small batches, large volumes, or special requirements — we adapt to your specific needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="padding: 6rem 0; background: #1C1C1C; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #C5A059, transparent);"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div class="reveal">
+        <span style="display: block; font-size: 0.75rem; letter-spacing: 0.2em; color: #E2C56B; text-transform: uppercase; margin-bottom: 1rem;">Let's Collaborate</span>
+        <h2 class="serif" style="font-size: 3rem; color: #FFFFFF; font-weight: 400; margin-bottom: 1rem;">
+          Your OEM Partner for <span style="color: #E2C56B; font-style: italic;">Precision</span>
+        </h2>
+        <p style="color: #A0A0A0; line-height: 1.7; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          We become your extended team — handling your product with full responsibility and care. Have a unique design? Let's make it real together.
+        </p>
+        
+        <button style="background: transparent; color: #FFFFFF; border: 1px solid #C5A059; padding: 1rem 2rem; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#C5A059'; this.style.color='#1C1C1C'" onmouseout="this.style.background='transparent'; this.style.color='#FFFFFF'">
+          Start Your Custom Project
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+{% endblock %}

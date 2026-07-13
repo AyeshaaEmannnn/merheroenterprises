@@ -1,0 +1,137 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+<!-- SECTION 1 – HERO BANNER -->
+    <header id="hero" class="hero-capabilities-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-capabilities">
+            <h1 style=" font-size: 3rem; margin-bottom: 10px; letter-spacing: 1px;">Manufacturing Capabilities</h1>
+            <h3 style="font-size: 1.2rem;font-weight: 400;margin-bottom: 20px;color: #ddd;">Structured Production. Reliable Output. OEM Ready.</h3>
+            <p class="hero-intro">
+                Merchero Enterprises operates with organized production systems, skilled craftsmanship, and controlled workflow — supporting international brands with reliable manufacturing solutions.
+            </p>
+        </div>
+    </header>
+
+    <!-- SECTION 2 – WHAT WE DO -->
+    <section class="what-we-do section-padding">
+        <div class="container">
+            <h2 class="section-title">What We Deliver</h2>
+            <div class="grid-box">
+                <div class="bullet-item">Leather & Performance Garment Manufacturing</div>
+                <div class="bullet-item">OEM & Private Label Production</div>
+                <div class="bullet-item">Prototype & Sample Development</div>
+                <div class="bullet-item">Export-Ready Production Flow</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 – MANUFACTURING FACILITY -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="content-block">
+                <div class="block-text">
+                    <h2 class="section-title">Manufacturing Facilities</h2>
+                    <p>Our workshop is equipped with industrial stitching machines, cutting stations, pattern work areas, and finishing units organized for consistent production standards.</p>
+                    <a href="{% url 'capabilities_manufacturing_facility' %}" class="btn btn-outline">View Facilities</a>
+                </div>
+                <div class="block-image">
+                    <img src="/static/images/manufacturing facility.jpg" alt="Industrial Stitching Machine Close-up">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 – PRODUCT DEVELOPMENT & R&D -->
+    <section class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="content-block reverse">
+                <div class="block-text">
+                    <h2 class="section-title">Research & Development</h2>
+                    <p>We support design refinement, pattern development, prototype sampling, and technical adjustments to prepare concepts for production-scale manufacturing.</p>
+                    <a href="{% url 'research_and_development' %}" class="small-link">View Development Process &rarr;</a>
+                </div>
+                <div class="block-image">
+                    <img src="/static/images/leather3.png" alt="Pattern Table and Measurements">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 – QUALITY CONTROL -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="content-block">
+                <div class="block-text">
+                    <h2 class="section-title">Quality Assurance</h2>
+                    <p>Quality is monitored throughout cutting, stitching, finishing, and final inspection stages. Every product is reviewed before packing to ensure export-level consistency.</p>
+                    <a href="{% url 'quality_assurance' %}" class="small-link">View Quality Process &rarr;</a>
+                </div>
+                <div class="block-image">
+                    <img src="/static/images/qualityassurance.jpg" alt="Quality Inspection Close-up">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 – OEM & CUSTOMIZATION -->
+    <section class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="content-block reverse">
+                <div class="block-text">
+                    <h2 class="section-title">OEM & Private Label Solutions</h2>
+                    <ul class="custom-list">
+                        <li>Custom branding & labeling</li>
+                        <li>Logo placement & embroidery</li>
+                        <li>Packaging customization</li>
+                        <li>Repeat bulk production</li>
+                    </ul>
+                    <a href="{% url 'oem_and_customization' %}" class="btn">Discuss OEM Project</a>
+                </div>
+                <div class="block-image">
+                    <img src="/static/images/labelsttitching.png" alt="Label Stitching Close-up">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 – WORK PROCESS -->
+    <section class="workflow-section-capabilities section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Workflow</h2>
+            
+            <div class="workflow-line">
+                <span class="step">Design</span>
+                <span class="arrow">→</span>
+                <span class="step">Pattern</span>
+                <span class="arrow">→</span>
+                <span class="step">Cutting</span>
+                <span class="arrow">→</span>
+                <span class="step">Stitching</span>
+                <span class="arrow">→</span>
+                <span class="step">Inspection</span>
+                <span class="arrow">→</span>
+                <span class="step">Packing</span>
+                <span class="arrow">→</span>
+                <span class="step">Delivery</span>
+            </div>
+
+            <a href="{% url 'work_process' %}" class="workflow-link">View Detailed Workflow</a>
+        </div>
+    </section>
+
+    <!-- SECTION 8 – CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Collaborate With Us</h2>
+            <p>We welcome wholesale, brand, and OEM manufacturing partnerships.</p>
+            <div>
+                <a href="{% url 'contact_inquiry_form' %}" class=" btn-cta-capa">Request Production Quote</a>
+                <a href="{% url 'about_team' %}" class=" btn-outline-capa" style="border-color: #fff; color: #fff;">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

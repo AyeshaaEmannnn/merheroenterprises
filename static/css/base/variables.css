@@ -1,0 +1,13 @@
+:root {
+    --olive-green: #849026;
+    --dark-olive: #585d2e;
+    --white: #ffffff;
+    --black: #000000;
+    --gold: rgb(159, 133, 56);
+    --light-bg: #f5f2eb;
+    --light-overlay: rgba(255, 255, 255, 0.8);
+    --dark-text: var(--black);
+    --accent-text: var(--dark-olive);
+    --shadow-light: rgba(0, 0, 0, 0.15);
+    --navbar-height: 80px;
+}

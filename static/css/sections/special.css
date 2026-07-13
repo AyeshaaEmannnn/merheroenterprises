@@ -1,0 +1,247 @@
+.what-makes-special {
+    padding: 80px 20px;
+    background: var(--light-bg);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.what-makes-special h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.what-makes-special h2 span {
+    color: var(--gold);
+}
+
+.intro-text {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.intro-text p {
+    color: var(--dark-text);
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+/* Horizontal Scroll on Mobile, Grid on Desktop */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature-card {
+    background: var(--);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 20px rgba(212, 168, 83, 0.3);
+}
+
+/* Corner Accents */
+.feature-card::before,
+.feature-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--gold);
+    border-style: solid;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.feature-card::before {
+    top: 10px;
+    left: 10px;
+    border-width: 2px 0 0 2px;
+}
+
+.feature-card::after {
+    bottom: 10px;
+    right: 10px;
+    border-width: 0 2px 2px 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 168, 83, 0.2);
+}
+
+.feature-card:hover::before,
+.feature-card:hover::after {
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+}
+
+/* Diamond Icon */
+.icon-diamond {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    transform: rotate(45deg);
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(212, 168, 83, 0.3);
+    transition: all 0.4s ease;
+}
+
+.icon-diamond i {
+    transform: rotate(-45deg);
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.feature-card:hover .icon-diamond {
+    transform: rotate(135deg) scale(1.1);
+    box-shadow: 0 10px 30px rgba(212, 168, 83, 0.5);
+}
+
+.feature-card:hover .icon-diamond i {
+    transform: rotate(-135deg);
+}
+
+/* Catalog CTA (Discover Our Complete Collection) */
+.catalog-cta {
+
+    background: linear-gradient(135deg, #f5f2eb, #e8dcc8);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.catalog-cta .catalog-content {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.catalog-cta .catalog-content h2 {
+    color: var(--gold);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 16px;
+}
+
+.catalog-cta .catalog-content .subtitle {
+    color: var(--dark-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 26px;
+}
+
+.catalog-cta .catalog-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 16px 34px;
+    border-radius: 999px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 12px 28px rgba(212, 168, 83, 0.22);
+}
+
+.catalog-cta .catalog-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(159, 133, 56, 0.95);
+    box-shadow: 0 16px 38px rgba(212, 168, 83, 0.32);
+}
+
+.catalog-cta .trust-badges {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.catalog-cta .trust-badges span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(212, 160, 23, 0.2);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 700;
+    color: var(--dark-text);
+    font-size: 0.95rem;
+}
+
+.catalog-cta .trust-badges span i {
+    color: var(--gold);
+}
+
+.feature-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+
+.feature-card:hover h3 {
+    color: var(--gold);
+}
+
+.feature-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Scroll */
+.scroll-indicator {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.scroll-indicator i {
+    color: var(--gold);
+    font-size: 1.5rem;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+}

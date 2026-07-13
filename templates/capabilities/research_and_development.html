@@ -1,0 +1,121 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+    <!-- 1. HERO SECTION -->
+    <header id="hero" class="hero-rnd">
+        <div class="hero-overlay-rnd"></div>
+        <div class="container-rnd">
+            <div class="hero-content-rnd">
+                <p class="hero-sub">Innovation at the Core</p>
+                <h1>Research & Development</h1>
+                <p>Transforming ideas into high-quality leather products with precision, creativity, and expertise. We blend traditional craftsmanship with modern innovation to set new benchmarks in the global leather industry.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. DESIGN INNOVATION -->
+    <section class="section-block bg-white">
+        <div class="container">
+            <div class="block-grid">
+                <div class="block-text">
+                    <h2>Design Innovation</h2>
+                    <p>At Merchero Enterprises, innovation begins with our design philosophy. Our team explores global trends, material possibilities, and ergonomic requirements to create leather products that are functional, stylish, and durable.</p>
+                    <p>Every sketch, pattern, and prototype reflects attention to detail and a commitment to excellence.</p>
+                </div>
+                <div class="block-visual">
+                    <img src="/static/images/desgininnovation.jpg" alt="Design Sketching and Pattern Work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROTOTYPING EXCELLENCE -->
+    <section class="section-block bg-light">
+        <div class="container">
+            <div class="block-grid reverse">
+                <div class="block-text">
+                    <h2>Prototyping Excellence</h2>
+                    <p>Every design is transformed into physical prototypes for evaluation. Multiple iterations allow us to perfect fit, performance, and aesthetics, whether it’s a motorbike racing suit, leather jacket, or glove.</p>
+                    <p>This ensures only the highest-quality products reach production.</p>
+                </div>
+                <div class="block-visual">
+                    <img src="/static/images/prototyping.jpg" alt="Leather Prototyping Process">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MATERIAL & PRODUCT TESTING -->
+    <section class="section-block bg-white">
+        <div class="container">
+            <div class="block-grid">
+                <div class="block-text">
+                    <h2>Material & Product Testing</h2>
+                    <p>Our R&D team rigorously tests materials and prototypes for durability, flexibility, and safety. Every product undergoes stress testing, seam strength evaluation, and performance checks to meet both local and international standards.</p>
+                    <p>This guarantees products that are not only premium in appearance but also dependable in function.</p>
+                </div>
+                <div class="block-visual">
+                    <img src="/static/images/leather testing.jpg" alt="Material Stress Testing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. COLLABORATION & CUSTOM SOLUTIONS -->
+    <section class="collab-section">
+        <div class="container">
+            <div class="collab-grid">
+                <div class="collab-text">
+                    <h2>Tailored Solutions for Partners</h2>
+                    <p>As a global OEM partner, we work closely with brands to bring their vision to life. From material selection to final sample approval, our R&D team ensures each product aligns with brand identity and market needs.</p>
+                </div>
+                <div class="block-visual collab-image">
+                    <img src="/static/images/solutionforartners.jpg" alt="Business Collaboration Meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. INNOVATION PROCESS FLOW -->
+    <section class="workflow-section-rnd">
+        <div class="container-rnd">
+            <h2>Our Innovation Workflow</h2>
+            <div class="process-line-rnd">
+                <div class="process-step-rnd">
+                    <div class="step-icon-rnd">1</div>
+                    <div class="step-title-rnd">Market Research & Trend Analysis</div>
+                </div>
+                <div class="process-step-rnd">
+                    <div class="step-icon-rnd">2</div>
+                    <div class="step-title-rnd">Concept Sketch & Design Draft</div>
+                </div>
+                <div class="process-step-rnd">
+                    <div class="step-icon-rnd">3</div>
+                    <div class="step-title-rnd">Prototype Development & Testing</div>
+                </div>
+                <div class="process-step-rnd">
+                    <div class="step-icon-rnd">4</div>
+                    <div class="step-title-rnd">Product Refinement</div>
+                </div>
+                <div class="process-step-rnd">
+                    <div class="step-icon-rnd">5</div>
+                    <div class="step-title-rnd">Production Handover</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CALL TO ACTION -->
+    <section class="section-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Partner with Merchero Enterprises for Innovative Leather Solutions</h2>
+                <p>Reach out today and discover how we can elevate your brand’s leather collection.</p>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Send Inquiry</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

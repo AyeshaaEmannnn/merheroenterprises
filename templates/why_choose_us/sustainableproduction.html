@@ -1,0 +1,209 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+ <!-- Hero Section with Image -->
+    <section id="hero" class="pt-20 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Content -->
+                <div>
+                    <!-- Heading -->
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.15] mb-6 opacity-0 animate-fade-in animate-delay-100">
+                        Responsible <span class="text-gold-500">Manufacturing.</span><br>
+                        Global <span class="italic">Standards</span>.
+                    </h1>
+                    
+                    <!-- Paragraph -->
+                    <p class="text-lg text-dark-muted leading-relaxed mb-8 opacity-0 animate-fade-in animate-delay-200">
+                        At Merchero Enterprises, sustainability is a core part of our manufacturing philosophy. We aim to minimize environmental impact while maintaining the highest quality standards for international brands.
+                    </p>
+                    
+                    <!-- Features Tags -->
+                    <div class="flex flex-wrap gap-4 opacity-0 animate-fade-in animate-delay-300">
+                        <div class="flex items-center gap-2 bg-gold-50 px-4 py-2 rounded-full border border-gold-200">
+                            <i data-lucide="leaf" class="w-4 h-4 text-gold-600"></i>
+                            <span class="text-sm font-medium">Eco-Conscious</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gold-50 px-4 py-2 rounded-full border border-gold-200">
+                            <i data-lucide="recycle" class="w-4 h-4 text-gold-600"></i>
+                            <span class="text-sm font-medium">Waste Reduction</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gold-50 px-4 py-2 rounded-full border border-gold-200">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-gold-600"></i>
+                            <span class="text-sm font-medium">Certified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative opacity-0 animate-fade-in animate-delay-400">
+                    <div class="rounded-sm overflow-hidden shadow-2xl">
+                        <img src="https://picsum.photos/seed/sustainable-nature/800/900.jpg" alt="Sustainable Production" class="w-full h-[500px] lg:h-[600px] object-cover img-hover">
+                    </div>
+                    <!-- Floating Stats Box -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl rounded-sm border border-gold-100 max-w-xs">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-gold-500 rounded-full flex items-center justify-center">
+                                <i data-lucide="recycle" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <span class="font-serif text-3xl text-dark-text block">90%+</span>
+                                <span class="text-xs text-dark-muted uppercase tracking-widest">Recycling Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Sustainability Practices -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Our Approach</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-4">Sustainability in Action</h2>
+                <p class="text-dark-muted max-w-2xl mx-auto">Our approach balances responsibility, efficiency, and long-term growth.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-light-bg p-8 rounded-sm border border-gold-100 card-hover group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="shopping-bag" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Eco-Conscious Material Selection</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">We source premium leather and fabrics from trusted suppliers who meet sustainability and quality standards.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-light-bg p-8 rounded-sm border border-gold-100 card-hover group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="zap" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Energy & Resource Efficiency</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Manufacturing facilities are optimized to reduce energy and water consumption while maintaining production efficiency.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-light-bg p-8 rounded-sm border border-gold-100 card-hover group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="recycle" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Waste Reduction & Recycling</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">All production waste is systematically segregated and recycled where possible. Packaging materials are designed to minimize environmental impact.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-light-bg p-8 rounded-sm border border-gold-100 card-hover group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="settings-2" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Green Process Integration</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Sustainable practices are incorporated directly into our workflow, from cutting to stitching and finishing.</p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="bg-light-bg p-8 rounded-sm border border-gold-100 card-hover group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="award" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Accountability & Certification</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">Our operations are aligned with international environmental guidelines, ensuring our practices are credible and export-ready.</p>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="bg-light-bg p-8 rounded-sm border border-gold-100 card-hover group">
+                    <div class="w-16 h-16 bg-white border border-gold-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:border-gold-500 transition-colors">
+                        <i data-lucide="globe" class="w-8 h-8 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium mb-3">Global Responsibility Mindset</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed">We believe sustainability is more than compliance — it’s a responsibility to the planet and our partners.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Promise Section -->
+    <section class="py-24 bg-gradient-to-r from-gold-50 to-gold-100/50 border-y border-gold-200">
+        <div class="max-w-5xl mx-auto px-6 md:px-12">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-8 pulse-glow">
+                    <i data-lucide="hand-heart" class="w-10 h-10 text-white"></i>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">Our Promise</h2>
+                <p class="text-dark-muted leading-relaxed max-w-3xl mx-auto text-lg mb-8">
+                    We combine quality, responsibility, and sustainability to deliver leather products that meet international standards without compromise.
+                </p>
+                <p class="text-dark-text leading-relaxed max-w-3xl mx-auto">
+                    Merchero Enterprises is your partner in ethically-produced, globally-ready leather solutions, ensuring that every product is a reflection of our professional and responsible approach.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Responsibility Highlights -->
+    <section class="py-24 bg-light-bg">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <span class="text-xs font-medium uppercase tracking-widest text-gold-600 mb-4 block">Responsibility</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight text-dark-text">Why It Matters</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white border border-gold-100 p-10 rounded-sm card-hover group text-center">
+                    <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="check-circle" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Assured Responsibility</h3>
+                    <p class="text-dark-muted leading-relaxed text-sm">Clients are assured products are produced responsibly with full transparency.</p>
+                </div>
+                
+                <div class="bg-white border border-gold-100 p-10 rounded-sm card-hover group text-center">
+                    <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="target" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Aligned with Standards</h3>
+                    <p class="text-dark-muted leading-relaxed text-sm">Practices are aligned with modern international expectations and guidelines.</p>
+                </div>
+                
+                <div class="bg-white border border-gold-100 p-10 rounded-sm card-hover group text-center">
+                    <div class="w-14 h-14 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="handshake" class="w-7 h-7 text-gold-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-medium text-dark-text mb-3">Long-Term Partnerships</h3>
+                    <p class="text-dark-muted leading-relaxed text-sm">Built on trust, transparency, and environmental responsibility.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Closing CTA -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+            <i data-lucide="trees" class="w-12 h-12 text-gold-400 mx-auto mb-6"></i>
+            <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">
+                Partner with a <span class="text-gold-500">Responsible</span> Manufacturer
+            </h2>
+            <p class="text-dark-muted leading-relaxed mb-10 max-w-2xl mx-auto">
+                Join us in our commitment to sustainable leather manufacturing. Let's build quality products while protecting our planet.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="{% url 'contact_inquiry_form' %}" class="bg-dark-text text-white px-8 py-4 text-sm font-medium uppercase tracking-widest hover:bg-gold-600 transition-colors inline-flex items-center gap-3">
+                    <span>Start Your Project</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

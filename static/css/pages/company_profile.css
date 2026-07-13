@@ -1,0 +1,611 @@
+/* =========================================
+   CSS VARIABLES (ROOT)
+   ========================================= */
+:root {
+    /* HTML ke liye Variables */
+    --bg: #f4f4f0;
+    /* Light Industrial Background */
+    --bg-alt: #ffffff;
+    /* White Background */
+    --bg-elevated: #ebebeb;
+    /* Slightly darker for sections */
+
+    --fg: #1a1a1a;
+    /* Main Text Color (Black/Dark Grey) */
+    --fg-muted: #666666;
+    /* Secondary Text Color (Grey) */
+    --accent: #9f8538;
+    /* Gold Color for highlights */
+    --border: #d1d5db;
+    /* Light Border Color */
+
+    --black: #000000;
+    /* Pure Black */
+
+    /* Aapke Original Variables */
+    --light-bg: #f4f4f0;
+    --dark-text: #1a1a1a;
+    --gold: #9f8538;
+    --white: #ffffff;
+    --shadow-light: #d1d5db;
+    --olive-green: #556b2f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.font-serif {
+    font-family: 'Instrument Serif', serif;
+}
+
+/* Hero Section Spacing Fix */
+.hero {
+    margin-top: var(--navbar-height) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+/* FIX: Industrial Background Z-Index changed to -1 so it stays BEHIND text */
+.bg-industrial {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 100% 80% at 0% 0%, rgba(132, 144, 38, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 100% 100%, rgba(159, 133, 56, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, var(--light-bg) 0%, var(--light-bg) 100%);
+    pointer-events: none;
+    z-index: -1;
+    /* Changed from 0 to -1 */
+}
+
+/* FIX: Grain Background Z-Index changed to -1 */
+.bg-grain {
+    position: fixed;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+    /* Changed from 1 to -1 so it doesn't cover text */
+}
+
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* FIX: Reveal class - Changed opacity from 0 to 1 so text is visible even without JS */
+.reveal-company {
+    opacity: 1;
+    /* Was 0 */
+    transform: translateY(0);
+    /* Removed translateY to prevent jumping */
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Kept visible class for compatibility if JS is added later */
+.reveal-company.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-company-left {
+    transform: translateX(0);
+}
+
+.reveal-company-left.visible {
+    transform: translateX(0);
+}
+
+.reveal-company-scale {
+    transform: scale(1);
+}
+
+.reveal-company-scale.visible {
+    transform: scale(1);
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+.delay-6 {
+    transition-delay: 0.6s;
+}
+
+.delay-7 {
+    transition-delay: 0.7s;
+}
+
+.delay-8 {
+    transition-delay: 0.8s;
+}
+
+/* Hero */
+.hero-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+}
+
+.hero-accent {
+    color: var(--gold);
+    font-style: italic;
+}
+
+/* Cards */
+.profile-card-company {
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
+    border: 1px solid var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card-company::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.profile-card-company:hover::before {
+    transform: scaleX(1);
+}
+
+.profile-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    transition: all 0.4s ease;
+}
+
+/* Data Cards */
+.data-card {
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    position: relative;
+}
+
+.data-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* Product Category */
+.category-tab {
+    position: relative;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.category-tab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-tab:hover {
+    border-color: var(--shadow-light);
+}
+
+.category-tab.active {
+    border-color: var(--gold);
+    background: rgba(159, 133, 56, 0.1);
+}
+
+.category-tab.active::before {
+    opacity: 0.05;
+}
+
+/* Capability Bar */
+.capability-bar {
+    height: 4px;
+    background: var(--shadow-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.capability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--olive-green));
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.capability-fill.animate {
+    transform: scaleX(1);
+}
+
+/* Timeline */
+.timeline-item-cp {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item-cp::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.timeline-item-cp::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 1.5rem;
+    width: 2px;
+    height: calc(100% - 0.5rem);
+    background: var(--shadow-light);
+}
+
+.timeline-item-cp:last-child::after {
+    display: none;
+}
+
+/* Section Divider */
+.section-marker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-number {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--gold);
+    letter-spacing: 0.1em;
+}
+
+.section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--shadow-light);
+}
+
+/* Contact Card */
+.contact-card {
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+    border: 1px solid var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(159, 133, 56, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+/* Interactive Elements */
+.btn-industrial {
+    position: relative;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+.btn-industrial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn-industrial:hover {
+    color: var(--white);
+}
+
+.btn-industrial:hover::before {
+    transform: translateY(0);
+}
+
+/* Image Frames */
+.frame-industrial {
+    position: relative;
+    border: 1px solid var(--shadow-light);
+    background: var(--white);
+}
+
+.frame-industrial::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 1px solid var(--shadow-light);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Badge */
+.badge-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(159, 133, 56, 0.1);
+    border: 1px solid rgba(159, 133, 56, 0.2);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gold);
+    z-index: 100;
+    transform-origin: left;
+    transition: transform 0.1s linear;
+}
+
+/* Focus states */
+*:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .capability-fill {
+        transform: scaleX(1);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--shadow-light);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+/* Extra Utility Classes for Catalog */
+.product-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    pointer-events: none;
+}
+
+.btn-editorial {
+    background-color: var(--dark-text);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-editorial:hover {
+    background-color: var(--gold);
+}
+
+.btn-outline-companyprofile {
+    border: 1px solid var(--dark-text);
+    background-color: var(--dark-text);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-companyprofile:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* PDF Download Button */
+.btn-download-pdf {
+    position: relative;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--white);
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+.btn-download-pdf::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--dark-text);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn-download-pdf:hover {
+    color: var(--white);
+    border-color: var(--dark-text);
+}
+
+.btn-download-pdf:hover::before {
+    transform: translateY(0);
+}
+
+/* Print Styles */
+@media print {
+
+    .navbar,
+    footer,
+    .bg-industrial,
+    .bg-grain,
+    .scroll-indicator,
+    .email-modal,
+    .btn-download-pdf,
+    #back-to-top {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    main {
+        padding-top: 0 !important;
+    }
+
+    section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .profile-card,
+    .data-card,
+    .contact-card,
+    .profile-card-company {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none !important;
+        color: black !important;
+    }
+}

@@ -1,0 +1,35 @@
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px var(--shadow-light);
+}
+
+.feature i {
+    font-size: 2rem;
+    color: var(--olive-green);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.feature:hover i {
+    color: var(--gold);
+}
+
+.feature h3 {
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+}
