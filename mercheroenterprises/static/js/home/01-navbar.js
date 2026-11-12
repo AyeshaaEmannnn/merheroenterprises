@@ -62,8 +62,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Toggle current dropdown
                 li.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false');
             });
         });
+
+        // ==================================================
+        // PRODUCT SUBCATEGORY SUBMENU TOGGLE
+        // ==================================================
+        // Click on a main product category with subcategories should open its submenu,
+        // while category page remains available via the submenu title link.
+        navMenu.querySelectorAll('.product-category-item.has-submenu > a').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                const parent = trigger.parentElement;
+                const submenu = parent.querySelector('.product-submenu');
+
+                if (!submenu) return; // no submenu, regular link behavior
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Close any other open submenus
+                navMenu.querySelectorAll('.product-category-item.has-submenu.submenu-open').forEach(el => {
+                    if (el !== parent) {
+                        el.classList.remove('submenu-open');
+                        const otherSub = el.querySelector('.product-submenu');
+                        if (otherSub) otherSub.style.display = '';
+                    }
+                });
+
+                const isOpen = parent.classList.toggle('submenu-open');
+                submenu.style.display = isOpen ? 'block' : '';
+            });
+        });
+
+        // Ensure submenus reset on window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768) {
+                    document.querySelectorAll('.product-category-item.has-submenu.submenu-open').forEach(el => {
+                        el.classList.remove('submenu-open');
+                        const sub = el.querySelector('.product-submenu');
+                        if (sub) sub.style.display = '';
+                    });
+                }
+            }, 250);
+        });
+
     }
 
     // Navbar Scroll Effect

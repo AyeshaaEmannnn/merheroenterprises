@@ -36,8 +36,23 @@
                         <li><a href="{% url 'collaborate_with_us' %}">Collaborate With Us</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{% url 'products_list' %}">Products</a>
+                <li class="dropdown product-dropdown">
+                    <a href="{% url 'products_list' %}" aria-haspopup="true" aria-expanded="false">Products</a>
+                    <ul class="dropdown-menu product-dropdown-menu" aria-label="Product categories">
+                        {% for category in product_navigation_categories %}
+                        <li class="product-category-item{% if category.subcategories %} has-submenu{% endif %}">
+                            <a href="{% url 'category_detail' category.slug %}">{{ category.name }}{% if category.subcategories %}<i class="fas fa-chevron-right"></i>{% endif %}</a>
+                            {% if category.subcategories %}
+                            <ul class="product-submenu">
+                                <li class="product-submenu-title"><a href="{% url 'category_detail' category.slug %}">{{ category.name }}</a></li>
+                                {% for subcategory in category.subcategories %}
+                                <li><a href="{% url 'subcategory_detail' category.slug subcategory.slug %}">{{ subcategory.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </li>
                 <li><a href="{% url 'cataloge' %}">Catalouge</a></li>
                 <li class="dropdown">

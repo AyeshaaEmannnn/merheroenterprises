@@ -4,6 +4,16 @@
     color: var(--dark-text);
 }
 
+.oem-slider .heading-home,
+.oem-slider h2.heading-home {
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+}
+
 .oem-content {
     display: grid;
     grid-template-columns: 1fr 1fr;

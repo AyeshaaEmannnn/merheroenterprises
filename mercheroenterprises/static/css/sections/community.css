@@ -4,6 +4,16 @@
     padding: inherit;
 }
 
+.community-section .heading-home,
+.community-section h2.heading-home {
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
 .community-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));

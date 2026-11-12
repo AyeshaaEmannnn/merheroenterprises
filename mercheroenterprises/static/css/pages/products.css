@@ -1,0 +1,655 @@
+/* ==========================================================================
+   Products section — overview, subcategory/leaf pages, product detail page
+   ========================================================================== */
+
+.pc-page {
+    padding-top: var(--navbar-height);
+    background-color: var(--light-bg);
+}
+
+/* ---- Hero banner (used on every products page) ---- */
+.pc-banner {
+    position: relative;
+    height: 320px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.pc-banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pc-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 24, 12, 0.35) 0%, rgba(20, 24, 12, 0.75) 100%);
+}
+
+.pc-banner-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+    color: var(--white);
+}
+
+.pc-banner-inner h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+}
+
+.pc-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.pc-breadcrumb a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.pc-breadcrumb a:hover {
+    color: var(--gold);
+}
+
+/* ---- Intro / description block ---- */
+.pc-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 1rem;
+    text-align: center;
+}
+
+.pc-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--dark-olive);
+    margin: 0 0 0.75rem;
+}
+
+.pc-intro p {
+    color: #4a4a42;
+    line-height: 1.7;
+}
+
+/* ---- Collection / grid wrapper ---- */
+.pc-collection {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+/* Category overview grid */
+.pc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+/* Product grid — 4-5 per row on laptop/desktop, 2 per row on mobile */
+.pc-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 1400px) {
+    .pc-product-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 1024px) {
+    .pc-grid { grid-template-columns: repeat(2, 1fr); }
+    .pc-product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .pc-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .pc-product-grid { grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .pc-collection { padding: 1.5rem 1rem 2.5rem; }
+}
+
+.pc-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #6b6b60;
+    padding: 2rem 1rem;
+}
+
+/* ---- Card (used for categories, products, related items) ---- */
+.pc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--dark-text);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+.pc-card-img {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #eceadf;
+}
+
+.pc-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.pc-card:hover .pc-card-img img {
+    transform: scale(1.05);
+}
+
+.pc-card-body {
+    padding: 1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+}
+
+.pc-card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.pc-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    margin: 0.1rem 0 0.2rem;
+    color: var(--dark-text);
+}
+
+.pc-card-body p {
+    font-size: 0.85rem;
+    color: #5c5c52;
+    margin: 0 0 0.4rem;
+    line-height: 1.5;
+}
+
+.pc-card-action {
+    margin-top: auto;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-olive);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.pc-card-action i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.pc-card:hover .pc-card-action i {
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .pc-card-body { padding: 0.7rem 0.7rem 0.9rem; }
+    .pc-card-body h3 { font-size: 0.95rem; }
+    .pc-card-body p { display: none; }
+    .pc-card-label { font-size: 0.62rem; }
+    .pc-card-action { font-size: 0.72rem; }
+}
+
+/* ---- Product detail page ---- */
+.pc-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 1rem;
+}
+
+.pc-detail-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.pc-gallery {
+    position: relative;
+    width: 100%;
+}
+
+.pc-gallery-main {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pc-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+}
+
+.pc-gallery-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 50%;
+    background: rgba(15, 15, 15, 0.75);
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease;
+    z-index: 15;
+    backdrop-filter: blur(4px);
+}
+
+.pc-gallery-button:hover,
+.pc-gallery-button:focus-visible {
+    background: var(--gold, #d4af37);
+    color: #000000;
+    border-color: var(--gold, #d4af37);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+}
+
+.pc-gallery-prev {
+    left: 14px;
+}
+
+.pc-gallery-next {
+    right: 14px;
+}
+
+.pc-gallery-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 15;
+}
+
+.pc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pc-dot.active {
+    background: var(--gold, #d4af37);
+    width: 26px;
+    border-radius: 13px;
+    border-color: var(--gold, #d4af37);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.pc-detail-type {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+}
+
+.pc-detail-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin: 0 0 0.5rem;
+    color: var(--dark-text);
+}
+
+.pc-detail-sku {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #7a7a6e;
+    margin-bottom: 1rem;
+}
+
+.pc-detail-desc {
+    color: #4a4a42;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.pc-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.pc-feature-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.92rem;
+    color: #3f3f38;
+}
+
+.pc-feature-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    color: var(--olive-green);
+    font-size: 0.75rem;
+}
+
+.pc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+.pc-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    background: #25d366;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pc-button:hover {
+    background: #1eb958;
+    transform: translateY(-2px);
+}
+
+.pc-button-alt {
+    background: var(--dark-olive);
+}
+
+.pc-button-alt:hover {
+    background: #454a26;
+}
+
+@media (max-width: 900px) {
+    .pc-detail-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+}
+
+/* ---- Description / Size Chart tabs ---- */
+.pc-tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 1rem;
+}
+
+.pc-tab-list {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(88, 93, 46, 0.25);
+    margin-bottom: 1.5rem;
+}
+
+.pc-tab {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.1rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #7a7a6e;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.pc-tab:hover {
+    color: var(--dark-olive);
+}
+
+.pc-tab.active {
+    color: var(--dark-olive);
+    border-bottom-color: var(--gold);
+}
+
+.pc-tab-panel {
+    display: none;
+}
+
+.pc-tab-panel.active {
+    display: block;
+}
+
+.pc-tab-panel h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    margin: 0 0 0.75rem;
+    color: var(--dark-text);
+}
+
+.pc-tab-panel p {
+    color: #4a4a42;
+    line-height: 1.7;
+}
+
+.pc-size-note {
+    font-size: 0.85rem;
+    color: #7a7a6e;
+    margin-bottom: 1rem;
+}
+
+.pc-overflow {
+    overflow-x: auto;
+}
+
+.pc-size-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 420px;
+}
+
+.pc-size-table th,
+.pc-size-table td {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-size: 0.88rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pc-size-table th {
+    background: var(--light-bg);
+    color: var(--dark-olive);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+}
+
+.pc-spec-table th {
+    width: 35%;
+    vertical-align: top;
+    padding-right: 1rem;
+    background: transparent;
+    color: var(--dark-text);
+    text-transform: none;
+}
+
+.pc-spec-table td {
+    color: #50504d;
+    padding: 0.85rem 0 0.85rem 0;
+}
+
+.pc-spec-table tr + tr th {
+    padding-top: 1rem;
+}
+
+.pc-highlights {
+    background: var(--light-bg);
+    padding: 2rem 0;
+}
+
+.pc-highlight-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(420px, 1.2fr);
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.pc-highlight-block {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid rgba(88, 93, 46, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 1.8rem;
+}
+
+.pc-highlight-block h2,
+.pc-why-choose h2,
+.pc-faq-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+    color: var(--dark-olive);
+    margin-bottom: 1rem;
+}
+
+.pc-highlight-block h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: var(--dark-text);
+}
+
+.pc-why-choose {
+    background: var(--white);
+    border-top: 1px solid rgba(88, 93, 46, 0.1);
+    max-width: 1300px;
+    margin: 0 auto 2rem;
+    padding: 2rem 1.5rem 2.5rem;
+}
+
+.pc-why-choose .pc-feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.pc-faq-block {
+    margin-top: 2rem;
+}
+
+.pc-faq-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.pc-faq-list details {
+    background: var(--light-bg);
+    border-radius: 14px;
+    border: 1px solid rgba(88, 93, 46, 0.12);
+    padding: 1.25rem 1.35rem;
+}
+
+.pc-faq-list summary {
+    list-style: none;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: var(--dark-text);
+}
+
+.pc-faq-list summary::marker {
+    display: none;
+}
+
+.pc-faq-list summary::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--gold);
+    transition: transform 0.25s ease;
+}
+
+.pc-faq-list details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.pc-faq-list p {
+    margin: 0.85rem 0 0;
+    color: #4a4a42;
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+    .pc-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pc-why-choose .pc-feature-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .pc-highlight-grid {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ---- Related products ---- */
+.pc-related {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+}
+
+.pc-related h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--dark-olive);
+    margin: 0 0 1.25rem;
+}

@@ -5,6 +5,16 @@
     padding: inherit;
 }
 
+.contact-section .heading-home,
+.contact-section h2.heading-home {
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
 .section-subtitle {
     color: var(--accent-text);
     font-size: 1.15rem;

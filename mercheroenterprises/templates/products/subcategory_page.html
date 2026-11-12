@@ -1,0 +1,93 @@
+{% extends 'base/base.html' %}
+{% block title %}{{ page_name }} | Merchero Enterprises{% endblock %}
+{% block content %}
+<main class="pc-page">
+
+  <section class="pc-banner">
+    <img src="{{ page_image }}" alt="{{ page_name }}">
+    <div class="pc-banner-inner">
+      <h1>{{ page_name }}</h1>
+      <p class="pc-breadcrumb">
+        <a href="{% url 'home' %}">Home</a><span>&rsaquo;</span>
+        <a href="{% url 'products_list' %}">Products</a><span>&rsaquo;</span>
+        {% if subcategory %}<span>{{ category.name }}</span><span>&rsaquo;</span>{% endif %}
+        <span>{{ page_name }}</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="pc-intro">
+    <h2>{{ page_name }}</h2>
+    <p>{{ page_description }}</p>
+  </section>
+
+  {% if subcategory and subcategory.page_specs %}
+  <section class="pc-highlights">
+    <div class="pc-highlight-grid">
+      <div class="pc-highlight-block">
+        <h2>Quick Specifications</h2>
+        <div class="pc-overflow">
+          <table class="pc-size-table pc-spec-table">
+            <tbody>
+              {% for row in subcategory.page_specs %}
+              <tr>
+                <th>{{ row.0 }}</th>
+                <td>{{ row.1 }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="pc-highlight-block">
+        <h2>Product Overview</h2>
+        <p>{{ subcategory.page_overview }}</p>
+        <h3>Key Features</h3>
+        <ul class="pc-feature-list">
+          {% for feature in subcategory.page_features %}
+          <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="pc-why-choose">
+    <h2>Why Choose MERCHERO Enterprises?</h2>
+    <ul class="pc-feature-list">
+      {% for item in subcategory.page_why_choose %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <div class="pc-faq-block">
+      <h2>Frequently Asked Questions</h2>
+      <div class="pc-faq-list">
+        {% for faq in subcategory.page_faqs %}
+        <details>
+          <summary>{{ faq.question }}</summary>
+          <p>{{ faq.answer }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="pc-collection">
+    <div class="pc-product-grid">
+      {% for product in products %}
+      <a class="pc-card" href="{% url 'product_detail' product.slug %}">
+        <div class="pc-card-img"><img src="{{ product.image }}" alt="{{ product.name }}" loading="lazy"></div>
+        <div class="pc-card-body">
+          <span class="pc-card-label">SKU {{ product.sku }}</span>
+          <h3>{{ product.name }}</h3>
+          <span class="pc-card-action">View product <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      {% empty %}
+      <p class="pc-empty">Products for this line are being added &mdash; check back soon, or contact us directly for the current catalogue.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+</main>
+{% endblock %}

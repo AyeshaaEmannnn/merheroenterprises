@@ -1,109 +1,90 @@
-from django.http import Http404
-from django.shortcuts import render
+from urllib.parse import quote
 
-PRODUCTS = [
-    {
-        'slug': 'apex-r-elite',
-        'name': 'Apex-R Elite',
-        'category': 'Racing Suits',
-        'label': 'Pro Edition',
-        'image': '/static/images/racingsuit1-front.jpeg',
-        'short_desc': 'One-piece leather racing suit with CE protection and premium finishing.',
-        'description': 'Built for professional riders who want race-ready protection, a tailored fit, and premium leather craftsmanship.',
-        'highlights': [
-            'CE-level impact protection',
-            'Premium cowhide and kangaroo panels',
-            'Custom fit and branding options',
-        ],
-        'specs': ['Full-grain leather', 'Airbag compatible', 'OEM-ready finishing'],
-        'gallery_images': ['/static/images/racingsuit1-front.jpeg', '/static/images/racingsuit1-back.jpeg'],
-    },
-    {
-        'slug': 'pro-racer-x',
-        'name': 'Pro-Racer X',
-        'category': 'Racing Suits',
-        'label': 'Competition Ready',
-        'image': '/static/images/racingsuit2-front.jpeg',
-        'short_desc': 'Advanced racing suit engineered for maximum performance and protection.',
-        'description': 'Professional-grade racing suit with premium leather and advanced safety features.',
-        'highlights': ['Advanced armor integration', 'Lightweight construction', 'Race-ready finish'],
-        'specs': ['Premium leather', 'Reinforced panels', 'Pro finishing'],
-        'gallery_images': ['/static/images/racingsuit2-front.jpeg', '/static/images/racingsuit2-back.jpeg'],
-    },
-    {
-        'slug': 'elite-guard',
-        'name': 'Elite Guard',
-        'category': 'Racing Gloves',
-        'label': 'Track Ready',
-        'image': '/static/images/gloves.jpeg',
-        'short_desc': 'Precision racing gloves designed for ultimate grip and protection on the track.',
-        'description': 'High-performance gloves with reinforced knuckles and premium leather construction.',
-        'highlights': ['Enhanced grip technology', 'Carbon knuckle protection', 'Track-tested design'],
-        'specs': ['Kangaroo leather', 'Palm sliders', 'Custom branding'],
-        'gallery_images': ['/static/images/gloves.jpeg'],
-    },
-    {
-        'slug': 'apex-b-elite',
-        'name': 'Apex-B Elite',
-        'category': 'Bags',
-        'label': 'Premium Storage',
-        'image': '/static/images/bags.jpeg',
-        'short_desc': 'Premium leather bag built for durability and style.',
-        'description': 'A versatile bag perfect for riders and travelers seeking quality and functionality.',
-        'highlights': ['Waxed leather', 'Durable hardware', 'Spacious compartments'],
-        'specs': ['Premium construction', 'Weather resistant', 'Professional finish'],
-        'gallery_images': ['/static/images/bags.jpeg'],
-    },
-    {
-        'slug': 'sialkot-classic-rider-jacket',
-        'name': 'Sialkot Classic Rider Jacket',
-        'category': 'Garments',
-        'label': 'Signature Series',
-        'image': '/static/images/1.jpeg',
-        'short_desc': 'A bold motorcycle garment designed for comfort, durability, and style.',
-        'description': 'A versatile leather garment for everyday riders and premium club collections.',
-        'highlights': ['Durable YKK zippers', 'Soft inner lining', 'Available in custom colors'],
-        'specs': ['Cowhide leather', 'Weather-ready finish', 'Branded hardware'],
-        'gallery_images': ['/static/images/hero-final.jpeg', '/static/images/leather.jpeg', '/static/images/garments-final.jpeg'],
-    },
-    {
-        'slug': 'apex-g',
-        'name': 'Apex-G',
-        'category': 'Garments',
-        'label': 'New Release',
-        'image': '/static/images/garments-final.jpeg',
-        'short_desc': 'Premium garment collection designed for riders who demand excellence.',
-        'description': 'Crafted with premium leather and modern design principles for ultimate comfort and style.',
-        'highlights': ['Premium materials', 'Modern design', 'Perfect fit'],
-        'specs': ['High-quality leather', 'Expert craftsmanship', 'Rider-tested'],
-        'gallery_images': ['/static/images/garments-final.jpeg'],
-    },
-    {
-        'slug': 'custom-oem',
-        'name': 'Brand-Ready Custom Program',
-        'category': 'OEM Custom',
-        'label': 'OEM Service',
-        'image': '/static/images/labelsttitching.png',
-        'short_desc': 'Turn your brand concept into a production-ready collection with our OEM team.',
-        'description': 'From prototypes to bulk manufacturing, we support private label and custom gear projects for international brands.',
-        'highlights': ['Logo placement and embroidery', 'Packaging and labeling', 'Bulk production support'],
-        'specs': ['Private label ready', 'Sampling support', 'Export packaging'],
-        'gallery_images': ['/static/images/readytobuildproductline.jpg', '/static/images/prototyping.jpg', '/static/images/manufacturing2.jpg'],
-    },
-]
+from django.http import Http404
+from django.shortcuts import render, redirect
+from django.urls import reverse
+
+from . import catalog
+
+# Real inquiry channels used on the product detail page.
+# Update these two values whenever the company's contact details change.
+WHATSAPP_NUMBER = '447858811371'  # from templates/contact/inquiryform.html
+INQUIRY_EMAIL = 'info@mercheroenterprises.com'
+
+
+def _inquiry_links(product):
+    """Build ready-to-click WhatsApp and email inquiry links for a product."""
+    message = f"Hi, I'm interested in {product['name']} ({product['sku']}). Could you share more details?"
+    whatsapp_link = f'https://wa.me/{WHATSAPP_NUMBER}?text={quote(message)}'
+    email_link = f"mailto:{INQUIRY_EMAIL}?subject={quote('Inquiry: ' + product['name'])}&body={quote(message)}"
+    return whatsapp_link, email_link
 
 
 def products_list(request):
-    """Render the full products catalog."""
-    return render(request, 'products/products.html', {'products': PRODUCTS})
+    """Overview page: shows all main categories (no dedicated page per category)."""
+    return render(request, 'products/products.html', {
+        'categories': catalog.CATEGORIES,
+    })
 
 
-def product_detail(request, slug):
-    product = next((item for item in PRODUCTS if item['slug'] == slug), None)
+def category_detail(request, category_slug):
+    """A main category never has its own page.
+
+    - If it has subcategories, forward straight to the first one.
+    - If it doesn't (a "leaf" category), render it exactly like a
+      subcategory page — hero, description, product grid.
+    """
+    category = catalog.get_category(category_slug)
+    if category is None:
+        raise Http404('Category not found.')
+
+    if category['subcategories']:
+        first_sub = category['subcategories'][0]
+        return redirect(reverse('subcategory_detail', args=[category['slug'], first_sub['slug']]))
+
+    return render(request, 'products/subcategory_page.html', {
+        'category': category,
+        'subcategory': None,
+        'page_name': category['name'],
+        'page_image': category['image'],
+        'page_description': category['description'],
+        'products': category['products'],
+    })
+
+
+def subcategory_detail(request, category_slug, subcategory_slug):
+    category, subcategory = catalog.get_subcategory(category_slug, subcategory_slug)
+    if category is None or subcategory is None:
+        raise Http404('Subcategory not found.')
+
+    return render(request, 'products/subcategory_page.html', {
+        'category': category,
+        'subcategory': subcategory,
+        'page_name': subcategory['name'],
+        'page_image': subcategory['image'],
+        'page_description': subcategory['description'],
+        'products': subcategory['products'],
+    })
+
+
+def product_detail(request, product_slug):
+    product = catalog.get_product(product_slug)
     if product is None:
         raise Http404('Product not found.')
-    return render(request, 'products/product_detail.html', {'product': product})
 
+    category = catalog.get_category(product['category_slug'])
+    subcategory = None
+    if product.get('subcategory_slug'):
+        _, subcategory = catalog.get_subcategory(product['category_slug'], product['subcategory_slug'])
 
-def motorcycle_racing_suit(request):
-    return product_detail(request, 'motorcycle-racing-suit')
+    related_products = catalog.get_related_products(product)
+    whatsapp_link, email_link = _inquiry_links(product)
+
+    return render(request, 'products/product_detail.html', {
+        'product': product,
+        'category': category,
+        'subcategory': subcategory,
+        'related_products': related_products,
+        'whatsapp_link': whatsapp_link,
+        'email_link': email_link,
+    })
