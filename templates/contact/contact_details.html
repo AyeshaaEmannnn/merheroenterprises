@@ -1,0 +1,100 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+<section id="hero" class="hero-section-contact">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Contact Details</h1>
+        <p>Whether you need custom racing gear or OEM manufacturing, we are here to turn your ideas into reality.</p>
+        <a href="#inquiry" class="btn-hero">
+            contact details <i class="fas fa-arrow-down"></i>
+        </a>
+    </div>
+</section>
+<section class="department">
+            <h2 style="font-size: xx-large;">Contact Us by Department</h2>
+        <div class="departments-grid">
+            <div class="department-card">
+                <div class="department-icon">📧</div>
+                <h3>General Inquiries</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:info@mercheroenterprises.com">info@mercheroenterprises.com</a></p>
+                <p>General inquiries, customer communication</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">🧑‍💼</div>
+                <h3>Support Department</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:support@mercheroenterprises.com">support@mercheroenterprises.com</a></p>
+                <p>After-sale support, issue handling</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">💰</div>
+                <h3>Sales Department</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:sales@mercheroenterprises.com">sales@mercheroenterprises.com</a></p>
+                <p>Orders, quotations, and deals</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">📦</div>
+                <h3>Marketing & Promotions</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:marketing@mercheroenterprises.com">marketing@mercheroenterprises.com</a></p>
+                <p>Ads, collaborations, campaigns</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">💳</div>
+                <h3>Billing & Payments</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:accounts@mercheroenterprises.com">accounts@mercheroenterprises.com</a></p>
+                <p>Invoices, payments, financial queries</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">🇪🇺</div>
+                <h3>Europe Branch</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:europe@mercheroenterprises.com">europe@mercheroenterprises.com</a></p>
+                <p>For European customers/partners</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">🇬🇧</div>
+                <h3>UK Branch</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:uk@mercheroenterprises.com">uk@mercheroenterprises.com</a></p>
+                <p>For UK-specific inquiries</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">🧠</div>
+                <h3>Management / CEO Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:ceo@mercheroenterprises.com">ceo@mercheroenterprises.com</a></p>
+                <p>Direct contact (for official deals only)</p>
+            </div>
+            <div class="department-card">
+                <div class="department-icon">🤝</div>
+                <h3>Business Collaborations</h3>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:partnerships@mercheroenterprises.com">partnerships@mercheroenterprises.com</a></p>
+                <p>Brand collaborations / sponsorships</p>
+            </div>
+        </div>
+</section>
+<!-- Email Modal -->
+<div id="emailModal" class="email-modal">
+    <div class="email-modal-content">
+        <span class="close-email-modal">&times;</span>
+        <h3>Send Email</h3>
+        <p>Email: <strong id="modalEmailAddress"></strong></p>
+        <a id="openEmailClient" href="#" class="email-open-btn">
+            <i class="fas fa-paper-plane"></i> Open Email Client
+        </a>
+        <p class="or-text">OR</p>
+        <button id="copyEmailBtn" class="email-copy-btn">
+            <i class="fas fa-copy"></i> Copy Email Address
+        </button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,429 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('/static/images/slide1.png');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1>Performance-Driven Motorbike Racing Suits</h1>
+                <p>Engineered for speed, safety, and professional riders worldwide.</p>
+                <a href="#products" class="cta-btn">Explore Racing Suits</a>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('/static/images/1.jpeg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1>Your Global OEM & Custom Manufacturing Partner</h1>
+                <p>From concept to production – custom motorbike gear manufactured under your brand.</p>
+                <a href="#oem" class="cta-btn">Start OEM Project</a>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide" style="background-image: url('/static/images/image.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1>Manufacturing Quality That Travels Worldwide</h1>
+                <p>Certified Facilities • Skilled Workforce • Global Export Experience</p>
+                <a href="{% url 'about_introduction' %}" class="cta-btn">Why Choose Merchero</a>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation Arrows -->
+    <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+
+    <!-- Dots -->
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>Merchero Enterprises is a Pakistan–UK based manufacturer of premium motorbike racing suits and
+                    high-quality leather apparel.</p>
+                <p>We specialize in custom riding gear, jackets, pants, gloves, boots, and leather garments, delivering
+                    trusted OEM manufacturing for brands worldwide.</p>
+                <a href="{% url 'about_introduction' %}" class="cta-button about-cta">
+                    <i class="fas fa-arrow-right"></i> Discover More About Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="section product-categories">
+    <div class="container">
+        <h2 class="heading-home" style="text-align:center; font-size: clamp(1.6rem, 3.2vw, 2.4rem);">Product Categories
+        </h2>
+
+        <div class="grid">
+            <div class="card" style="background-image: url('/static/images/racing-suit.jpeg');">
+                <div class="overlay">
+                    <h3>Motorbike Racing Gear</h3>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('/static/images/garments-final.jpeg');">
+                <div class="overlay">
+                    <h3>Garments</h3>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('/static/images/gloves.jpeg');">
+                <div class="overlay">
+                    <h3>Gloves</h3>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('/static/images/image.jpg');">
+                <div class="overlay">
+                    <h3>OEM Custom Projects</h3>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('/static/images/bags.jpeg');">
+                <div class="overlay">
+                    <h3>Bags</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ye line sirf mobile par dikhai degi -->
+    <div class="swipe-hint">← Swipe →</div>
+</section>
+<!-- Leather Collection Section -->
+<section class="leather-collection-section">
+    <div class="leather-dark-overlay"></div>
+    <div class="leather-content">
+        <h2>Leather Collection</h2>
+        <p>Experience the finest craftsmanship with our premium range of leather apparel.</p>
+        <a href="#products" class="leather-btn">View Collection</a>
+    </div>
+</section>
+<!-- OEM Section -->
+<section id="oem" class="section oem-slider">
+    <div class="container">
+        <h2 class="heading-home" style="text-align:center;">Custom OEM Manufacturing</h2>
+
+
+        <p>Merchero Enterprises provides premium OEM solutions for motorbike racing suits and leather gear. We transform
+            your concepts into high-quality, rider-focused products, maintaining precision, safety, and brand identity
+            at every step. From prototyping to bulk production, we ensure quality, scalability, and international
+            standards. Our goal is to be your long-term manufacturing partner, empowering your brand worldwide.</p><br>
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide-item">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <p>Custom Design Development</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    <p>Rider-Focused Fit & Sizing</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-swatchbook"></i>
+                    <p>Premium Leather & Material Selection</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-tags"></i>
+                    <p>Brand Identity Integration</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Safety & Performance Engineering</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-flask"></i>
+                    <p>Sampling & Prototyping</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Quality Control at Every Stage</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <p>Export-Ready Manufacturing</p>
+                </div>
+                <div class="slide-item">
+                    <i class="fas fa-handshake"></i>
+                    <p>Long-Term OEM Partnership</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Our Manufacturing & Technology Section -->
+<section class="manufacturing-section">
+    <div class="container">
+        <div class="two-columns">
+            <!-- Left: Paragraph -->
+            <div class="left-column">
+                <h2>Our Technology</h2>
+                <p>At Merchero Enterprises, we combine advanced technology with skilled craftsmanship to produce
+                    high-quality motorbike racing suits and leather gear. Every stage of production — from cutting,
+                    stitching, and assembly — is executed with precision to ensure durability, safety, and comfort. Our
+                    in-house facilities and modern machinery allow us to deliver scalable, consistent, and world-class
+                    products while maintaining strict quality standards. Innovation, efficiency, and attention to detail
+                    are the pillars of our manufacturing process.</p>
+            </div>
+
+            <!-- Right: Bullet Points with Icons -->
+            <div class="right-column">
+                <h3>Key Capabilities:</h3>
+                <ul class="capabilities-list">
+
+                    <li><i class="fas fa-cut"></i> Precision Cutting Tools</li>
+                    <li><i class="fas fa-check-circle"></i> Quality Inspection & Testing</li>
+                    <li><i class="fas fa-user-check"></i> Ergonomic Design Implementation</li>
+                    <li><i class="fas fa-boxes-stacked"></i> Advanced Material Handling</li>
+                    <li><i class="fas fa-cogs"></i> High-Efficiency Production Workflow</li>
+                    <li><i class="fas fa-toolbox"></i> Customization & Prototype Development</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Certificates & Company Documents Section -->
+<section id="certificates" class="certificates-section">
+    <h2 class="heading-home" style="text-align:center;">Certificates & Company Documents</h2>
+
+    <div class="certificates-grid">
+        <div class="cert-item">
+            <img src="/static/images/certificate-1.jpeg" alt="Certificate 1">
+        </div>
+        <div class="cert-item">
+            <i class="fas fa-file-alt"></i>
+            <p>Document 1 (Placeholder)</p>
+        </div>
+        <div class="cert-item">
+            <img src="/static/images/home-certificate-2.jpeg" alt="Certificate 1">
+        </div>
+        <div class="cert-item">
+            <i class="fas fa-file-pdf"></i>
+            <p>Document 2 (Placeholder)</p>
+        </div>
+        <!-- Add more placeholders as needed -->
+    </div>
+</section>
+<!-- Meet Our Team Section -->
+<section id="team" class="team-section-home">
+    <div class="container">
+        <div class="team-layout">
+
+            <!-- LEFT SIDE - Photos -->
+            <div class="team-photos">
+                <div class="team-member">
+                    <img src="/static/images/WhatsApp Image 2026-01-24 at 11.31.15 AM (1).jpeg" alt="Owner & Founder">
+                    <h3>Owner & Founder</h3>
+                </div>
+
+                <div class="team-member">
+                    <img src="/static/images/WhatsApp Image 2026-01-24 at 11.31.15 AM.jpeg" alt="Owner & CEO">
+                    <h3>Owner & CEO</h3>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE - Text -->
+            <div class="team-content">
+                <h2>Meet Our Team</h2>
+                <p>Our experienced team specializes in premium motorbike racing suits manufacturing.</p>
+                <p>We combine passion, precision, and years of expertise to deliver world-class quality.</p>
+
+                <a href="{% url 'team_director_and_managment_team' %}" class="cta-button">Meet the Full Team →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- What Makes Us Special Section -->
+<section class="what-makes-special" id="what-makes-special">
+    <div class="container">
+        <h2>What Makes Us <span>Special</span></h2>
+
+        <div class="intro-text">
+            <p>Merchero Enterprises provides complete motorbike racing suit and leather gear solutions in one place.
+                Delivering high-quality, rider-focused products efficiently and reliably.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-diamond"><i class="fas fa-search"></i></div>
+                <h3>Attention to Detail</h3>
+                <p>Precision in every stitch</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-diamond"><i class="fas fa-cogs"></i></div>
+                <h3>Industry Expertise</h3>
+                <p>Years of experience</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-diamond"><i class="fas fa-comments"></i></div>
+                <h3>Clear Communication</h3>
+                <p>Transparent updates</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-diamond"><i class="fas fa-leaf"></i></div>
+                <h3>Eco-Friendly</h3>
+                <p>Sustainable practices</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-diamond"><i class="fas fa-handshake"></i></div>
+                <h3>Partnerships</h3>
+                <p>Long-term relationships</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-diamond"><i class="fas fa-lightbulb"></i></div>
+                <h3>Innovation</h3>
+                <p>Constant improvement</p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- Catalog Download Section - Modern Premium Style -->
+<section class="catalog-cta" id="catalog">
+    <div class="container">
+        <div class="catalog-content">
+            <h2>Discover Our Complete Collection</h2>
+            <p class="subtitle">
+                Premium leather motorbike gear • Racing suits • Custom OEM projects<br>
+                High-resolution images • Detailed specifications • Latest designs
+            </p>
+            <a href="Ayesha_Catalog_2026.pdf" download="Ayesha_Catalog_2026.pdf" class="catalog-btn">
+                <i class="fas fa-download"></i>
+                Download Full Catalog (PDF)
+            </a>
+            <div class="trust-badges">
+                <span><i class="fas fa-shield-alt"></i> Secure Download</span>
+                <span><i class="fas fa-clock"></i> Updated January </span>
+                <span><i class="fas fa-file-pdf"></i> ~4.8 MB</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Business Addresses & Contact Information -->
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <h2 class="heading-home" style="text-align:center;">Global Presence</h2>
+
+
+        <p class="section-subtitle">We proudly serve clients worldwide with manufacturing excellence from Pakistan and
+            support offices in multiple countries.</p>
+        <div class="addresses-grid">
+            <!-- Head Office (Pakistan) -->
+            <div class="address-card">
+                <div class="address-icon"><i class="fas fa-building"></i></div>
+                <h3>Head Office & Manufacturing Unit</h3>
+                <p class="location">Sialkot, Punjab, Pakistan</p>
+                <p>Merchero Enterprises (SMC PVT ) Ltd<br>Merchero enterprises St, Ghatorora, 51311</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> <a
+                            href="https://maps.app.goo.gl/FdhdTfFxDPDQL8bp6?g_st=awb">View on Google Maps</a></p>
+                </div>
+            </div>
+            <!-- UK Office -->
+            <div class="address-card">
+                <div class="address-icon"><i class="fas fa-landmark"></i></div>
+                <h3>UK Representative Office</h3>
+                <p class="location">Manchester, United Kingdom</p>
+                <p>Merchero Enterprises Ltd.<br>Office 12, Initial Business Centre, Wilson Business Park, M40 8WN</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> +44 7858 811371</p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:uk@mercheroenterprises.com">uk@mercheroenterprises.com</a></p>
+                </div>
+            </div>
+            <!-- Belgium Office -->
+            <div class="address-card">
+                <div class="address-icon"><i class="fas fa-landmark"></i></div>
+                <h3>Belgium Representative Office</h3>
+                <p class="location">Antwerp, Belgium</p>
+                <p>Oostende straat 49<br>2660 Antwerpen</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> +32 465 59 08 41</p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:europe@mercheroenterprises.com">europe@mercheroenterprises.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-cta">
+            <a href="mailto:info@mercheroenterprises.com" class="cta-button">
+                <i class="fas fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Community Initiatives Section -->
+<section id="community" class="section community-section">
+    <div class="container">
+        <h2 class="heading-home" style="text-align:center;">Community & Rider Safety Initiatives</h2>
+
+
+        <p class="section-subtitle">At Merchero Enterprises, we believe in giving back to the riding community that
+            inspires us every day.</p>
+        <div class="community-content">
+            <div class="initiative-card">
+                <div class="initiative-icon"><i class="fas fa-motorcycle"></i></div>
+                <h3>Road Safety Awareness Programs</h3>
+                <p>We actively support rider safety and awareness programs. We conduct educational sessions in
+                    collaboration with local schools to promote road safety, responsible riding, and the importance of
+                    protective gear among students and young riders.</p>
+            </div>
+            <div class="initiative-card">
+                <div class="initiative-icon"><i class="fas fa-users"></i></div>
+                <h3>Supporting Local Riding Communities</h3>
+                <p>Partnering with motorcycle clubs, safety workshops, and charity rides to make roads safer for
+                    everyone.</p>
+            </div>
+        </div>
+        <div class="view-all-wrapper">
+            <a href="community.html" class="view-all-btn">
+                View All Community Initiatives <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Email Modal -->
+<div id="emailModal" class="email-modal">
+    <div class="email-modal-content">
+        <span class="close-email-modal">&times;</span>
+        <h3>Send Email</h3>
+        <p>Email: <strong id="modalEmailAddress"></strong></p>
+        <a id="openEmailClient" href="#" class="email-open-btn">
+            <i class="fas fa-paper-plane"></i> Open Email Client
+        </a>
+        <p class="or-text">OR</p>
+        <button id="copyEmailBtn" class="email-copy-btn">
+            <i class="fas fa-copy"></i> Copy Email Address
+        </button>
+    </div>
+</div>
+{% endblock %}

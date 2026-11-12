@@ -1,0 +1,54 @@
+/* Home page hero slider fixes */
+html,
+body,
+main,
+#hero,
+.hero,
+.hero-slider {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#hero.home-hero,
+#hero.hero {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+    height: 100vh !important;
+}
+
+#hero.home-hero .slide {
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 1 !important;
+    /* Ensure visible */
+}
+
+@media (max-width: 768px) {
+    #hero.hero {
+        height: 100vh !important;
+        min-height: 100svh !important;
+    }
+
+    #hero.hero .slide {
+        background-size: cover !important;
+        background-position: 20% center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    #hero.hero .slide:first-child {
+        background-position: 20% center !important;
+        background-size: cover !important;
+    }
+}
+
+/* Ensure navbar overlays properly but slider visible */
+.navbar {
+    z-index: 1000 !important;
+}
+
+#hero .slide-content {
+    z-index: 1001 !important;
+}

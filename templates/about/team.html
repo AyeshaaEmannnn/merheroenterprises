@@ -1,0 +1,270 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+<main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-team-section">
+        <div class="hero-pattern"></div>
+        <div class="hero-content-team reveal">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Merchero Enterprises
+            </div>
+            <h1 class="hero-title-team font-display-team">Our Team</h1>
+            <p class="hero-tagline">Leadership. Craftsmanship. Innovation.</p>
+            <p class="hero-subtitle-team">At Merchero Enterprises, our strength lies in structured leadership, skilled
+                production expertise, and forward-thinking design development. Our team operates with a shared focus on
+                quality, performance, and long-term business partnerships.</p>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="section-header reveal">
+            
+            <h2 class="section-title font-display">Leadership</h2>
+            <p class="section-intro">Strategic direction at Merchero Enterprises is driven by experienced leadership
+                combining entrepreneurial vision with operational expertise. The company is founded on partnership,
+                structure, and long-term international growth.</p>
+        </div>
+
+        <div class="leadership-grid">
+            <!-- Founder -->
+            <div class="leader-card reveal reveal-delay-1">
+                <img src="/static/images/founder.jpeg" alt="Muhammad Saad Madni"
+                    class="leader-image">
+                <div class="leader-content">
+                    <h3 class="leader-name font-display">Muhammad Saad Madni</h3>
+                    <p class="leader-role">Founder & Owner</p>
+                    <p class="leader-bio">Muhammad Saad Madni established Merchero Enterprises with a vision to build a
+                        structured leather manufacturing company capable of serving international markets. As Founder &
+                        Owner, he oversees strategic direction, long-term investment planning, and overall business
+                        development, ensuring stability, growth, and strong operational foundations.</p>
+                    <a href="{% url 'team_leader_ceo_message' %}" class="leader-link">
+                        View Founder's Message
+                        <svg class="leader-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CEO -->
+            <div class="leader-card reveal reveal-delay-2">
+                <img src="/static/images/ceo.jpeg" alt="Muhammad Ahtisham Bahoo" class="leader-image">
+                <div class="leader-content">
+                    <h3 class="leader-name font-display">Muhammad Ahtisham Bahoo</h3>
+                    <p class="leader-role">Co-Founder & Chief Executive Officer</p>
+                    <p class="leader-bio">As Co-Founder & CEO, Muhammad Ahtisham Bahoo leads executive management,
+                        international client relations, and operational coordination between the UK business presence
+                        and Pakistan manufacturing unit.</p>
+
+                    <div class="leader-responsibilities">
+                        <div class="resp-item">
+                            <svg class="resp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg>
+                            <span class="resp-text">Global B2B partnerships</span>
+                        </div>
+                        <div class="resp-item">
+                            <svg class="resp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg>
+                            <span class="resp-text">OEM & private label strategy</span>
+                        </div>
+                        <div class="resp-item">
+                            <svg class="resp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg>
+                            <span class="resp-text">Production alignment & quality oversight</span>
+                        </div>
+                        <div class="resp-item">
+                            <svg class="resp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg>
+                            <span class="resp-text">Business development & expansion</span>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'team_leader_ceo_message' %}" class="leader-link">
+                        View CEO's Message
+                        <svg class="leader-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Team Section -->
+    <section class="team-section" style="background-color: var(--light-bg);">
+        <div class="team-grid">
+            <div class="team-content-teams reveal">
+                
+                <h2 class="team-title font-display">Managment Team</h2>
+                <p class="team-intro">Behind every product is a team of experienced craftsmen and technical specialists.
+                    We combine traditional craftsmanship with structured production flow to ensure consistency,
+                    durability, and export-ready standards — especially in performance-driven products like motorbike
+                    racing suits.</p>
+
+                <div class="team-list">
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        <span class="team-list-text">Skilled leather artisans</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        <span class="team-list-text">Pattern makers & technical cutters</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        <span class="team-list-text">Specialized stitching operators</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        <span class="team-list-text">Quality inspection supervisors</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        <span class="team-list-text">Finishing and packaging team</span>
+                    </div>
+                </div>
+
+                <a href="{% url 'team_director_and_managment_team' %}" class="team-link">
+                    Explore Management Team
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="team-visual reveal reveal-delay-2">
+                <div class="team-image-wrap">
+                    <img src="/static/images/team (2).jpg" alt="Production Team" class="team-image">
+                    <div class="team-image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design & Development Section -->
+    <section class="team-section reverse">
+        <div class="team-grid">
+            <div class="team-content-teams reveal">
+                
+                <h2 class="team-title font-display">Design & Product Development</h2>
+                <p class="team-intro">Strong products require strong design systems. We support brands from concept
+                    stage to production execution, ensuring each product aligns with performance requirements and market
+                    expectations.</p>
+
+                <div class="team-list">
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="M2 2l7.586 7.586" />
+                        </svg>
+                        <span class="team-list-text">Custom pattern development</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="M2 2l7.586 7.586" />
+                        </svg>
+                        <span class="team-list-text">Size grading & fitting refinement</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="M2 2l7.586 7.586" />
+                        </svg>
+                        <span class="team-list-text">Material research & sourcing</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="M2 2l7.586 7.586" />
+                        </svg>
+                        <span class="team-list-text">Prototype sampling</span>
+                    </div>
+                    <div class="team-list-item">
+                        <svg class="team-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="M2 2l7.586 7.586" />
+                        </svg>
+                        <span class="team-list-text">Brand-focused OEM customization</span>
+                    </div>
+                </div>
+
+                <a href="{% url 'team_production_and_design_team' %}" class="team-link">
+                    Meet Our Design & Production Team
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="team-visual reveal reveal-delay-2">
+                <div class="team-image-wrap">
+                    <img src="/static/images/team2.jpg" alt="Design Team" class="team-image">
+                    <div class="team-image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing-section-team">
+        <div class="closing-inner reveal">
+            <p class="closing-text-team">
+                Merchero Enterprises is built on collaboration between leadership, production excellence, and product
+                innovation — delivering structured, reliable manufacturing for international brands.
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}

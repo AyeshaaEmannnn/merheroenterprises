@@ -1,0 +1,360 @@
+        :root {
+            --bg-dark: #121212;
+            --bg-light: #f9f9f9;
+            --accent: #b19468;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+
+
+        .container-process {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover { background: #9a7b4e; }
+        
+        .btn-outline {
+            border: 1px solid var(--text-main);
+            background: var(--bg-dark);
+            color: var(--text-main);
+        }
+        
+        .btn-outline:hover {
+            background: var(--text-main);
+            color: var(--white);
+        }
+
+        .btn-small {
+            font-size: 0.75rem;
+            padding: 8px 16px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+        }
+        
+        .btn-small:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .hero-process {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background: url('/static/images/workprocess-bg.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-overlay-process {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+        }
+
+        .hero-content-process {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .hero-content-process h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero-content-process p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- SECTION 2: PHILOSOPHY --- */
+        .section-philosophy {
+            padding: 100px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .philosophy-text {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .philosophy-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-item {
+            padding: 30px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .value-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .value-item h3 {
+            font-size: 1.4rem;
+        }
+
+        /* --- SECTION 3: PRODUCTION JOURNEY (TIMELINE) --- */
+        .section-timeline {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+        }
+
+        /* Vertical Timeline Structure */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* The Vertical Line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        /* The Content Box */
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 90%;
+            position: relative;
+            border-left: 3px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 30px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 30px;
+            border-left: 3px solid var(--text-main);
+        }
+
+        /* The Circle Marker */
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--bg-dark);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .step-details {
+            list-style: none;
+            margin-bottom: 15px;
+            background: var(--bg-light);
+            padding: 15px;
+        }
+
+        .step-details li {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .step-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .step-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* --- SECTION 4: PRODUCTION CONTROL --- */
+        .section-control {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .control-box {
+            padding: 30px 15px;
+            background: var(--bg-light);
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .control-box:hover {
+            border-bottom-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .control-box h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* --- SECTION 5: CLOSING --- */
+        .section-closing {
+            padding: 100px 0;
+            background: var(--light-bg);
+            color: var(--dark-text);
+            text-align: center;
+        }
+
+        .closing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .closing-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .closing-content p {
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            .timeline-marker { left: 20px; }
+            .timeline-content { width: 100%; margin: 0 !important; }
+            .values-grid, .control-grid { grid-template-columns: 1fr; }
+        }

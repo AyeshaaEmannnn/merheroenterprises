@@ -1,0 +1,700 @@
+/* ===== Motorcycle Racing Suit Page ===== */
+/* Modern, responsive product showcase styling for mobile and desktop */
+
+:root {
+    --mrs-bg: var(--light-bg, #f5f2eb);
+    --mrs-surface: #ffffff;
+    --mrs-surface-alt: #f0ede6;
+    --mrs-text-main: var(--black, #000000);
+    --mrs-text-muted: #555555;
+    --mrs-accent: var(--gold, rgb(159, 133, 56));
+    --mrs-accent-dim: rgba(159, 133, 56, 0.1);
+    --mrs-border: rgba(0, 0, 0, 0.08);
+    --mrs-font-display: 'Cormorant Garamond', serif;
+    --mrs-font-sans: 'DM Sans', sans-serif;
+    --mrs-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mrs-page {
+    background: linear-gradient(180deg, #f8f3e8 0%, #f0ebdf 100%);
+    color: var(--mrs-text-main);
+    font-family: var(--mrs-font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.mrs-noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.025;
+    z-index: 999;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mrs-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s var(--mrs-ease);
+}
+
+.mrs-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mrs-page-view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s var(--mrs-ease), transform 0.5s var(--mrs-ease);
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+}
+
+.mrs-page-view.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+}
+
+/* Product cards */
+.mrs-product-card {
+    position: relative;
+    transition: transform 0.4s var(--mrs-ease), border-color 0.4s ease, box-shadow 0.4s ease;
+    background: var(--mrs-surface);
+    border: 1px solid var(--mrs-border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.mrs-product-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(159, 133, 56, 0.35);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+.mrs-product-card:hover .mrs-card-image img {
+    transform: scale(1.06);
+}
+
+.mrs-product-card:hover .mrs-card-overlay {
+    opacity: 1;
+}
+
+.mrs-product-card:hover .mrs-view-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mrs-card-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: var(--mrs-surface-alt);
+}
+
+.mrs-card-image img {
+    transition: transform 0.6s var(--mrs-ease);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mrs-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 1.1rem;
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.7) 100%);
+    transition: opacity 0.35s ease;
+}
+
+.mrs-view-btn {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.4s var(--mrs-ease), opacity 0.4s ease, background 0.3s ease;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--mrs-text-main);
+    padding: 0.8rem 1.15rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.mrs-product-card .p-5 {
+    padding: 1.25rem 1.2rem 1.4rem;
+}
+
+.mrs-product-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.mrs-product-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--mrs-text-muted);
+}
+
+.mrs-label-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Hero section */
+.mrs-hero-banner {
+    position: relative;
+    min-height: 72vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #111111;
+}
+
+.mrs-hero-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 8, 8, 0.78) 0%, rgba(8, 8, 8, 0.2) 100%);
+    z-index: 1;
+}
+
+.mrs-hero-banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(18%) contrast(1.08) brightness(0.58);
+}
+
+.mrs-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 4.5rem 1.2rem;
+}
+
+.mrs-hero-copy {
+    max-width: 700px;
+}
+
+.mrs-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.1);
+    color: #f7e7c5;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-bottom: 1rem;
+}
+
+.mrs-hero-content h1 {
+    font-family: var(--mrs-font-display);
+    font-size: clamp(2.55rem, 5vw, 4.8rem);
+    font-weight: 700;
+    line-height: 0.95;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.mrs-hero-content p {
+    color: rgba(255,255,255,0.84);
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 620px;
+}
+
+.mrs-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+.mrs-btn-primary--light,
+.mrs-btn-outline--light {
+    border-radius: 999px;
+    padding: 0.95rem 1.35rem;
+    font-size: 0.72rem;
+}
+
+.mrs-btn-primary--light {
+    background: var(--mrs-accent);
+    color: #ffffff;
+}
+
+.mrs-btn-outline--light {
+    background: transparent;
+    border-color: rgba(255,255,255,0.32);
+    color: #ffffff;
+}
+
+.mrs-btn-primary--light:hover,
+.mrs-btn-outline--light:hover {
+    transform: translateY(-2px);
+}
+
+/* Intro strip */
+.mrs-intro-strip {
+    padding: 1.2rem 1rem 0;
+}
+
+.mrs-intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1rem;
+    background: rgba(255,255,255,0.84);
+    border: 1px solid var(--mrs-border);
+    border-radius: 24px;
+    padding: 1.4rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.mrs-intro-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.mrs-intro-copy p {
+    margin: 0;
+    color: var(--mrs-text-muted);
+    line-height: 1.7;
+    font-size: 0.97rem;
+}
+
+.mrs-section-eyebrow {
+    color: var(--mrs-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.mrs-intro-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.mrs-stat-card {
+    padding: 1rem;
+    border-radius: 16px;
+    background: var(--mrs-surface-alt);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.mrs-stat-card strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--mrs-accent);
+    margin-bottom: 0.25rem;
+}
+
+.mrs-stat-card span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--mrs-text-muted);
+    line-height: 1.45;
+}
+
+/* Page sections */
+.mrs-section-heading {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.mrs-section-heading h2 {
+    font-family: var(--mrs-font-display);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin: 0 0 0.5rem;
+}
+
+.mrs-section-heading p {
+    color: var(--mrs-text-muted);
+    line-height: 1.7;
+}
+
+.mrs-section {
+    padding: 4.25rem 1rem;
+}
+
+.mrs-section-sm {
+    padding: 3rem 1rem;
+}
+
+.mrs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+/* Size Chart Table */
+.mrs-size-table th,
+.mrs-size-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--mrs-border);
+    font-size: 0.875rem;
+    color: var(--mrs-text-muted);
+}
+
+.mrs-size-table th {
+    color: var(--mrs-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    background: var(--mrs-surface-alt);
+}
+
+.mrs-size-table tr:hover td {
+    background: rgba(159, 133, 56, 0.03);
+}
+
+.mrs-spec-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--mrs-border);
+    font-size: 0.875rem;
+}
+
+.mrs-spec-table td:first-child {
+    color: var(--mrs-text-muted);
+    font-weight: 500;
+    width: 40%;
+}
+
+.mrs-spec-table td:last-child {
+    color: var(--mrs-text-main);
+}
+
+.mrs-highlight-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--mrs-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.mrs-highlight-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 6px;
+    height: 6px;
+    background: var(--mrs-accent);
+    border-radius: 50%;
+}
+
+.mrs-section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--mrs-border), transparent);
+}
+
+.mrs-breadcrumb a {
+    color: var(--mrs-text-muted);
+    transition: color 0.3s ease;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.mrs-breadcrumb a:hover {
+    color: var(--mrs-accent);
+}
+
+.mrs-breadcrumb span.sep {
+    color: rgba(0, 0, 0, 0.2);
+    margin: 0 8px;
+}
+
+.mrs-breadcrumb span.current {
+    color: var(--mrs-text-main);
+    font-size: 0.8rem;
+}
+
+.mrs-back-btn {
+    transition: color 0.3s ease, gap 0.3s ease;
+    gap: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--mrs-text-muted);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.mrs-back-btn:hover {
+    color: var(--mrs-accent);
+    gap: 12px;
+}
+
+.mrs-back-btn .arrow {
+    transition: transform 0.3s var(--mrs-ease);
+}
+
+.mrs-back-btn:hover .arrow {
+    transform: translateX(-4px);
+}
+
+.mrs-protection-item {
+    transition: border-color 0.3s ease;
+    border: 1px solid var(--mrs-border);
+    background: var(--mrs-surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.mrs-protection-item:hover {
+    border-color: rgba(159, 133, 56, 0.3);
+}
+
+.mrs-thumb {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mrs-thumb.active,
+.mrs-thumb:hover {
+    border-color: var(--mrs-accent);
+    opacity: 1;
+}
+
+.mrs-font-display {
+    font-family: var(--mrs-font-display);
+}
+
+.mrs-font-sans {
+    font-family: var(--mrs-font-sans);
+}
+
+.mrs-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: var(--mrs-accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.mrs-btn-primary:hover {
+    background: var(--dark-olive, #585d2e);
+    transform: translateY(-2px);
+}
+
+.mrs-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: 1px solid var(--mrs-text-muted);
+    color: var(--mrs-text-main);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mrs-btn-outline:hover {
+    background: var(--mrs-text-main);
+    color: var(--mrs-surface);
+    border-color: var(--mrs-text-main);
+}
+
+.mrs-page ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mrs-page ::-webkit-scrollbar-track {
+    background: var(--mrs-bg);
+}
+
+.mrs-page ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.mrs-page ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+    .mrs-intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mrs-hero-banner {
+        min-height: 62vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .mrs-hero-content {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .mrs-product-card:hover .mrs-view-btn,
+    .mrs-view-btn {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .mrs-section {
+        padding: 2.75rem 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .mrs-hero-banner {
+        min-height: 58vh;
+    }
+
+    .mrs-hero-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .mrs-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mrs-hero-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mrs-intro-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .mrs-product-card {
+        border-radius: 18px;
+    }
+
+    .mrs-card-overlay {
+        padding: 1rem;
+    }
+
+    .mrs-view-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mrs-hero-banner {
+        min-height: 50vh;
+    }
+
+    .mrs-hero-content {
+        padding: 1.8rem 0.75rem 1.2rem;
+    }
+
+    .mrs-hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.04;
+    }
+
+    .mrs-hero-content p {
+        font-size: 0.92rem;
+    }
+
+    .mrs-intro-strip {
+        padding: 0.6rem 0.5rem 0;
+    }
+
+    .mrs-intro-grid {
+        padding: 0.95rem;
+        border-radius: 18px;
+    }
+
+    .mrs-section {
+        padding: 2rem 0.75rem;
+    }
+
+    .mrs-section-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .mrs-product-card .p-5 {
+        padding: 0.9rem 0.9rem 1rem;
+    }
+
+    .mrs-card-image {
+        aspect-ratio: 4 / 5;
+    }
+
+    .mrs-view-btn {
+        font-size: 0.64rem;
+        padding: 0.68rem 0.9rem;
+    }
+
+    .mrs-label-badge {
+        font-size: 0.56rem;
+        padding: 0.28rem 0.6rem;
+    }
+
+    #mrs-productGrid {
+        gap: 0.85rem;
+    }
+
+    .mrs-product-card {
+        min-height: auto;
+    }
+
+    .mrs-product-card h3 {
+        font-size: 0.98rem;
+    }
+
+    .mrs-product-card p {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+}

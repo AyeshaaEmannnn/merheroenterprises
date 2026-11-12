@@ -1,0 +1,129 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section-team_a">
+        <div class="team_a_hero-bg"></div>
+        <div class="team_a_hero-content">
+            <p>Management Team</p>
+            <h1>Structured Business Operations</h1>
+        </div>
+    </section>
+
+    <!-- Section 1: Management Overview -->
+    <section class="overview-section">
+        <div class="container">
+            <h2>Management Overview</h2>
+            <p>
+                Our management framework bridges commercial operations, client engagement, financial oversight, and regional coordination. It ensures smooth communication and accountability at every level.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2: Core Departments -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Departments</h2>
+            </div>
+
+            <div class="departments-grid">
+                
+                <!-- Sales & Coordination -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Sales & Client Coordination</h3>
+                    <p>Manages quotations, bulk orders, commercial documentation, and order execution.</p>
+                    <a href="mailto:sales@mercheroenterprises.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> sales@mercheroenterprises.com
+                    </a>
+                </div>
+
+                <!-- Client Support -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Client Support & Issue Handling</h3>
+                    <p>Ensures structured after-sales support, issue resolution, and customer communication.</p>
+                    <a href="mailto:support@mercheroenterprises.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> support@mercheroenterprises.com
+                    </a>
+                </div>
+
+                <!-- Marketing -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Marketing & Brand Development</h3>
+                    <p>Handles advertising, promotions, and market strategy to maintain Merchero’s global positioning.</p>
+                    <a href="mailto:marketing@mercheroenterprises.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> marketing@mercheroenterprises.com
+                    </a>
+                </div>
+
+                <!-- Accounts -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Accounts & Financial Processing</h3>
+                    <p>Manages invoices, payments, and all financial correspondence.</p>
+                    <a href="mailto:accounts@mercheroenterprises.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> accounts@mercheroenterprises.com
+                    </a>
+                </div>
+
+                <!-- Regional Representation -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-globe-europe"></i></div>
+                    <h3>Regional Representation</h3>
+                    <ul class="region-list">
+                        <li><strong>United Kingdom:</strong> uk@mercheroenterprises.com</li>
+                        <li><strong>Europe:</strong> europe@mercheroenterprises.com</li>
+                        <li><strong>Pakistan:</strong> pakistan@mercheroenterprises.com</li>
+                    </ul>
+                    <!-- Optional: Main contact button for region -->
+                </div>
+
+                <!-- Strategic Partnerships -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-link"></i></div>
+                    <h3>Strategic Partnerships</h3>
+                    <p>Responsible for collaborations, distributor communications, and long-term business alliances.</p>
+                    <a href="mailto:partnership@mercheroenterprises.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> partnership@mercheroenterprises.com
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Management Philosophy -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <i class="fas fa-quote-left phil-icon-large"></i>
+                <h2>Management Philosophy</h2>
+                <p>
+                    The management team ensures clarity between client expectations and operational execution. Their goal is operational efficiency, transparent communication, and consistent quality in every business process.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Modal -->
+<div id="emailModal" class="email-modal">
+    <div class="email-modal-content">
+        <span class="close-email-modal">&times;</span>
+        <h3>Send Email</h3>
+        <p>Email: <strong id="modalEmailAddress"></strong></p>
+        <a id="openEmailClient" href="#" class="email-open-btn">
+            <i class="fas fa-paper-plane"></i> Open Email Client
+        </a>
+        <p class="or-text">OR</p>
+        <button id="copyEmailBtn" class="email-copy-btn">
+            <i class="fas fa-copy"></i> Copy Email Address
+        </button>
+    </div>
+</div>
+{% endblock %}

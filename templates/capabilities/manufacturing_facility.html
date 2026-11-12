@@ -1,0 +1,138 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+
+    <header id="hero" class="hero-facilities">
+        <div class="hero-overlay-facilities"></div>
+        <div class="container-facilities">
+            <div class="hero-content-facilities">
+                <h1>Manufacturing Facilities</h1>
+                <p>Structured production. Controlled processes. Reliable output.</p>
+            </div>
+        </div>
+    </header>
+    <section class="section-overview">
+        <div class="container">
+            <div class="text-block">
+                <h2>Our Production Environment</h2>
+                <p>Our manufacturing facility is built around disciplined workflow and practical production efficiency. From raw leather preparation to final product finishing, every stage follows a structured process.</p>
+                <p>The facility is organized to support smooth material movement between cutting, stitching, assembly, and inspection zones. While maintaining a real working environment, production areas are arranged for clarity, safety, and control.</p>
+                <p>We prioritize consistency over complexity — ensuring each product meets defined specifications before dispatch.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section-workflow">
+        <div class="container">
+            <div class="section-header">
+                <h2>Workflow Breakdown</h2>
+            </div>
+            
+            <div class="workflow-list">
+                <div class="workflow-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Material Preparation</h3>
+                        <p>Raw materials are examined and prepared for structured cutting according to approved patterns.</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Precision Cutting</h3>
+                        <p>Dedicated cutting tables allow controlled shaping and panel accuracy for consistent assembly.</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Industrial Stitching</h3>
+                        <p>Heavy-duty sewing machines are used for reinforced stitching and durability.</p>
+                    </div>
+                </div>
+                <div class="workflow-item">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Finishing & Edge Work</h3>
+                        <p>Products move to finishing where edges, lining, and detailing are completed.</p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="workflow-item">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Quality Inspection</h3>
+                        <p>Every unit passes through systematic inspection before final approval.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION (Placed between Workflow and Machinery as requested) -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <!-- Placeholder for Video -->
+                
+                    <video controls>
+                        <source src="/static/images/Video Project1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    <!-- Replace this div with iframe code if you have a video URL -->
+                    </video>
+                    <h1></h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ MACHINERY & EQUIPMENT -->
+    <section class="section-machinery">
+        <div class="container">
+            <div class="machinery-grid">
+                <div class="machinery-text">
+                    <h2>Core Equipment Overview</h2>
+                    <p>Our production floor operates with industrial sewing machines and structured cutting setups suited for leather manufacturing.</p>
+                    <p>Equipment is selected based on performance reliability and durability rather than decorative features. Each machine supports continuous workflow for bulk production requirements.</p>
+                </div>
+                <div class="machinery-img">
+                    <!-- Optional Image: Close-up of machine -->
+                    <img src="/static/images/equipment-review.jpg" alt="Industrial Machine Close-up">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ & 6️⃣ PRODUCTION CAPACITY & FACILITY STANDARDS -->
+    <section class="dual-section">
+        <div class="container">
+            <div class="dual-grid">
+                <!-- Production Capacity -->
+                <div class="info-block">
+                    <h2>Controlled & Scalable Output</h2>
+                    <p>Our facility is capable of handling both small-batch development and structured bulk orders. Production planning is managed to maintain timelines without compromising construction quality.</p>
+                    <ul class="custom-list">
+                        <li>Consistent seam strength</li>
+                        <li>Dimensional accuracy</li>
+                        <li>Controlled material usage</li>
+                        <li>Organized dispatch</li>
+                    </ul>
+                </div>
+
+                <!-- Facility Standards -->
+                <div class="info-block">
+                    <h2>Operational Principles</h2>
+                    <p>We adhere to strict operational principles to ensure every product meets the high standards expected by our partners.</p>
+                    <ul class="custom-list">
+                        <li>Structured workflow management</li>
+                        <li>Practical workspace organization</li>
+                        <li>Controlled inspection stages</li>
+                        <li>Batch monitoring before dispatch</li>
+                        <li>Clear production movement between zones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

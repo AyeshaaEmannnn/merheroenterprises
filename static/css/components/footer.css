@@ -1,0 +1,308 @@
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to top, #f5f2eb, #e8dcc8);
+    color: var(--accent-text);
+    padding: 60px 0 30px;
+    border-top: 1px solid rgba(132, 144, 38, 0.2);
+    position: relative;
+    z-index: 50;
+    width: 100%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p,
+.footer-col ul {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li a {
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--gold);
+}
+
+.contact-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-list i {
+    color: var(--olive-green);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+    margin: 1rem 0;
+}
+
+.social-icons a {
+    color: var(--accent-text);
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.newsletter {
+    margin-top: 1.5rem;
+}
+
+.newsletter p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 280px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid rgba(132, 144, 38, 0.2);
+    border-radius: 5px 0 0 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--dark-text);
+}
+
+.newsletter-form button {
+    padding: 0 16px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: var(--olive-green);
+    color: var(--white);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(132, 144, 38, 0.15);
+    font-size: 0.9rem;
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.payment-methods img {
+    height: 32px;
+    object-fit: contain;
+    filter: grayscale(50%);
+    transition: filter 0.3s;
+}
+
+.payment-methods img:hover {
+    filter: grayscale(0%);
+}
+
+.copyright {
+    color: var(--dark-text);
+}
+
+.gallery-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.mini-img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on thumbnails */
+.mini-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--shadow-light);
+}
+
+/* =========================
+   MODAL OVERLAY STYLING
+   ========================= */
+/* Modal background (full screen + blur) */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    /* light overlay */
+    backdrop-filter: blur(6px);
+    /* background blur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+/* Active modal */
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal image styling */
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px var(--shadow-light);
+    animation: zoomIn 0.3s ease;
+}
+
+/* Close button */
+.image-modal .close-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 35px;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-modal .close-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Zoom animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Modal Arrow Buttons */
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(159, 133, 56, 0.8);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-arrow:hover {
+    background: var(--gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+    left: 30px;
+}
+
+.next-arrow {
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .modal-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .prev-arrow {
+        left: 15px;
+    }
+
+    .next-arrow {
+        right: 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .payment-methods {
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

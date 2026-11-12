@@ -1,0 +1,600 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Racing Gear Catalogue 2026{% endblock %}
+
+{% block content %}
+<style>
+  #flip-viewer {
+    width: 100%;
+    min-height: 60vh;
+    background: radial-gradient(ellipse at center, #2a2a2a 0%, #111 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+    margin-top: 18px;
+    padding: 18px 0 18px;
+    box-sizing: border-box;
+  }
+
+  /* grid texture */
+  #flip-viewer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* ── Loader ── */
+  #flip-loader {
+    position: absolute;
+    inset: 0;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    z-index: 50;
+  }
+
+  #flip-loader span {
+    color: #c9a84c;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .ld-ring {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #2a2a2a;
+    border-top-color: #c9a84c;
+    border-radius: 50%;
+    animation: ld-spin .8s linear infinite;
+  }
+
+  .ld-bar {
+    width: 170px;
+    height: 2px;
+    background: #222;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .ld-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #c9a84c, #f0d080);
+    transition: width .3s;
+  }
+
+  @keyframes ld-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ── Book area — grows to fill, centers book ── */
+  #flip-book-wrap {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+    /* gap from top */
+    overflow: visible;
+    filter: drop-shadow(0 20px 44px rgba(0, 0, 0, .85));
+    position: relative;
+    z-index: 1;
+  }
+
+  #flipbook {
+    margin: 0 auto;
+  }
+
+  .flip-page {
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .flip-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /* ── Toolbar — sits directly below book, no scroll ── */
+  #flip-toolbar {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    background: rgba(14, 14, 14, .97);
+    border-top: 1px solid #252525;
+    display: none;
+    /* shown after load */
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 14px;
+    z-index: 10;
+    position: relative;
+    /* NOT fixed — sits in flex flow */
+    flex-wrap: wrap;
+  }
+
+  .tb-btn {
+    background: none;
+    border: none;
+    color: #bbb;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s, color .15s;
+    flex-shrink: 0;
+  }
+
+  .tb-btn:hover {
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+  }
+
+  .tb-div {
+    width: 1px;
+    height: 22px;
+    background: #2a2a2a;
+    margin: 0 5px;
+    flex-shrink: 0;
+  }
+
+  #tb-page-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid #2f2f2f;
+    border-radius: 6px;
+    padding: 0 10px;
+    height: 30px;
+    min-width: 85px;
+  }
+
+  #tb-cur-page {
+    background: none;
+    border: none;
+    color: #fff;
+    width: 26px;
+    font-size: 13px;
+    text-align: right;
+    outline: none;
+    font-family: inherit;
+  }
+
+  #tb-cur-page::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  #tb-total {
+    color: #555;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  #tb-zoom-label {
+    color: #666;
+    font-size: 12px;
+    min-width: 36px;
+    text-align: center;
+  }
+
+  /* ── Thumbnail panel ── */
+  #thumb-panel {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 108px;
+    background: rgba(12, 12, 12, .97);
+    border-right: 1px solid #1e1e1e;
+    overflow-y: auto;
+    z-index: 5;
+    padding: 8px 6px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #thumb-panel.open {
+    display: flex;
+  }
+
+  .thumb-item {
+    width: 88px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    overflow: hidden;
+    opacity: .65;
+    transition: all .2s;
+    flex-shrink: 0;
+  }
+
+  .thumb-item:hover,
+  .thumb-item.active {
+    border-color: #c9a84c;
+    opacity: 1;
+  }
+
+  .thumb-item img {
+    width: 100%;
+    display: block;
+  }
+
+  .thumb-num {
+    text-align: center;
+    font-size: 10px;
+    color: #555;
+    padding: 2px 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* ── Mobile tweaks ── */
+  @media (max-width: 600px) {
+    #flip-viewer {
+      min-height: auto;
+      padding-bottom: 20px;
+      margin-top: 24px;
+    }
+
+    #flip-book-wrap {
+      padding-top: 32px;
+      justify-content: center;
+    }
+
+    #flip-toolbar {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      background: rgba(14, 14, 14, .98);
+      z-index: 12;
+      padding: 10px 14px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tb-btn {
+      min-width: 36px;
+    }
+
+    .tb-div {
+      display: none;
+    }
+
+    #tb-zoom-label,
+    #tb-zoom-in,
+    #tb-zoom-out {
+      display: none;
+    }
+
+    #tb-thumb {
+      display: none;
+    }
+  }
+</style>
+
+<div id="flip-viewer">
+
+  <div id="flip-loader">
+    <div class="ld-ring"></div>
+    <span id="ld-text">Loading Catalogue...</span>
+    <div class="ld-bar">
+      <div class="ld-fill" id="ld-fill"></div>
+    </div>
+  </div>
+
+  <div id="thumb-panel"></div>
+
+  <div id="flip-book-wrap">
+    <div id="flipbook"></div>
+  </div>
+
+  <!-- Toolbar is INSIDE viewer flex, right below book -->
+  <div id="flip-toolbar">
+
+    <button class="tb-btn" id="tb-thumb" title="Thumbnails">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </svg>
+    </button>
+
+    <div class="tb-div"></div>
+
+    <button class="tb-btn" id="tb-first" title="First">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+      </svg>
+    </button>
+    <button class="tb-btn" id="tb-prev" title="Previous">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+      </svg>
+    </button>
+
+    <div id="tb-page-wrap">
+      <input type="number" id="tb-cur-page" value="1" min="1">
+      <span id="tb-total">/ 1</span>
+    </div>
+
+    <button class="tb-btn" id="tb-next" title="Next">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+      </svg>
+    </button>
+    <button class="tb-btn" id="tb-last" title="Last">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 6h2v12h-2zm-3.5 6L4 6v12z" />
+      </svg>
+    </button>
+
+    <div class="tb-div"></div>
+
+    <button class="tb-btn" id="tb-zoom-out" title="Zoom out">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z" />
+      </svg>
+    </button>
+    <span id="tb-zoom-label">100%</span>
+    <button class="tb-btn" id="tb-zoom-in" title="Zoom in">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm.5-5H9V7H8v2H6v1h2v2h1v-2h2z" />
+      </svg>
+    </button>
+
+    <div class="tb-div"></div>
+
+    <button class="tb-btn" id="tb-fullscreen" title="Fullscreen">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+      </svg>
+    </button>
+
+    <a href="{% static 'pdfs/Merchero_Enterprises_2026_Racing_Gear_Catalogue.pdf' %}" download
+      style="display:contents;">
+      <button class="tb-btn" title="Download PDF">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5z" />
+        </svg>
+      </button>
+    </a>
+  </div><!-- /toolbar -->
+</div><!-- /viewer -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+  (function () {
+    const PDF_URL = "{% static 'pdfs/Merchero_Enterprises_2026_Racing_Gear_Catalogue.pdf' %}";
+
+    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    let pf = null, totalPages = 0, zoomLevel = 1.0, thumbOpen = false;
+    let pageImgSrcs = [];
+
+    const $ = id => document.getElementById(id);
+    const setP = v => { $('ld-fill').style.width = v + '%'; };
+    const setT = t => { $('ld-text').textContent = t; };
+
+    /* ── Responsive book size ── */
+    function bookSize() {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const isMobile = vw < 600;
+      const nav = isMobile ? 68 : 80;    // navbar height — adjust if yours differs
+      const tb = 52;                    // toolbar height
+      const pt = isMobile ? 28 : 24;    // top padding for mobile
+      const avH = vh - nav - tb - pt - 12;
+
+      if (isMobile) {
+        /* single page portrait on mobile */
+        const w = Math.min(Math.round(vw * 0.96), 520);
+        const h = Math.min(Math.round(w * 1.41), avH);
+        return { w, h, portrait: true };
+      }
+      if (vw < 900) {
+        const h = Math.min(460, avH);
+        const w = Math.round(h / 1.41);
+        return { w, h, portrait: false };
+      }
+      /* desktop — wider */
+      const h = Math.min(580, avH);
+      const w = Math.round(h / 1.41);
+      return { w, h, portrait: false };
+    }
+
+    /* ── Render PDF → images ── */
+    async function renderPages() {
+      const pdf = await pdfjsLib.getDocument(PDF_URL).promise;
+      totalPages = pdf.numPages;
+      $('tb-total').textContent = '/ ' + totalPages;
+      $('tb-cur-page').max = totalPages;
+
+      const scale = window.devicePixelRatio >= 2 ? 1.8 : 1.5;
+      const container = $('flipbook');
+
+      for (let i = 1; i <= totalPages; i++) {
+        setT('Rendering page ' + i + ' of ' + totalPages + '...');
+        setP((i / totalPages) * 88);
+
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+
+        const src = canvas.toDataURL('image/jpeg', 0.88);
+        pageImgSrcs.push(src);
+
+        const div = document.createElement('div');
+        div.className = 'flip-page';
+        div.dataset.density = (i === 1 || i === totalPages) ? 'hard' : 'soft';
+        const img = document.createElement('img');
+        img.src = src; img.alt = 'Page ' + i;
+        div.appendChild(img);
+        container.appendChild(div);
+      }
+    }
+
+    /* ── Thumbnails ── */
+    function buildThumbs() {
+      const panel = $('thumb-panel');
+      pageImgSrcs.forEach((src, idx) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'thumb-item';
+        wrap.dataset.idx = idx;
+        const img = document.createElement('img'); img.src = src; img.alt = idx + 1;
+        const num = document.createElement('div'); num.className = 'thumb-num'; num.textContent = idx + 1;
+        wrap.appendChild(img); wrap.appendChild(num);
+        wrap.onclick = () => { pf.flip(idx); toggleThumbs(false); };
+        panel.appendChild(wrap);
+      });
+    }
+
+    function updateActiveThumb(idx) {
+      document.querySelectorAll('.thumb-item').forEach(el =>
+        el.classList.toggle('active', +el.dataset.idx === idx));
+    }
+
+    function toggleThumbs(force) {
+      thumbOpen = force !== undefined ? force : !thumbOpen;
+      $('thumb-panel').classList.toggle('open', thumbOpen);
+      $('flip-book-wrap').style.paddingLeft = thumbOpen ? '112px' : '0';
+    }
+
+    /* ── Zoom ── */
+    function applyZoom() {
+      $('flip-book-wrap').style.transform = 'scale(' + zoomLevel + ')';
+      $('flip-book-wrap').style.transformOrigin = 'center center';
+      $('tb-zoom-label').textContent = Math.round(zoomLevel * 100) + '%';
+    }
+
+    /* ── Page info ── */
+    function updateInfo() {
+      if (!pf) return;
+      const cur = pf.getCurrentPageIndex() + 1;
+      $('tb-cur-page').value = cur;
+      updateActiveThumb(pf.getCurrentPageIndex());
+    }
+
+    /* ── Init PageFlip ── */
+    function initFlip() {
+      const { w, h, portrait } = bookSize();
+      const container = $('flipbook');
+
+      pf = new St.PageFlip(container, {
+        width: w,
+        height: h,
+        size: 'fixed',
+        showCover: true,
+        usePortrait: portrait,
+        autoSize: false,
+        flippingTime: 580,
+        mobileScrollSupport: false,
+        drawShadow: true,
+        maxShadowOpacity: 0.5,
+      });
+
+      pf.loadFromHTML(container.querySelectorAll('.flip-page'));
+      pf.on('flip', updateInfo);
+      updateInfo();
+    }
+
+    /* ── Controls ── */
+    function wireControls() {
+      $('tb-first').onclick = () => pf.flip(0);
+      $('tb-prev').onclick = () => pf.flipPrev();
+      $('tb-next').onclick = () => pf.flipNext();
+      $('tb-last').onclick = () => pf.flip(totalPages - 1);
+
+      $('tb-cur-page').addEventListener('change', () => {
+        const v = parseInt($('tb-cur-page').value);
+        if (v >= 1 && v <= totalPages) pf.flip(v - 1);
+      });
+      $('tb-cur-page').addEventListener('keydown', e => {
+        if (e.key === 'Enter') $('tb-cur-page').blur();
+      });
+
+      $('tb-zoom-in').onclick = () => { zoomLevel = Math.min(zoomLevel + 0.2, 2.5); applyZoom(); };
+      $('tb-zoom-out').onclick = () => { zoomLevel = Math.max(zoomLevel - 0.2, 0.4); applyZoom(); };
+      $('tb-thumb').onclick = () => toggleThumbs();
+
+      $('tb-fullscreen').onclick = () => {
+        const el = $('flip-viewer');
+        if (!document.fullscreenElement)
+          (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+        else
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      };
+
+      document.addEventListener('keydown', e => {
+        if (e.target.tagName === 'INPUT') return;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') pf.flipNext();
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') pf.flipPrev();
+        if (e.key === 'Home') pf.flip(0);
+        if (e.key === 'End') pf.flip(totalPages - 1);
+      });
+    }
+
+    /* ── Boot ── */
+    async function boot() {
+      try {
+        setP(3);
+        await renderPages();
+        setT('Building flipbook...');
+        setP(95);
+        initFlip();
+        buildThumbs();
+        wireControls();
+        setP(100);
+        setTimeout(() => {
+          $('flip-loader').style.display = 'none';
+          $('flip-toolbar').style.display = 'flex';
+        }, 300);
+      } catch (err) {
+        console.error(err);
+        $('flip-loader').innerHTML =
+          '<p style="color:#ff6b6b;font-size:13px;font-family:sans-serif;text-align:center;padding:24px;">' +
+          'Could not load PDF.<br><small>' + (err.message || err) + '</small></p>';
+      }
+    }
+
+    boot();
+  })();
+</script>
+{% endblock %}

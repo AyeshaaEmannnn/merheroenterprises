@@ -1,0 +1,318 @@
+        /* --- CSS VARIABLES --- */
+        :root {
+            --bg-dark: #121212;
+            --bg-light: #f9f9f9;
+            --accent: #b19468;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container-rnd {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background: #9a7b4e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(177, 148, 104, 0.2);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-ghost:hover {
+            background: var(--white);
+            color: var(--bg-dark);
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .hero-rnd {
+            position: relative;
+            height: 75vh;
+            min-height: 550px;
+            background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-overlay-rnd {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.75), rgba(0,0,0,0.4));
+        }
+
+        .hero-content-rnd {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .hero-content-rnd h1 {
+            font-size: 3.8rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero-content-rnd p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        /* --- SECTION 2 & 3: STANDARD LAYOUTS --- */
+        .section-block {
+            padding: 100px 0;
+        }
+
+        .bg-light { background: var(--bg-light); }
+        .bg-white { background: var(--white); }
+
+        .block-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .block-grid.reverse .block-text {
+            order: 2;
+        }
+        .block-grid.reverse .block-visual {
+            order: 1;
+        }
+
+        .block-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+        }
+
+        .block-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .block-visual img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            transition: transform 0.5s ease;
+        }
+
+        .block-visual:hover img {
+            transform: scale(1.02);
+        }
+
+        /* --- SECTION 5: COLLABORATION --- */
+        .collab-section {
+            padding: 100px 0;
+            background: var(--bg-dark);
+            color: var(--white);
+        }
+
+        .collab-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .collab-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .collab-text p {
+            color: #aaa;
+            font-size: 1.05rem;
+        }
+
+        .collab-image img {
+            border: 4px solid #333;
+            filter: grayscale(30%);
+        }
+
+        /* --- SECTION 6: WORKFLOW --- */
+        .workflow-section-rnd {
+            padding: 100px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .workflow-section-rnd h2 {
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+        }
+
+        .process-line-rnd {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* The connecting line */
+        .process-line-rnd::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .process-step-rnd {
+            position: relative;
+            z-index: 1;
+            width: 18%;
+            text-align: center;
+        }
+
+        .step-icon-rnd {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: all 0.3s;
+        }
+
+        .process-step-rnd:hover .step-icon-rnd {
+            background: var(--accent);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .step-title-rnd {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* --- SECTION 7: CTA --- */
+        .section-cta {
+            padding: 120px 0;
+            background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat fixed;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 3.2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .block-grid, .block-grid.reverse, .collab-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-line-rnd {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .process-line-rnd::before {
+                display: none;
+            }
+            .process-step-rnd {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                gap: 20px;
+            }
+            .step-icon-rnd {
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .block-text h2 { font-size: 2rem; }
+        }

@@ -1,0 +1,109 @@
+/* --- Product Categories Section --- */
+
+/* Base Layout (Laptop & Desktop) */
+.section.product-categories .grid {
+    display: flex;
+    /* Flex use karke single line banayi */
+    flex-wrap: nowrap;
+    /* Items next line nahi jayenge */
+    overflow-x: auto;
+    /* Agar items zyada hon to scroll/swipe ho jayenge */
+    gap: 1.5rem;
+    padding: 0 1rem 10px 1rem;
+    /* Left/right padding ensures first and last cards stay visible */
+    scroll-padding-left: 1rem;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /* Laptop par scrollbar stylish dikhega taake user ko pata chale scroll hai */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f1f1f1;
+}
+
+/* Card Styling */
+.section.product-categories .grid .card {
+    flex: 0 0 280px;
+    /* fixed width and no shrink */
+    min-width: 280px;
+    height: 350px;
+    scroll-snap-align: start;
+    /* Swipe mein smooth start */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.section.product-categories .grid .card:first-child {
+    margin-left: 0;
+}
+
+/* Overlay Styling */
+.product-categories .card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* SWIPE HINT - Default Hidden */
+.swipe-hint {
+    display: none;
+    /* By default hide hai */
+    text-align: center;
+    margin-top: 15px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Scrollbar Styling for Webkit (Chrome/Safari) */
+.product-categories .grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.product-categories .grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.product-categories .grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+/* --- Mobile View --- */
+@media (max-width: 768px) {
+    .product-categories .grid {
+        gap: 16px;
+        padding: 0 1rem 12px 1rem;
+        scroll-padding-left: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        /* Mobile par scrollbar hide karni hai native look ke liye */
+        scrollbar-width: none;
+    }
+
+    .product-categories .grid::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar on mobile */
+    }
+
+    .product-categories .grid .card {
+        flex: 0 0 75%;
+        /* Mobile screen ka 75% */
+        min-width: 75%;
+        height: 250px;
+    }
+
+    /* Mobile par Swipe Hint dikhayi dega */
+    .swipe-hint {
+        display: block;
+    }
+}

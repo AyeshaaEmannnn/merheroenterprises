@@ -1,0 +1,287 @@
+        /* Hero Section */
+        .hero-section-team-b {
+            position: relative;
+            height: 55vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .team-b-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/static/images/team-b_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.35);
+            z-index: 1;
+        }
+
+        .team-b-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .team-b-hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .team-b-hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-b-hero-content .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Section 2: Manufacturing Operations (Process Flow) */
+        .operations-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 20px auto 0;
+            color: var(--text-light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 15px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Connecting Line for Desktop */
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: -10px;
+            width: 20px;
+            height: 2px;
+            background-color: var(--text-dark);
+            display: none; /* Hidden on mobile by default */
+        }
+        
+
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px var(--light-bg);
+            border: 2px solid var(--accent-color);
+        }
+
+        .process-step h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Section 3: Design & Product Development */
+        .design-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .design-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .design-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .design-text p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .capabilities-list-teamb {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .capabilities-list-teamb li {
+            position: relative;
+            padding-left: 25px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .capabilities-list-teamb li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--accent-color);
+        }
+
+        .design-visual {
+            position: relative;
+        }
+
+        .design-visual img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .design-note {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 4px solid var(--gold);
+            background: var(--light-bg);
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        /* Section 4: Team Philosophy */
+        .philosophy-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+            color: var(--white);
+        }
+
+        .philosophy-section h2 {
+            color: var(--text-dark);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+        .philosophy-section p{
+           color: var(--text-dark);
+            text-align: center;
+            font-size: 1.1rem;
+             max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .phil-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .phil-item:hover {
+            background: var(--accent-color);
+        }
+
+        .phil-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .phil-item h4 {
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .phil-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .design-content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .design-visual {
+                order: -1; /* Image on top for mobile */
+            }
+            .design-text h2 { text-align: center; }
+            .design-text p { text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .capabilities-list-teamb { grid-template-columns: 1fr; }
+        }

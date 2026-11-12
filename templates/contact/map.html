@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+<!-- 1. Hero Section for Map Page -->
+<section id="hero" class="hero-section-sm">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Our Location</h1>
+        <p>Visit our factory or reach out to us. We are located in the industrial hub of Sialkot.</p>
+    </div>
+</section>
+
+<!-- 2. Map Section
+<section id="map-section" class="map-wrapper">-->
+
+    <!-- Floating Info Card 
+    <div class="location-info-card">
+        <h3>Merchero Enterprises</h3>
+        <div class="info-line">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Industrial Area, Sialkot, Pakistan</span>
+        </div>
+        <div class="info-line">
+            <i class="fas fa-clock"></i>
+            <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+        </div>
+        <div class="info-line">
+            <i class="fas fa-phone-alt"></i>
+            <span>+92 300 1234567</span>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="btn-directions">
+            Get Directions <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div> -->
+<section id="map-section" class="map-wrapper">
+    <!-- Google Map Embed -->
+    <!-- NOTE: Apni location ka link neeche src mein replace karein -->
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3367.673624692899!2d74.50753187427757!3d32.427899501748165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x65dff4983e97ad6f%3A0x35b669a4af8e7c15!2sMerchero%20Enterprises%20(Pvt)%20Ltd!5e0!3m2!1sen!2s!4v1771657976717!5m2!1sen!2s"
+            width="600" 
+            height="450"
+            style="border:0;" 
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,266 @@
+        :root {
+            --bg-dark: #121212;
+            --bg-light: #f9f9f9;
+            --accent: #b19468;
+            --accent-green: #7d8c75; /* Muted earthy green for sustainability accents */
+            --text-main: #222222;
+            --text-muted: #555555;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+       
+
+        .container-sustain {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover { background: #9a7b4e; }
+
+        .btn-ghost-sustain {
+            background: var(--white);
+            color: var(--dark-text);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-ghost-sustain:hover {
+            background: var(--white);
+            color: var(--bg-dark);
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .hero-sustain {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            /* Using a natural leather texture image */
+            background: url('/static/images/From\ Main\ Klickpin\ CF-\ freepikcom\ -\ 5paQLqqfv.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            /* Subtle green tone overlay as requested */
+            background: linear-gradient(45deg, rgba(34, 45, 35, 0.85), rgba(18, 18, 18, 0.6));
+        }
+
+        .hero-content-sustain {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .hero-content-sustain h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero-content-sustain p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- SECTION 2: COMMITMENT --- */
+        .section-commitment {
+            padding: 100px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .commitment-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-card {
+            padding: 40px 20px;
+            background: var(--bg-light);
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .pillar-card:hover {
+            border-bottom-color: var(--accent-green);
+            transform: translateY(-5px);
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-green);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- SECTIONS 3, 4, 5, 6: DETAIL BLOCKS --- */
+        .section-detail {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bg-light { background: var(--bg-light); }
+        .bg-white { background: var(--white); }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .detail-grid.reverse .detail-text {
+            order: 2;
+        }
+        
+        .detail-grid.reverse .detail-visual {
+            order: 1;
+        }
+
+        .detail-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .detail-text p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .eco-list {
+            list-style: none;
+        }
+
+        .eco-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .eco-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .detail-visual {
+            background: #eee;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Using abstract natural textures for visual blocks */
+        .img-sourcing { background: url('/static/images/rawmaterial.jpg') center/cover; }
+        .img-waste { background: url('/static/images/leatherbin.jpg') center/cover; }
+        .img-chemical { background: url('/static/images/safeprocessingstanderd.jpg') center/cover; }
+        .img-people { background: url('/static/images/peopleinsustainability.jpg') center/cover; }
+
+        /* --- SECTION 7: VISION --- */
+        .section-vision {
+            padding: 100px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+
+        .vision-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* --- SECTION 8: CTA --- */
+        .section-cta-sustain {
+            padding: 120px 0;
+            background: var(--light-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Subtle leaf pattern overlay could go here, keeping simple for now */
+        
+        .cta-content-sustain {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content-sustain h2 {
+            font-size: 3rem;
+            color: var(--dark-text);
+            margin-bottom: 30px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .detail-grid, .detail-grid.reverse { grid-template-columns: 1fr; }
+            .detail-visual { height: 250px; order: -1; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .pillars-grid { grid-template-columns: 1fr; }
+        }

@@ -1,0 +1,233 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+    <!-- 1️⃣ HERO SECTION -->
+    <header id="hero" class="hero-oem">
+        <div class="hero-overlay-oem"></div>
+        <div class="container-oem">
+            <div class="hero-content-oem">
+                <h1>From Concept to Global Product — Manufactured Under Your Brand</h1>
+                <p>Private Label & Full-Scale OEM Manufacturing Solutions for Growing Brands and Established Retailers.</p>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Start Your Custom Project</a>
+                <a href="#" class="btn btn-ghost">Request Product Catalog</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2️⃣ WHO WE WORK WITH -->
+    <section class="section-clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Brands That Want to Scale</h2>
+                <p>We partner with businesses looking for reliable, long-term manufacturing relationships.</p>
+            </div>
+            
+            <div class="client-grid">
+                <div class="client-box">
+                    <div class="client-icon">🚀</div>
+                    <h4>Private Label Startups</h4>
+                </div>
+                <div class="client-box">
+                    <div class="client-icon">🛍️</div>
+                    <h4>E-commerce Brands</h4>
+                </div>
+                <div class="client-box">
+                    <div class="client-icon">👗</div>
+                    <h4>Fashion Retailers</h4>
+                </div>
+                <div class="client-box">
+                    <div class="client-icon">🎁</div>
+                    <h4>Corporate Gift Suppliers</h4>
+                </div>
+                <div class="client-box">
+                    <div class="client-icon">🌍</div>
+                    <h4>International Distributors</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ OUR OEM MANUFACTURING MODEL -->
+    <section class="section-model">
+        <div class="container">
+            <div class="model-grid">
+                <div class="model-content">
+                    <h2>Flexible Production. Scalable Capacity.</h2>
+                    <p>We provide end-to-end OEM manufacturing — from sample development to bulk production and global dispatch.</p>
+                    <ul class="service-list">
+                        <li>Product development from reference/sample</li>
+                        <li>Custom sizing & structural adjustments</li>
+                        <li>Branding (Embossing, Printing, Metal Logos)</li>
+                        <li>Custom packaging solutions</li>
+                        <li>Low to high MOQ flexibility</li>
+                    </ul>
+                </div>
+                <div class="model-image">
+                    <img src="/static/images/flexibleproduction.jpg" alt="Manufacturing Discussion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ CUSTOMIZATION CAPABILITIES -->
+    <section class="section-custom">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete Customization Control</h2>
+            </div>
+
+            <div class="custom-grid">
+                <!-- Design -->
+                <div class="custom-card">
+                    <div class="custom-icon">✎</div>
+                    <h3>Product Design</h3>
+                    <ul class="custom-list">
+                        <li>Shape modifications</li>
+                        <li>Compartment redesign</li>
+                        <li>Functional upgrades</li>
+                    </ul>
+                </div>
+
+                <!-- Material -->
+                <div class="custom-card">
+                    <div class="custom-icon">◧</div>
+                    <h3>Material Selection</h3>
+                    <ul class="custom-list">
+                        <li>Full-grain / Top-grain leather</li>
+                        <li>Texture & finish selection</li>
+                        <li>Color matching</li>
+                    </ul>
+                </div>
+
+                <!-- Branding -->
+                <div class="custom-card">
+                    <div class="custom-icon">★</div>
+                    <h3>Brand Identity</h3>
+                    <ul class="custom-list">
+                        <li>Logo embossing</li>
+                        <li>Foil stamping</li>
+                        <li>Custom hardware engraving</li>
+                        <li>Branded packaging</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ DEVELOPMENT PROCESS -->
+    <section class="section-process-oem">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Bring Your Product to Life</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-item">
+                    <div class="step-num">01</div>
+                    <div class="process-text">
+                        <h3>Concept Discussion</h3>
+                        <p>Understanding your target market, price point & design vision.</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="step-num">02</div>
+                    <div class="process-text">
+                        <h3>Sampling & Prototype</h3>
+                        <p>Technical pattern development and first sample creation.</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="step-num">03</div>
+                    <div class="process-text">
+                        <h3>Revisions & Approval</h3>
+                        <p>Adjustments until final approval is achieved.</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="step-num">04</div>
+                    <div class="process-text">
+                        <h3>Bulk Production</h3>
+                        <p>Controlled manufacturing with quality monitoring.</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="step-num">05</div>
+                    <div class="process-text">
+                        <h3>Packaging & Dispatch</h3>
+                        <p>Secure packaging and international shipping coordination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ PRODUCTION CAPACITY -->
+    <section class="section-capacity">
+        <div class="container">
+            <h2>Reliable Output. Predictable Timelines.</h2>
+            <div class="capacity-points">
+                <div class="cap-point">
+                    <h4>Structured Production Workflow</h4>
+                </div>
+                <div class="cap-point">
+                    <h4>Dedicated Production Lines</h4>
+                </div>
+                <div class="cap-point">
+                    <h4>Skilled Workforce</h4>
+                </div>
+                <div class="cap-point">
+                    <h4>Transparent Lead Time</h4>
+                </div>
+                <div class="cap-point">
+                    <h4>Bulk Export Capacity</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7️⃣ WHY BRANDS CHOOSE US -->
+    <section class="section-why">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Brands Choose Us</h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <h4>Consistent Product Quality</h4>
+                </div>
+                <div class="why-item">
+                    <h4>Transparent Communication</h4>
+                </div>
+                <div class="why-item">
+                    <h4>Sample Accuracy Guarantee</h4>
+                </div>
+                <div class="why-item">
+                    <h4>Export-Ready Documentation</h4>
+                </div>
+                <div class="why-item">
+                    <h4>Long-Term Partnership Approach</h4>
+                </div>
+            </div>
+
+            <div class="closing-text">
+                <p>We don't just manufacture products — we help brands build scalable product lines with confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8️⃣ FINAL CALL TO ACTION -->
+    <section class="section-final-cta">
+        <div class="container">
+            <div class="final-content">
+                <h2>Ready to Build Your Product Line?</h2>
+                <p>Let’s turn your design into a globally market-ready product.</p>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Start OEM Inquiry</a>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-dark">Schedule Production Discussion</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

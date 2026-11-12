@@ -1,0 +1,173 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Merchero Enterprises - Premium Leather Motorbike Gear{% endblock %}
+
+{% block content %}
+    <!-- 1️⃣ HERO SECTION -->
+    <header id="hero" class="hero-quality">
+        <div class="hero-overlay-quality"></div>
+        <div class="container-quality">
+            <div class="hero-content-quality">
+                <h1>Quality You Can Trust.<br>Consistency You Can Scale.</h1>
+                <p>From raw material inspection to final shipment approval — every product undergoes rigorous quality control aligned with international manufacturing standards.</p>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Request Quality Report</a>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-ghost">Discuss Your Requirements</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2️⃣ OUR QUALITY COMMITMENT -->
+    <section class="section-commitment">
+        <div class="container">
+            <p class="commitment-intro">
+                At Merchero Enterprises, quality is not a department — it is a system embedded in every stage of our production process. Our quality assurance framework ensures consistency, durability, and compliance with global buyer expectations.
+            </p>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">✔</div>
+                    <h3>Precision in Material Selection</h3>
+                    <p>Only the finest graded materials enter our production line.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">✖</div>
+                    <h3>Zero-Defect Production Approach</h3>
+                    <p>Strict monitoring to minimize defects at the source.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">★</div>
+                    <h3>International Compliance Standards</h3>
+                    <p>Adhering to global export and safety regulations.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">☑</div>
+                    <h3>Transparent Inspection Reporting</h3>
+                    <p>Detailed reports provided for every batch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ RAW MATERIAL TESTING -->
+    <section class="section-detail">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h2>Material Verification & Testing</h2>
+                    <p>Every batch of leather and raw materials undergoes strict evaluation before entering production. We ensure performance, durability, and visual consistency.</p>
+                    <ul class="check-list">
+                        <li>Leather thickness & grain inspection</li>
+                        <li>Color consistency testing</li>
+                        <li>Tensile strength & flexibility check</li>
+                        <li>Hardware durability & rust resistance testing</li>
+                        <li>Stitching thread strength evaluation</li>
+                    </ul>
+                </div>
+                <div class="detail-image">
+                    <img src="/static/images/verificationandtesting.jpg" alt="Material Testing Close-up">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ IN-PROCESS QUALITY CONTROL -->
+    <section class="section-detail" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="detail-grid reverse">
+                <div class="detail-content">
+                    <h2>Production Stage Monitoring</h2>
+                    <p>Quality checks are conducted at multiple stages during production to prevent defects and ensure precision craftsmanship.</p>
+                    <ul class="check-list">
+                        <li>Pattern verification before cutting</li>
+                        <li>Stitch alignment & seam strength inspection</li>
+                        <li>Edge finishing & detailing accuracy</li>
+                        <li>Branding & logo placement check</li>
+                        <li>Dimensional measurement validation</li>
+                    </ul>
+                </div>
+                <div class="detail-image">
+                    <img src="/static/images/stagemonitoring.jpg" alt="Production Floor Inspection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ FINAL PRODUCT INSPECTION -->
+    <section class="section-detail">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h2>100% Final Inspection Before Shipment</h2>
+                    <p>Each finished product is carefully reviewed to meet agreed specifications and buyer requirements before packaging and dispatch.</p>
+                    <ul class="check-list">
+                        <li>Visual defect screening</li>
+                        <li>Functional testing (zippers, buttons, hardware)</li>
+                        <li>Weight & size confirmation</li>
+                        <li>Packaging compliance check</li>
+                        <li>Export documentation verification</li>
+                    </ul>
+                </div>
+                <div class="detail-image">
+                    <img src="/static/images/inspectionbeforeshipment.jpg" alt="Final Quality Check">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ COMPLIANCE & STANDARDS -->
+    <section class="section-compliance">
+        <div class="container">
+            <h2>International Quality Compliance</h2>
+            <p>Our production practices align with international B2B buyer standards, ensuring reliability and long-term partnership value.</p>
+            
+            <div class="compliance-grid">
+                <div class="comp-item">
+                    <h4>AQL-based Inspection System</h4>
+                </div>
+                <div class="comp-item">
+                    <h4>Export-Quality Packaging</h4>
+                </div>
+                <div class="comp-item">
+                    <h4>Buyer-Approved Sample Matching</h4>
+                </div>
+                <div class="comp-item">
+                    <h4>Batch Traceability System</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7️⃣ CONTINUOUS IMPROVEMENT -->
+    <section class="section-improvement">
+        <div class="container">
+            <div class="improvement-wrapper">
+                <div class="improvement-text">
+                    <h2>Data-Driven Quality Improvement</h2>
+                    <p>We maintain detailed quality records for every production run, allowing continuous refinement and performance optimization.</p>
+                </div>
+                <div class="improvement-list">
+                    <h2>Quality Metrics</h2>
+                    <ul>
+                        <li>Quality audit reports</li>
+                        <li>Production feedback analysis</li>
+                        <li>Defect ratio monitoring</li>
+                        <li>Corrective & preventive action planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8️⃣ CALL TO ACTION -->
+    <section class="section-cta-quality">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Partner With a Manufacturer That Prioritizes Quality</h2>
+                <p>Whether you're launching a private label or scaling bulk production, our quality assurance system protects your brand reputation at every stage.</p>
+                <a href="{% url 'contact_inquiry_form' %}" class="btn btn-primary">Request Product Samples</a>
+                <a href="{% url 'team_production_and_design_team' %}" class="btn btn-ghost">Contact Our Production Team</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

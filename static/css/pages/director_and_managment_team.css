@@ -1,0 +1,240 @@
+        /* Hero Section */
+        .hero-section_team_a {
+            position: relative;
+            height: 50vh;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            
+        }
+
+        .team_a_hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-image: url('/static/images/team_a-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.4);
+            z-index: 1;
+        }
+
+        .team_a_hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .team_a_hero-content h1 {
+            font-size: 3.2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .team_a_hero-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--accent-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Section 1: Management Overview */
+        .overview-section {
+            padding: 80px 0 40px;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .overview-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: auto 20px;
+        }
+
+        .overview-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* Section 2: Core Departments */
+        .departments-section {
+            padding: 40px 0 80px;
+            background-color: var(--section-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .dept-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dept-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent-color);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .dept-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(26, 43, 74, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .dept-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .dept-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            min-height: 50px; /* Align buttons */
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: rgba(197, 160, 101, 0.1);
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .contact-link i {
+            margin-right: 8px;
+            font-size: 0.85rem;
+        }
+
+        /* Regional List Style */
+        .region-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .region-list li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+        
+        .region-list li strong {
+            color: var(--primary-color);
+        }
+
+        /* Section 3: Philosophy */
+        .philosophy-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .philosophy-section h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .philosophy-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .phil-icon-large {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .overview-section { padding: 60px 0 30px; }
+            .departments-grid { grid-template-columns: 1fr; }
+            .team_a_hero-bg { height: 56%; }
+
+        }

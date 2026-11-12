@@ -1,0 +1,357 @@
+/* --- 1. Hero Section Styling --- */
+.hero-section-inquiry {
+    position: relative;
+    height: 70vh; /* 70% of screen height */
+    min-height: 500px;
+    background-image: url('/static/images/inquiry-bg.jpg'); /* Apni image ka path dalein */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Dark Overlay for text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--gold);
+    /* سبز بٹن */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- 2. Inquiry Form Section Styling --- */
+
+.inquiry-section {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    margin-top: -50px; /* Slight overlap with hero for modern look */
+    position: relative;
+    z-index: 2;
+}
+
+.inquiry-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* Left Side - Info Area */
+.inquiry-info {
+    flex: 1;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inquiry-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.inquiry-info p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--gold);
+    background: rgba(255,255,255,0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-item h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.info-item p {
+    margin: 5px 0 0;
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+/* Right Side - Form Area */
+.inquiry-form-container {
+    flex: 1.5;
+    padding: 60px 50px;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #fafafa;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background-color: #fff;
+}
+
+.btn-submit {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    align-self: flex-start;
+}
+
+.btn-submit:hover {
+    background: var(--gold);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+/* --- Responsive Design (sirf yeh part replace / update karo) --- */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero ko thoda compact karo taake form jaldi dikhe */
+    .hero-section-inquiry {
+        height: 55vh;               /* pehle 60vh tha – ab balanced */
+        min-height: 420px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+        line-height: 1.15;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Inquiry section */
+    .inquiry-section {
+        padding: 60px 15px 50px;    /* sides kam, top/bottom balanced */
+        margin-top: 0;              /* negative margin hatao mobile pe */
+    }
+
+    /* Wrapper – full bleed feel on mobile */
+    .inquiry-wrapper {
+        flex-direction: column;
+        border-radius: 12px;        /* thoda rounded rakho, zero mat karo */
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1); /* shadow halka sa rakho */
+    }
+
+    /* Dark info panel */
+    .inquiry-info {
+        padding: 50px 30px;
+        text-align: center;         /* center karo mobile pe acha lagta */
+    }
+
+    .inquiry-info h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .info-items {
+        gap: 28px;
+    }
+
+    .info-item {
+        flex-direction: row;        /* icon left – text right (horizontal stack better feel deta) */
+        text-align: left;
+        gap: 18px;
+    }
+
+    .info-item i {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        font-size: 1.6rem;
+    }
+
+    .info-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .info-item p {
+        font-size: 0.98rem;
+        word-break: break-word;     /* UK number ya email break ho sake */
+        hyphens: auto;
+    }
+
+    /* Form area */
+    .inquiry-form-container {
+        padding: 45px 30px;
+    }
+
+    .inquiry-form {
+        gap: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px 16px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    /* Submit button full width – zyada user-friendly */
+    .btn-submit {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.05rem;
+        justify-content: center;
+    }
+
+    /* Textarea thodi taller */
+    .form-group textarea {
+        min-height: 130px;
+    }
+}
+
+/* Bohot chhote phones ke liye (optional but helpful) */
+@media (max-width: 480px) {
+    .inquiry-info {
+        padding: 45px 25px;
+    }
+
+    .inquiry-form-container {
+        padding: 40px 25px;
+    }
+
+    .info-item {
+        gap: 15px;
+    }
+
+    .info-item i {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+    }
+}

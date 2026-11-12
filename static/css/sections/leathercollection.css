@@ -1,0 +1,69 @@
+    .leather-collection-section {
+        position: relative;
+        height: 100vh; /* Section ki height */
+        background-image: url('/static/images/leaher-collection.jpeg'); /* Yahan apni image ka path lagayen */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Parallax effect ke liye */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .leather-dark-overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Dark Overlay */
+        z-index: 1;
+    }
+
+    .leather-content {
+        position: relative;
+        z-index: 2;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.4); /* Text ke peeche thora background */
+        backdrop-filter: blur(4px);
+        max-width: 700px;
+        margin: 0 20px;
+    }
+
+    .leather-content h2 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 800;
+    }
+
+    .leather-content p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        color: #ddd;
+    }
+
+    .leather-btn {
+        display: inline-block;
+        padding: 12px 35px;
+        background-color: transparent;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 2px solid #fff;
+        transition: all 0.3s ease;
+    }
+
+    .leather-btn:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        .leather-content h2 { font-size: 2rem; }
+        .leather-collection-section { height: 100vh; }
+    }

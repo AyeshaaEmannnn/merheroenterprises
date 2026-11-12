@@ -1,0 +1,61 @@
+@import "base/variables.css";
+@import "base/reset.css";
+@import "base/layout.css";
+
+@import "components/navbar.css";
+@import "components/footer.css";
+@import "components/buttons.css";
+@import "components/cards.css";
+@import "components/sliders.css";
+@import "components/modal.css";
+
+@import "sections/hero.css";
+@import "sections/about.css";
+@import "sections/products.css";
+@import "sections/oem.css";
+@import "sections/features.css";
+@import "sections/team.css";
+@import "sections/certificates.css";
+@import "sections/contact.css";
+@import "sections/community.css";
+@import "sections/manufacturing.css";
+@import "sections/special.css";
+@import "sections/leathercollection.css";
+
+@import "pages/home.css";
+@import "pages/introduction.css";
+@import "pages/company_profile.css";
+@import "pages/our_journey.css";
+@import "pages/vision.css";
+@import "pages/core_values.css";
+@import "pages/certificates.css";
+@import "pages/team.css";
+
+@import "pages/capabilities.css";
+@import "pages/manufacturing_facility.css";
+@import "pages/qualityassurance.css";
+@import "pages/researchanddevelopment.css";
+@import "pages/oem&customization.css";
+@import "pages/workprocess.css";
+@import "pages/sustainability.css";
+@import "pages/collaboratewithus.css";
+
+@import "pages/inquiry.css";
+@import "pages/map.css";
+@import "pages/contactdeails.css";
+@import "pages/faq.css";
+
+@import "pages/leader_ceo_message.css";
+@import "pages/director_and_managment_team.css";
+@import "pages/desgin_and_production_team.css";
+
+@import "pages/commitmenttoquality.css";
+@import "pages/sustainableproduction.css";
+@import "pages/advancedtechnology.css";
+@import "pages/fastcommunicationandsupport.css";
+@import "pages/whychooseus.css";
+@import "pages/globaldeleivernetwork.css";
+@import "pages/skilledworkforce.css";
+@import "pages/oemexprtise.css";
+@import "pages/motorcycle_racing_suit.css";
+@import "pages/products_list.css";
